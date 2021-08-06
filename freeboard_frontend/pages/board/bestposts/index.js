@@ -2,6 +2,8 @@
 
 import BestList from '../../../src/components/units/board/bestlist/BestList.container';
 
-export default function ListPage() {
+function ListPage() {
   return <BestList />;
 }
+
+export default withAuth(ListPage);

@@ -12,6 +12,7 @@ export const SignupWrapper = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 15%;
 `;
 export const TopTitle = styled.h1`
   color: #fff;

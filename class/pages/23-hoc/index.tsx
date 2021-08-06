@@ -13,6 +13,7 @@ const withAuth = (Component: ComponentType) => (props: any) => {
   const { accessToken } = useContext(GlobalContext);
 
   useEffect(() => {
+    // 권한체크
     if (!accessToken) {
       alert('로그인이 필요한 페이지입니다.');
       router.push('/22-login');
@@ -20,4 +21,5 @@ const withAuth = (Component: ComponentType) => (props: any) => {
   }, []);
 
   return <Component {...props} />;
+  //       로그인되고 넘어간 화면
 };

@@ -29,14 +29,21 @@ if (typeof window !== 'undefined') {
 interface IContext {
   accessToken: string;
   setAccessToken: Dispatch<SetStateAction<string>>;
+  userInfo: any;
+  setUserInfo: any;
 }
 
 export const GlobalContext = createContext<IContext>({});
 function MyApp({ Component, pageProps }: AppProps) {
   const [accessToken, setAccessToken] = useState('');
+  const [userInfo, setUserInfo] = useState({}); // 유저정보
+
   const value = {
+    // 글로벌콘텍스트에 담아준 것들은 모든 컴포넌트에서 꺼내 쓸 수 있음.
     accessToken: accessToken,
     setAccessToken: setAccessToken,
+    userInfo: userInfo,
+    setUserInfo: setUserInfo,
   };
 
   const uploadLink = createUploadLink({

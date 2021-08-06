@@ -6,11 +6,11 @@ import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 
 const Body = styled.div`
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  height: 100%;
 `;
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  height: 1080px;
 `;
 
 interface IProps {
