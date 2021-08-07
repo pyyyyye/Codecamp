@@ -43,13 +43,13 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
           </WriterInfo>
           <WriterIcon>
             {/*---- 우측 픽토그램 ---*/}
-            <LinkIcon src="/link.png" />
+            <LinkIcon src="/icon_link.png" />
             {/* <MapIcon src="/link2.png" /> */}
             <Tooltip
               placement="top"
               title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
             >
-              <MapIcon src="/link2.png" alt="작성자 주소" />
+              <MapIcon src="/icon_location.png" alt="작성자 주소" />
             </Tooltip>
           </WriterIcon>
         </TopContentsWriter>
@@ -76,11 +76,11 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
         {/*//!--- BottomContentsRecommend 좋아요 싫어요 Start --- */}
         <BottomContentsRecommend>
           <Recommendations>
-            <RecomImage src="/recom.png" />
+            <RecomImage src="/icon_like.png" />
             <RecomCount>1920</RecomCount>
           </Recommendations>
           <Recommendations>
-            <DecomImage src="/decom.png" />
+            <DecomImage src="/icon_disLike.png" />
             <DecomCount>1920</DecomCount>
           </Recommendations>
         </BottomContentsRecommend>

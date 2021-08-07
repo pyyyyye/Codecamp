@@ -5,14 +5,13 @@ export const SignupWrapper = styled.div`
   width: 384px;
   height: 740px;
   font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   margin-top: 15%;
+
+  background-color: darkgray;
 `;
 export const TopTitle = styled.h1`
   color: #fff;
@@ -22,8 +21,16 @@ export const TopTitle = styled.h1`
   text-align: center;
   border-bottom: 40px;
 `;
-export const InputBox = styled.div`
+export const MainSignupContents = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: auto; */
+`;
+export const InputBox = styled.div`
+  width: 50%;
 `;
 export const SingupLabel = styled.label`
   color: #fff;

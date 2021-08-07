@@ -109,18 +109,18 @@ export const PhotoBox = styled.div`
   flex-direction: column;
   margin-bottom: 40px;
 `;
-export const UploadBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-export const ImgUploadBox = styled.label`
-  width: 78px;
-  height: 78px;
-  background-color: #bdbdbd;
-  text-align: center;
-  padding-top: 18px;
-  cursor: pointer;
-`;
+// export const UploadBox = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+// `;
+// export const ImgUploadBox = styled.label`
+//   width: 78px;
+//   height: 78px;
+//   background-color: #bdbdbd;
+//   text-align: center;
+//   padding-top: 18px;
+//   cursor: pointer;
+// `;
 
 export const ImgUploadInput = styled.input`
   //파일업로드 input박스 숨김

@@ -3,8 +3,17 @@ import LayoutNavigationUI from './LayoutNavigation.presenter';
 
 export default function LayoutNavigation() {
   const router = useRouter();
+
   const onClickMarket = () => {
     router.push('/market/write');
   };
-  return <LayoutNavigationUI onClickMarket={onClickMarket} />;
+  const onClickFreeboard = () => {
+    router.push('/board/bestposts');
+  };
+  return (
+    <LayoutNavigationUI
+      onClickFreeboard={onClickFreeboard}
+      onClickMarket={onClickMarket}
+    />
+  );
 }

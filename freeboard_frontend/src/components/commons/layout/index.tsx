@@ -10,7 +10,7 @@ const Body = styled.div`
   height: 100%;
 `;
 const Wrapper = styled.div`
-  height: 1080px;
+  /* height: 1080px; */
 `;
 
 interface IProps {

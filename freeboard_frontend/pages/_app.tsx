@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const uploadLink = createUploadLink({
     // 실제 파일이 업로드 될 주소
     uri: 'http://backend02.codebootcamp.co.kr/graphql',
-    Headers: {
+    headers: {
       authorization: `Bearer ${accessToken}`,
     },
   });
@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               checkLogin
                 ? {
                     backgroundImage: 'url(/market/market_bg.png)',
-                    height: '100%',
+                    height: '100vh',
                   }
                 : undefined
             }
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div
               style={
                 checkLogin
-                  ? { backgroundColor: 'rgba(0, 0, 0, 0.8)', height: '100%' }
+                  ? { backgroundColor: 'rgba(0, 0, 0, 0.8)', height: '100vh' }
                   : undefined
               }
             >
