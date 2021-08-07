@@ -60,7 +60,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
                     <PostDate>Date : 2020.02.18</PostDate>
                   </PostsInfo_Left>
                   <PostsInfo_Right>
-                    <RecomImage src="/recom.png" alt="추천 아이콘" />
+                    <RecomImage src="/like.png" alt="추천 아이콘" />
                     <RecomCount>296</RecomCount>
                   </PostsInfo_Right>
                 </BestPostsInfo>
@@ -101,8 +101,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
 
           {/* //!▶▶▶▶▶  ListFooter Start  ◀◀◀◀◀// */}
           <ListFooter>
-            <Pagination01 
-            />
+            <Pagination01 />
             <UploadButton id={data?._id} onClick={onClickUpload}>
               게시물 등록하기
             </UploadButton>

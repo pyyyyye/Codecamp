@@ -10,123 +10,142 @@ import {
   ContIcons,
   ContInput,
   AddressBox,
-  AddressButton,
   AddressBoxLeft,
   LocationMap,
+  LocationIcon,
   AddressComponent,
   AddressBoxRight,
   GpsComponent,
   InputGPS,
   AddressDetail,
   ProductImages,
+  ImgInputBox,
   ProductImg,
+  DeleteBtn,
   RadioBox,
   RadioButton,
   Button1,
+  RadioText,
   ButtonBox,
 } from './MarketWrite.styles';
 
-export default function MarketWriteUI() {
+interface MarketWriteUIProps {
+  // onClickSubmit: any;
+  // handleSubmit: any;
+}
+
+export default function MarketWriteUI(props: MarketWriteUIProps) {
   return (
     <Wrapper>
       <Contents>
         <Title>상품 등록하기</Title>
-
-        <WriteInputBox>
-          <Categorize>상품명</Categorize>
-          <InputBox
-            type="text"
-            name="productName"
-            placeholder="상품명을 작성해주세요."
-          />
-        </WriteInputBox>
-
-        <WriteInputBox>
-          <Categorize>한 줄 요약</Categorize>
-          <InputBox
-            type="text"
-            name="Summary"
-            placeholder="간단한 상품 설명을 작성해주세요."
-          />
-        </WriteInputBox>
-
-        <ContBox>
-          <Categorize>상품 설명</Categorize>
-          <ContentsBox>
-            <ContIcons>아이콘 줄</ContIcons>
-            <ContInput
-              // type="text"
-              name="contents"
-              placeholder="상품 설명을 자세히 작성해주세요."
+        <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+          <WriteInputBox>
+            <Categorize>상품명</Categorize>
+            <InputBox
+              placeholder="상품명을 작성해주세요."
+              {...props.register('name')}
             />
-          </ContentsBox>
-        </ContBox>
+          </WriteInputBox>
+          <WriteInputBox>
+            <Categorize>한 줄 요약</Categorize>
+            <InputBox
+              placeholder="간단한 상품 설명을 작성해주세요."
+              {...props.register('remarks')}
+            />
+          </WriteInputBox>
 
-        <WriteInputBox>
-          <Categorize>판매 가격</Categorize>
-          <InputBox
-            type="number"
-            name="Price"
-            placeholder="판매 가격을 입력해주세요."
-          />
-        </WriteInputBox>
+          <ContBox>
+            <Categorize>상품 설명</Categorize>
+            <ContentsBox>
+              <ContIcons>아이콘 줄</ContIcons>
+              <ContInput
+                // type="text"
 
-        <WriteInputBox>
-          <Categorize>태그입력</Categorize>
-          <InputBox type="text" name="Tag" placeholder="#태그 #태그 #태그" />
-        </WriteInputBox>
+                placeholder="상품 설명을 자세히 작성해주세요."
+                {...props.register('contents')}
+              />
+            </ContentsBox>
+          </ContBox>
 
-        <AddressBox>
-          {/* --------  Address Left  ------- */}
-          <AddressBoxLeft>
-            <Categorize>거래 위치</Categorize>
-            <LocationMap>지도 그림 박스</LocationMap>
-          </AddressBoxLeft>
+          <WriteInputBox>
+            <Categorize>판매 가격</Categorize>
+            <InputBox
+              placeholder="판매 가격을 입력해주세요."
+              {...props.register('price')}
+            />
+          </WriteInputBox>
 
-          {/* --------  Address Right  ------- */}
-          <AddressBoxRight>
-            <Categorize>GPS</Categorize>
-            <GpsComponent>
-              <InputGPS type="text" placeholder="위도(LAT)" />
-              <InputGPS type="text" placeholder="경도(LNG)" />
-            </GpsComponent>
+          <WriteInputBox>
+            <Categorize>태그입력</Categorize>
+            <InputBox
+              name="Tag"
+              placeholder="#태그 #태그 #태그"
+              // {...props.register('contents')}
+            />
+          </WriteInputBox>
 
-            <AddressComponent>
-              <Categorize>주소</Categorize>
-              <AddressButton>주소 검색</AddressButton>
-              <AddressDetail placeholder="주소를 입력해주세요." />
-              <AddressDetail placeholder="상세 주소를 입력해주세요." />
-            </AddressComponent>
-          </AddressBoxRight>
-        </AddressBox>
+          <AddressBox>
+            {/* --------  Address Left  ------- */}
+            <AddressBoxLeft>
+              <Categorize>거래 위치</Categorize>
+              <LocationMap>지도 그림 박스</LocationMap>
+            </AddressBoxLeft>
 
-        {/* --------------  이미지 업로드 버튼  -------------- */}
-        <ProductImages>
-          <Categorize>사진 첨부</Categorize>
-          <ProductImg>1</ProductImg>
-          <ProductImg>2</ProductImg>
+            {/* --------  Address Right  ------- */}
+            <AddressBoxRight>
+              <Categorize>GPS</Categorize>
+              <GpsComponent>
+                <InputGPS type="text" placeholder="위도(LAT)" />
+                <LocationIcon src="/icon_location.png" />
+                <InputGPS type="text" placeholder="경도(LNG)" />
+              </GpsComponent>
 
-          {/* {new Array(3).fill('a').map((data, index) => (
+              <AddressComponent>
+                <Categorize>주소</Categorize>
+                <AddressDetail placeholder="주소를 입력해주세요." />
+                <AddressDetail
+                  placeholder="상세 주소를 입력해주세요."
+                  style={{ marginTop: '16px' }}
+                />
+              </AddressComponent>
+            </AddressBoxRight>
+          </AddressBox>
+
+          {/* --------------  이미지 업로드 버튼  -------------- */}
+          <ProductImages>
+            <Categorize>사진 첨부</Categorize>
+            <ImgInputBox>
+              <DeleteBtn src="/icon_delete_black.png" />
+              <ProductImg>
+                +<br />
+                Upload
+              </ProductImg>
+            </ImgInputBox>
+
+            {/* {new Array(3).fill('a').map((data, index) => (
             <Upload01
               key={`${data}_${index}`}
               index={index}
               onChangeFiles={props.onChangeFiles}
             />
           ))} */}
-        </ProductImages>
+          </ProductImages>
 
-        <RadioBox>
-          <Categorize>메인 사진 설정</Categorize>
-          <RadioButton>
-            <Button1 type="radio" name="set" value="사진1" checked />
-            <span>사진 1</span>
-            <Button1 type="radio" name="set" value="사진2" />
-            <span>사진 2</span>
-          </RadioButton>
-        </RadioBox>
+          <RadioBox>
+            <Categorize>메인 사진 설정</Categorize>
+            <RadioButton>
+              <Button1 type="radio" name="set" value="사진1" checked />
+              <RadioText>사진 1</RadioText>
+              <Button1 type="radio" name="set" value="사진2" />
+              <RadioText>사진 2</RadioText>
+            </RadioButton>
+          </RadioBox>
 
-        {/* ------------------- 하단 등록 버튼 ---------------- */}
-        <ButtonBox> 등록하기</ButtonBox>
+          {/* ------------------- 하단 등록 버튼 ---------------- */}
+          {/* active={props.active} */}
+          <ButtonBox type="submit">등록하기</ButtonBox>
+        </form>
       </Contents>
     </Wrapper>
   );

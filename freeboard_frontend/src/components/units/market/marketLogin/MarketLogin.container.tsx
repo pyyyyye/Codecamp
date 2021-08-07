@@ -36,7 +36,7 @@ export default function MarketLogin() {
         },
       });
       setAccessToken(result.data?.loginUser.accessToken || '');
-      alert('됐다 굿');
+      alert('로그인 되었습니다.');
       // router.push('')
     } catch (error) {
       alert('회원정보를 확인해주세요.');
