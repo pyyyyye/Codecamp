@@ -17,16 +17,21 @@ import Layout from '../src/components/commons/layout';
 interface IContext {
   accessToken: string;
   setAccessToken: Dispatch<SetStateAction<string>>;
+  userInfo: any;
+  setUserInfo: any;
 }
 
 export const GlobalContext = createContext<IContext>({});
-
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [accessToken, setAccessToken] = useState('');
+  const [userInfo, setUserInfo] = useState({}); //유저 정보
+
   const value = {
     accessToken,
     setAccessToken,
+    userInfo,
+    setUserInfo,
   };
   console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
   const uploadLink = createUploadLink({

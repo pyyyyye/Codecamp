@@ -1,18 +1,18 @@
 // ====== 중고마켓 회원가입 | market signup styles ======
 import styled from '@emotion/styled';
 
-export const SignupWrapper = styled.div`
-  width: 384px;
-  height: 740px;
-  font-size: 30px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 15%;
+// export const SignupWrapper = styled.div`
+//   width: 384px;
+//   height: 740px;
+//   font-size: 30px;
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   margin-top: 15%;
 
-  background-color: darkgray;
-`;
+//   background-color: darkgray;
+// `;
 export const TopTitle = styled.h1`
   color: #fff;
   font-weight: 700;
@@ -20,6 +20,7 @@ export const TopTitle = styled.h1`
   line-height: 40px;
   text-align: center;
   border-bottom: 40px;
+  padding-top: 160px;
 `;
 export const MainSignupContents = styled.div`
   width: 100%;
@@ -30,7 +31,8 @@ export const MainSignupContents = styled.div`
   /* margin: auto; */
 `;
 export const InputBox = styled.div`
-  width: 50%;
+  width: 384px;
+  padding-bottom: 20px;
 `;
 export const SingupLabel = styled.label`
   color: #fff;
@@ -49,6 +51,7 @@ export const InputSignup = styled.input`
   padding: 20px;
   background: transparent;
   font-size: 15px;
+  margin-top: 12px;
 `;
 export const SignupError = styled.div`
   font-size: 14px;
@@ -58,7 +61,7 @@ export const SignupError = styled.div`
   margin: 10px 0px 0px 16px;
 `;
 export const GoToSignup = styled.div`
-  width: 100%;
+  width: 384px;
   height: 64px;
   background-color: #4f4f4f;
   border-radius: 16px;
@@ -68,5 +71,6 @@ export const GoToSignup = styled.div`
   text-align: center;
   line-height: 64px;
   color: #fff;
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 `;

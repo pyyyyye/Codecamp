@@ -1,20 +1,19 @@
 // ---------- 중고마켓 로그인 container.tsx -------------
-import { useMutation } from '@apollo/client';
+import { useApolloClient, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
-// import { useRouter } from 'next/router';
-import { useContext, useEffect } from 'react';
+import { MouseEvent, useContext } from 'react';
 import { ChangeEvent, useState } from 'react';
 import { GlobalContext } from '../../../../../pages/_app';
 import MarketLoginUI from './MarketLogin.presenter';
-import { LOGIN_USER } from './MarketLogin.queries';
+import { LOGIN_USER, FETCH_USER_LOGGED_IN } from './MarketLogin.queries';
 
 export default function MarketLogin() {
-  // const router = useRouter();
-  const { setAccessToken } = useContext(GlobalContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginUser] = useMutation(LOGIN_USER);
+  const { setAccessToken, setUserInfo, userInfo } = useContext(GlobalContext);
   const router = useRouter();
+  const client = useApolloClient();
 
   function onChangeEmail(event: ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
@@ -22,8 +21,7 @@ export default function MarketLogin() {
   function onChangePassword(event: ChangeEvent<HTMLInputElement>) {
     setPassword(event.target.value);
   }
-  function onClickGoToSignup(event) {
-    console.log(event.target);
+  function onClickGoToSignup() {
     router.push('/market/signup');
   }
 
@@ -31,13 +29,22 @@ export default function MarketLogin() {
     try {
       const result = await loginUser({
         variables: {
-          email: email,
-          password: password,
+          email,
+          password,
         },
       });
+      const resultUser = await client.query({
+        query: FETCH_USER_LOGGED_IN,
+        context: {
+          headers: {
+            authorization: `Bearer ${result.data?.loginUser.accessToken}`,
+          },
+        },
+      });
+      setUserInfo(resultUser.data.fetchUserLoggedIn);
       setAccessToken(result.data?.loginUser.accessToken || '');
       alert('로그인 되었습니다.');
-      // router.push('')
+      router.push('../../../../../market/list');
     } catch (error) {
       alert('회원정보를 확인해주세요.');
     }

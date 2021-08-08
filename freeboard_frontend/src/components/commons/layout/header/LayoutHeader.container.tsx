@@ -1,5 +1,17 @@
+import { useRouter } from 'next/router';
 import LayoutHeaderUI from './LayoutHeader.presenter';
 
 export default function LayoutHeader() {
-  return <LayoutHeaderUI />;
+  const router = useRouter();
+
+  const onClickLogin = () => {
+    router.push('/market/login');
+  };
+  const onClickSignup = () => {
+    router.push('/market/signup');
+  };
+
+  return (
+    <LayoutHeaderUI onClickLogin={onClickLogin} onClickSignup={onClickSignup} />
+  );
 }
