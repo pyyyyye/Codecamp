@@ -124,8 +124,10 @@ export const AddressDetail = styled.input`
   /* margin-top: 16px; */
 `;
 export const ProductImages = styled.div`
+  width: 330px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 export const ImgInputBox = styled.div`
   width: 180px;
@@ -161,11 +163,15 @@ export const RadioText = styled.div`
   font-weight: 500px;
   margin-right: 24px;
 `;
+export const BottomBtn = styled.div`
+  width: 100%;
+  text-align: center;
+  padding: 80px;
+`;
 export const ButtonBox = styled.button`
   width: 179px;
   height: 52px;
   background-color: #bdbdbd;
   border: none;
   cursor: pointer;
-  margin: 80px auto;
 `;

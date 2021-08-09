@@ -26,12 +26,15 @@ import {
   RadioButton,
   Button1,
   RadioText,
+  BottomBtn,
   ButtonBox,
 } from './MarketWrite.styles';
+import Upload01 from '../../../commons/uploads/01/uploads01.container';
 
 interface MarketWriteUIProps {
   // onClickSubmit: any;
   // handleSubmit: any;
+  onChangeFiles: (file: File, index: number) => void;
 }
 
 export default function MarketWriteUI(props: MarketWriteUIProps) {
@@ -114,22 +117,22 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
 
           {/* --------------  이미지 업로드 버튼  -------------- */}
           <ProductImages>
-            <Categorize>사진 첨부</Categorize>
+            {/* <Categorize>사진 첨부</Categorize>
             <ImgInputBox>
               <DeleteBtn src="/icon_delete_black.png" />
               <ProductImg>
                 +<br />
                 Upload
               </ProductImg>
-            </ImgInputBox>
+            </ImgInputBox> */}
 
-            {/* {new Array(3).fill('a').map((data, index) => (
-            <Upload01
-              key={`${data}_${index}`}
-              index={index}
-              onChangeFiles={props.onChangeFiles}
-            />
-          ))} */}
+            {new Array(3).fill('a').map((data, index) => (
+              <Upload01
+                key={`${data}_${index}`}
+                index={index}
+                onChangeFiles={props.onChangeFiles}
+              />
+            ))}
           </ProductImages>
 
           <RadioBox>
@@ -144,7 +147,9 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
 
           {/* ------------------- 하단 등록 버튼 ---------------- */}
           {/* active={props.active} */}
-          <ButtonBox type="submit">등록하기</ButtonBox>
+          <BottomBtn>
+            <ButtonBox type="submit">등록하기</ButtonBox>
+          </BottomBtn>
         </form>
       </Contents>
     </Wrapper>

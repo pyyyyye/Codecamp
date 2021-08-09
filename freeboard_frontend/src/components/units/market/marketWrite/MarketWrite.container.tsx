@@ -7,8 +7,10 @@ import { useMutation } from '@apollo/client';
 import { Modal } from 'antd';
 
 import router from 'next/router';
+import { useState } from 'react';
 
 export default function MarketWrite() {
+  const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const { register, handleSubmit, formState } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema),
@@ -36,10 +38,17 @@ export default function MarketWrite() {
       Modal.error({ content: error.message });
     }
   }
+
+  function onChangeFiles(file: File, index: number) {
+    const newFiles = [...files];
+    newFiles[index] = file;
+    setFiles(newFiles);
+  }
   return (
     <MarketWriteUI
       // active={active}
       onClickSubmit={onClickSubmit}
+      onChangeFiles={onChangeFiles}
       // errors={formState.errors}
       register={register}
       handleSubmit={handleSubmit}

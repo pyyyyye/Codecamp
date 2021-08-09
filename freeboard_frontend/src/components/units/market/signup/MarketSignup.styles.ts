@@ -1,26 +1,15 @@
 // ====== 중고마켓 회원가입 | market signup styles ======
 import styled from '@emotion/styled';
 
-// export const SignupWrapper = styled.div`
-//   width: 384px;
-//   height: 740px;
-//   font-size: 30px;
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   transform: translate(-50%, -50%);
-//   margin-top: 15%;
-
-//   background-color: darkgray;
-// `;
 export const TopTitle = styled.h1`
   color: #fff;
+
   font-weight: 700;
   font-size: 28px;
   line-height: 40px;
   text-align: center;
   border-bottom: 40px;
-  padding-top: 160px;
+  padding-top: 100px;
 `;
 export const MainSignupContents = styled.div`
   width: 100%;
@@ -72,5 +61,5 @@ export const GoToSignup = styled.div`
   line-height: 64px;
   color: #fff;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 120px;
 `;

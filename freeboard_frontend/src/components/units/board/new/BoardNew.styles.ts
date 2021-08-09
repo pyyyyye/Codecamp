@@ -103,8 +103,6 @@ export const AddressInput = styled.input`
 `;
 
 export const PhotoBox = styled.div`
-  width: 282px;
-  height: 118px;
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;

@@ -1,20 +1,26 @@
 import styled from '@emotion/styled';
 
 export const UploadImage = styled.img`
-  width: 78px;
-  height: 78px;
-  margin-right: 24px;
+  width: 100px;
+  height: 100px;
+  /* margin-right: 24px; */
   cursor: pointer;
+  box-sizing: border-box;
+
+  /* display: flex;
+  flex-direction: row; */
 `;
 
 export const UploadButton = styled.div`
   width: 100px;
   height: 100px;
   background-color: #bdbdbd;
-  margin-right: 24px;
+  /* margin-right: 24px; */
   outline: none;
   border: none;
   cursor: pointer;
+  text-align: center;
+  padding: 25px;
 `;
 
 export const UploadFileHidden = styled.input`

@@ -59,7 +59,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               checkLogin
                 ? {
                     backgroundImage: 'url(/market/market_bg.png)',
-                    height: '100vh',
                   }
                 : undefined
             }
@@ -67,7 +66,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div
               style={
                 checkLogin
-                  ? { backgroundColor: 'rgba(0, 0, 0, 0.8)', height: '100vh' }
+                  ? {
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    }
                   : undefined
               }
             >
