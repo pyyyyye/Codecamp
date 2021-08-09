@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "apollo-upload-client": "^16.0.0"
+    "apollo-upload-client": "^16.0.0",
+    "react-sticky": "^6.0.3"
   }
 }

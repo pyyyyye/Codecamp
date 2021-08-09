@@ -6,3 +6,7 @@ function MarketWritePage() {
 }
 
 export default withAuth(MarketWritePage);
+
+// export default function MarketWritePage() {
+//   return <MarketWrite />;
+// }

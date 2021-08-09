@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const HeaderWrap = styled.div`
-  width: 160px;
+  width: 190px;
   height: 20px;
   display: flex;
   justify-content: space-between;

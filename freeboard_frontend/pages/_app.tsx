@@ -17,16 +17,21 @@ import Layout from '../src/components/commons/layout';
 interface IContext {
   accessToken: string;
   setAccessToken: Dispatch<SetStateAction<string>>;
+  userInfo: any;
+  setUserInfo: any;
 }
 
 export const GlobalContext = createContext<IContext>({});
-
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [accessToken, setAccessToken] = useState('');
+  const [userInfo, setUserInfo] = useState({}); //유저 정보
+
   const value = {
     accessToken,
     setAccessToken,
+    userInfo,
+    setUserInfo,
   };
   console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
   const uploadLink = createUploadLink({
@@ -54,7 +59,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               checkLogin
                 ? {
                     backgroundImage: 'url(/market/market_bg.png)',
-                    height: '100vh',
                   }
                 : undefined
             }
@@ -62,7 +66,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div
               style={
                 checkLogin
-                  ? { backgroundColor: 'rgba(0, 0, 0, 0.8)', height: '100vh' }
+                  ? {
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    }
                   : undefined
               }
             >
