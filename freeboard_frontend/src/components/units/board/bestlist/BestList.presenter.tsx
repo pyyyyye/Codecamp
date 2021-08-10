@@ -87,11 +87,11 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
               <CategorizeTop aaa={true}>작성일</CategorizeTop>
             </Categorize>
 
-            {data?.fetchBoards.map((data, index) => (
+            {data?.fetchBoards.map((data) => (
               <Categorize key={data._id}>
                 <CategorizeTop>{index + 1}</CategorizeTop>
                 <CategorizeTopTitle id={data?._id} onClick={onClickTitle}>
-                  {data.title}{' '}
+                  {data.title}
                 </CategorizeTopTitle>
                 <CategorizeTop>{data.writer}</CategorizeTop>
                 <CategorizeTop>{getDate(data.createdAt)}</CategorizeTop>

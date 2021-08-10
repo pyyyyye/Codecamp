@@ -43,6 +43,10 @@ export default function MarketLogin() {
       });
       setUserInfo(resultUser.data.fetchUserLoggedIn);
       setAccessToken(result.data?.loginUser.accessToken || '');
+      localStorage.setItem(
+        'accessToken',
+        result.data?.loginUser.accessToken || ''
+      );
       alert('로그인 되었습니다.');
       router.push('../../../../../market/list');
     } catch (error) {

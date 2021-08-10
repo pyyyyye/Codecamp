@@ -13,6 +13,7 @@ import {
   ProductName,
   ProductRemarks,
   ProductTags,
+  LeftInfo,
   BottomPrevInfo,
   SellerBox,
   Seller,
@@ -26,6 +27,7 @@ import {
   RightSticky,
   GoToWrite,
 } from './MarketList.styles';
+// import { getDate } from '../../../../commons/libraries/utils';
 
 export default function MarketListUI(props) {
   const withAuth = (Component: ComponentType) => (props) => {
@@ -43,34 +45,42 @@ export default function MarketListUI(props) {
     <Wrapper>
       <ListContents>
         <Title>베스트 상품 </Title>
-        <List>
-          <ProductBox>
-            <ProductPrevImg>이미지</ProductPrevImg>
-            <ProductPrevInfo>
-              <TopPrevInfo>
-                <ProductName>삼성전자</ProductName>
-                <ProductRemarks>모델명</ProductRemarks>
-                <ProductTags>#태그 #태그</ProductTags>
-              </TopPrevInfo>
-              {/* <BottomPrevInfo> */}
-              {/* <SellerBox>
-                  <SellerImg src="/images/WriterProfileImg_2.png" />
-                  <Seller>판매자</Seller>
-                </SellerBox>
-                <LikeBox>
-                  <Like src="/images/icon_like_2.png" />
-                  <LikeCount>58</LikeCount>
-                </LikeBox> */}
-              {/* </BottomPrevInfo> */}
-            </ProductPrevInfo>
-            <ProductPrice>
-              <PriceIcon src="/images/icon_Euro.png" />
-              <Price>274,260원</Price>
-            </ProductPrice>
-          </ProductBox>
-        </List>
+        {props.data?.fetchUseditems.map((data) => (
+          <List key={data._id}>
+            <ProductBox>
+              <ProductPrevImg>{data?.images}</ProductPrevImg>
+              <ProductPrevInfo>
+                <LeftInfo onClick={props.onClickTitle}>
+                  <TopPrevInfo>
+                    <ProductName>{data?.name}</ProductName>
+                    <ProductRemarks>{data?.remarks}</ProductRemarks>
+                    <ProductTags>{data?.tags}</ProductTags>
+                  </TopPrevInfo>
 
-        <GoToWrite onClick={props.onClickWrite}>상품 등록하기</GoToWrite>
+                  <BottomPrevInfo>
+                    <SellerBox>
+                      <SellerImg />
+                      <Seller>{data?.seller}</Seller>
+                    </SellerBox>
+                    <LikeBox>
+                      <Like />
+                      <LikeCount>58</LikeCount>
+                    </LikeBox>
+                  </BottomPrevInfo>
+                </LeftInfo>
+
+                <ProductPrice>
+                  <PriceIcon src="/images/icon_Euro.png" />
+                  <Price>{data?.price}</Price>
+                </ProductPrice>
+              </ProductPrevInfo>
+            </ProductBox>
+          </List>
+        ))}
+
+        <GoToWrite id={props.data?._id} onClick={props.onClickWrite}>
+          상품 등록하기
+        </GoToWrite>
       </ListContents>
 
       {/* 우측 오늘 본 상품 */}
