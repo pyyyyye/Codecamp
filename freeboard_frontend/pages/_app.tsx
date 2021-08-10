@@ -38,7 +38,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     // 실제 파일이 업로드 될 주소
     uri: 'http://backend02.codebootcamp.co.kr/graphql',
     headers: {
-      authorization: `Bearer ${accessToken}`,
+      authorization: `Bearer ${
+        (typeof window !== 'undefined' &&
+          localStorage.getItem('accessToken')) ||
+        ''
+      }`,
     },
   });
   const client = new ApolloClient({

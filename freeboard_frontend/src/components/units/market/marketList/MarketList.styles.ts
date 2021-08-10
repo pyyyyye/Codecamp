@@ -19,12 +19,12 @@ export const Title = styled.h1`
 export const List = styled.div`
   width: 100%;
   height: 200px;
-  background-color: skyblue;
 `;
 
 // --- LEFT Product IMG Start ---
 export const ProductBox = styled.div`
   width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,56 +33,84 @@ export const ProductPrevImg = styled.div`
   width: 160px;
   height: 160px;
   background-color: #bdbdbd;
+  margin: 20px 40px 20px 0px;
 `;
 
 // --- CENTER ProductPrevInfo Start ---
 export const ProductPrevInfo = styled.div`
-  width: 816px;
-  background-color: orange;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+`;
+export const LeftInfo = styled.div`
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 export const TopPrevInfo = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 0px;
 `;
 export const ProductName = styled.h2`
   font-size: 24px;
   font-weight: 500;
   line-height: 36px;
+  margin-bottom: 4px;
 `;
-export const ProductRemarks = styled.span``;
-export const ProductTags = styled.span``;
+export const ProductRemarks = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+  color: #4f4f4f;
+  line-height: 23.68px;
+`;
+export const ProductTags = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+  color: #bdbdbd;
+  line-height: 23.68px;
+  padding-top: 8px;
+`;
 
 // --- BottomPrevInfo Start ----
-// export const BottomPrevInfo = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-// export const SellerBox = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   padding-right: 22px;
-// `;
-// export const SellerImg = styled.img`
-//   width: 20px;
-//   height: 20px;
-// `;
-// export const Seller = styled.div``;
-// export const LikeBox = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `;
-// export const Like = styled.img`
-//   width: 20px;
-//   height: 20px;
-// `;
-// export const LikeCount = styled.div``;
+export const BottomPrevInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const SellerBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-right: 22px;
+`;
+export const SellerImg = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+`;
+
+export const Seller = styled.div``;
+export const LikeBox = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const Like = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+`;
+export const LikeCount = styled.div``;
 
 // --- RIGHT Product Price ---
 export const ProductPrice = styled.div`
   display: flex;
   flex-direction: row;
-  height: 36px;
-  border: 1px solid blue;
+  justify-content: right;
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  align-items: center;
 `;
 export const PriceIcon = styled.img`
   width: 18px;
@@ -105,6 +133,7 @@ export const GoToWrite = styled.button`
   cursor: pointer;
   outline: none;
   border: 1px solid #000;
+  background: #fff;
   :hover {
     background-color: #ffd600;
   }
@@ -113,8 +142,11 @@ export const GoToWrite = styled.button`
 //! =============== Right Sticky Menu =================
 export const RightSticky = styled.div`
   width: 196px;
-  height: 505px;
+  height: 100px;
   background-color: #bdbdbd;
+
+  position: sticky;
+  top: 600px;
 
   display: none;
 `;

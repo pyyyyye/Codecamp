@@ -41,6 +41,8 @@ export default function SignupPage() {
         },
       });
       setAccessToken(result.data?.loginUser.accessToken || ''); // 타입 없으면 '' 빈문자열 넘겨줘
+      localStorage.setItem('accessToken', result.data?.loginUser.accessToken);
+      //  로그인 시 로컬스토리지에 accessToken 저장되게 설정.
       // =ClobalContext에 담아라
       //   console.log(result.data?.loginUser.accessToken);
       //   alert(result.data?.loginUser.accessToken); // accessToken 보여지게

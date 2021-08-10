@@ -50,7 +50,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     // 실제 데이터가 업로드 될 백엔드 주소
     uri: 'http://backend02.codebootcamp.co.kr/graphql',
     headers: {
-      authorization: `Bearer ${accessToken}`,
+      authorization: `Bearer ${
+        (typeof window !== 'undefined' &&
+          localStorage.getItem('accessToken')) ||
+        ''
+      }`,
       // 'accessToken 넣는 자리'
       // 다르게 해도 되지만,  Bearer 라고 하면 토큰 정보 주고받는 자리라고 약속함.
     },
