@@ -15,10 +15,12 @@ export const ListContents = styled.div`
 export const Title = styled.h1`
   font-size: 700;
   text-align: center;
+  padding-bottom: 40px;
 `;
 export const List = styled.div`
   width: 100%;
   height: 200px;
+  cursor: pointer;
 `;
 
 // --- LEFT Product IMG Start ---

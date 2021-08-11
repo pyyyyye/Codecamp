@@ -102,7 +102,7 @@ export default function NewPage(props: IProps) {
           content: '게시물이 성공적으로 등록되었습니다.',
           onOk: () => {
             router.push(`/board/detail/${result.data.createBoard._id}`);
-            console.log('드뎌 등록 되었다');
+            // console.log('드뎌 등록 되었다');
             // onCancel: () => router.push(`/board/bestposts`),
           },
         });

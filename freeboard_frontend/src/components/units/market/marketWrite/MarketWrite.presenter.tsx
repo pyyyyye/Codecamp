@@ -100,7 +100,7 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               <Categorize>GPS</Categorize>
               <GpsComponent>
                 <InputGPS type="text" placeholder="위도(LAT)" />
-                <LocationIcon src="/icon_location.png" />
+                <LocationIcon src="/images/icon_location.png" />
                 <InputGPS type="text" placeholder="경도(LNG)" />
               </GpsComponent>
 
@@ -117,15 +117,6 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
 
           {/* --------------  이미지 업로드 버튼  -------------- */}
           <ProductImages>
-            {/* <Categorize>사진 첨부</Categorize>
-            <ImgInputBox>
-              <DeleteBtn src="/icon_delete_black.png" />
-              <ProductImg>
-                +<br />
-                Upload
-              </ProductImg>
-            </ImgInputBox> */}
-
             {new Array(3).fill('a').map((data, index) => (
               <Upload01
                 key={`${data}_${index}`}

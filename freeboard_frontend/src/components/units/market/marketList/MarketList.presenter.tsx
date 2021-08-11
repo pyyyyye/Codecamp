@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router';
-import { ComponentType, useContext, useEffect } from 'react';
-import { GlobalContext } from '../../../../../pages/_app';
+// import { useRouter } from 'next/rou
 import {
   Wrapper,
   ListContents,
@@ -27,20 +25,19 @@ import {
   RightSticky,
   GoToWrite,
 } from './MarketList.styles';
-// import { getDate } from '../../../../commons/libraries/utils';
 
 export default function MarketListUI(props) {
-  const withAuth = (Component: ComponentType) => (props) => {
-    const { accessToken } = useContext(GlobalContext);
-    const router = useRouter();
+  // const withAuth = (Component: ComponentType) => (props) => {
+  //   const { accessToken } = useContext(GlobalContext);
+  //   const router = useRouter();
 
-    useEffect(() => {
-      if (!accessToken) {
-        alert('로그인이 필요한 페이지입니다.');
-        router.push('../../../../../market/login');
-      }
-    }, []);
-  };
+  //   useEffect(() => {
+  //     if (!accessToken) {
+  //       alert('로그인이 필요한 페이지입니다.');
+  //       router.push('../../../../../market/login');
+  //     }
+  //   }, []);
+  // };
   return (
     <Wrapper>
       <ListContents>
@@ -48,22 +45,24 @@ export default function MarketListUI(props) {
         {props.data?.fetchUseditems.map((data) => (
           <List key={data._id}>
             <ProductBox>
-              <ProductPrevImg>{data?.images}</ProductPrevImg>
+              <ProductPrevImg>{data.images}</ProductPrevImg>
               <ProductPrevInfo>
-                <LeftInfo onClick={props.onClickTitle}>
+                <LeftInfo>
                   <TopPrevInfo>
-                    <ProductName>{data?.name}</ProductName>
-                    <ProductRemarks>{data?.remarks}</ProductRemarks>
-                    <ProductTags>{data?.tags}</ProductTags>
+                    <ProductName id={data._id} onClick={props.onClickTitle}>
+                      {data.name}
+                    </ProductName>
+                    <ProductRemarks>{data.remarks}</ProductRemarks>
+                    <ProductTags>{data.tags}</ProductTags>
                   </TopPrevInfo>
 
                   <BottomPrevInfo>
                     <SellerBox>
-                      <SellerImg />
-                      <Seller>{data?.seller}</Seller>
+                      <SellerImg src="/images/WriterProfileImg_2.png" />
+                      <Seller>박영은</Seller>
                     </SellerBox>
                     <LikeBox>
-                      <Like />
+                      <Like src="/images/icon_like_2.png" />
                       <LikeCount>58</LikeCount>
                     </LikeBox>
                   </BottomPrevInfo>
@@ -71,7 +70,7 @@ export default function MarketListUI(props) {
 
                 <ProductPrice>
                   <PriceIcon src="/images/icon_Euro.png" />
-                  <Price>{data?.price}</Price>
+                  <Price>{data.price}</Price>
                 </ProductPrice>
               </ProductPrevInfo>
             </ProductBox>

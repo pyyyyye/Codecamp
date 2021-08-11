@@ -137,7 +137,7 @@ export const InfoMiddle = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const MainImage = styled.div`
+export const MainImage = styled.img`
   width: 296px;
   height: 296px;
   background-color: #bdbdbd;
