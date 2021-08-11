@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const FETCH_USED_ITEMS = gql`
-  query fetchUseditems($search: String, $page: Int) {
-    fetchUseditems(search: $search, page: $page) {
+  query fetchUseditems {
+    fetchUseditems {
       _id
       name
       remarks
@@ -10,11 +10,11 @@ export const FETCH_USED_ITEMS = gql`
       price
       tags
       images
-      pickedCount
-      useditemAddress
-      buyer
-      Seller
-      soldAt
+      # pickedCount
+      # useditemAddress
+      # buyer
+      # Seller
+      # soldAt
       createdAt
     }
   }

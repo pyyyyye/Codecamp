@@ -39,21 +39,21 @@ export default function MarketDetailUI(props) {
       <Contents>
         {/* ------------- 상단 판매자 정보 START --------------- */}
         <TopContentsWriter>
-          <WriterProfileImg src="/WriterProfileImg_2.png" />
+          <WriterProfileImg src="/images/WriterProfileImg_2.png" />
           <WriterInfo>
             <Name>{props.userInfo.name}</Name>
             <Date>{getDate(props.data?.fetchUseditem.createdAt)}</Date>
           </WriterInfo>
           <WriterIcon>
             {/*---- 우측 픽토그램 ---*/}
-            <LinkIcon src="/icon_link.png" />
+            <LinkIcon src="/images/icon_link.png" />
             {/* <Tooltip
               placement="top"
               title={`${props.data?.fetchUseditem.boardAddress?.address} ${props.data?.fetchUseditem.boardAddress?.addressDetail}`}
             >
               <MapIcon src="/icon_location.png" alt="작성자 주소" />
             </Tooltip> */}
-            <MapIcon src="/icon_location.png" alt="작성자 주소" />
+            <MapIcon src="/images/icon_location.png" alt="작성자 주소" />
           </WriterIcon>
         </TopContentsWriter>
         {/* ------------- 상단 판매자 정보 END --------------- */}
@@ -67,14 +67,20 @@ export default function MarketDetailUI(props) {
                 <Price>{props.data?.fetchUseditem.price}</Price>
               </InfoTopLeft>
               <InfoTopRight>
-                <LikeBtn src="/icon_like_2.png" />
+                <LikeBtn src="/images/icon_like_2.png" />
                 <LikeCount>20</LikeCount>
               </InfoTopRight>
             </InfoTop>
 
             {/* // ! ---- images ---- */}
             <InfoMiddle>
-              <MainImage></MainImage>
+              {props.data?.fetchUseditem.images.map((data) => (
+                <MainImage
+                  key={data}
+                  src={`https://storage.googleapis.com/${data}`}
+                />
+              ))}
+
               <SubImage> </SubImage>
             </InfoMiddle>
 

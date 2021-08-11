@@ -44,7 +44,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
             {new Array(4).fill(1).map(() => (
               <BestPosts>
                 <BestPostsPhoto
-                  src="/BestPostsPhoto_01.png"
+                  src="/images/BestPostsPhoto_01.png"
                   alt="베스트게시글 대표사진_01"
                 />
                 <TitleInBestPosts>게시물 제목입니다.</TitleInBestPosts>
@@ -52,7 +52,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
                   <PostsInfo_Left>
                     <WriterInfo>
                       <WriterPhoto
-                        src="/WriterProfileImg.png"
+                        src="/images/WriterProfileImg.png"
                         alt="작가 프로필사진 "
                       />
                       <WriterName>호두</WriterName>
@@ -60,7 +60,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
                     <PostDate>Date : 2020.02.18</PostDate>
                   </PostsInfo_Left>
                   <PostsInfo_Right>
-                    <RecomImage src="/like.png" alt="추천 아이콘" />
+                    <RecomImage src="/images/like.png" alt="추천 아이콘" />
                     <RecomCount>296</RecomCount>
                   </PostsInfo_Right>
                 </BestPostsInfo>
@@ -72,7 +72,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
         <BestListBottom>
           <BestListBottomSearch>
             <SearchBox>
-              <SearchIcon src="/icon_search.png" alt="검색 아이콘" />
+              <SearchIcon src="/images/icon_search.png" alt="검색 아이콘" />
               <SearchText>제목을 검색해 주세요.</SearchText>
             </SearchBox>
             <SearchDateBox>YYYY.MM.DD ~ YYYY.MM.DD</SearchDateBox>
@@ -87,7 +87,7 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
               <CategorizeTop aaa={true}>작성일</CategorizeTop>
             </Categorize>
 
-            {data?.fetchBoards.map((data) => (
+            {data?.fetchBoards.map((data, index) => (
               <Categorize key={data._id}>
                 <CategorizeTop>{index + 1}</CategorizeTop>
                 <CategorizeTopTitle id={data?._id} onClick={onClickTitle}>

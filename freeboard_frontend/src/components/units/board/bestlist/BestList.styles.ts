@@ -79,6 +79,7 @@ export const WriterName = styled.h5`
 `;
 export const PostDate = styled.p`
   font-size: 12px;
+  margin-top: 8px;
   font-weight: 400;
   color: #828282;
 `;

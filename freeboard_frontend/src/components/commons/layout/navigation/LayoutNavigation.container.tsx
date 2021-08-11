@@ -5,7 +5,7 @@ export default function LayoutNavigation() {
   const router = useRouter();
 
   const onClickMarket = () => {
-    router.push('/market/write');
+    router.push('/market/list');
   };
   const onClickFreeboard = () => {
     router.push('/board/bestposts');

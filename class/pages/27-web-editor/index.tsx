@@ -19,7 +19,9 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 export default function WebEditorPage() {
   const router = useRouter();
-  const { handleSubmit, register, setValue } = useForm();
+  const { handleSubmit, register, setValue, trigger } = useForm({
+    mode: 'onChange',
+  });
   const [createBoard] = useMutation(CREATE_BOARD);
 
   const onClickButton = async (data) => {
@@ -42,7 +44,10 @@ export default function WebEditorPage() {
   };
 
   const onChangeContents = (value) => {
-    setValue('contents', value);
+    const isBlank = '<p><br></p>'; // 콘텐츠 부분에 글 지워도 공백 남지 않도록  ??? 불을 껐다 켯닿 한다는게 머선 말ㅇ지
+
+    setValue('contents', value === isBlank ? '' : value);
+    trigger('contents');
   };
 
   return (

@@ -13,7 +13,7 @@ export default function MarketDetail() {
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: router.query.detailpages },
   });
-
+  console.log(data);
   function onClickMoveToList() {
     router.push('../../../../../market/list');
   }

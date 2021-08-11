@@ -3,12 +3,12 @@ import ListPageUI from './BestList.presenter';
 import { useQuery } from '@apollo/client';
 import { FETCH_BOARDS } from './BestList.queries';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export default function ListPage() {
   const router = useRouter();
-  const [startPage, setStartPage] = useState(1);
-  const [keyword, setKeword] = useState('');
+  // const [startPage, setStartPage] = useState(1);
+  // const [keyword, setKeword] = useState('');
   const { data } = useQuery(FETCH_BOARDS);
 
   function onClickTitle(event) {
