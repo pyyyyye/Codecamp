@@ -3,8 +3,12 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 300px;
 `;
+
 //! =============== Main Best Product List Contents =================
 export const ListContents = styled.div`
   width: 100%;
@@ -17,21 +21,42 @@ export const Title = styled.h1`
   text-align: center;
   padding-bottom: 40px;
 `;
+export const TopBox = styled.div`
+  width: 100%;
+  height: 80px;
+  background-color: lightseagreen;
+  text-align: center;
+  line-height: 80px;
+  margin-bottom: 80px;
+  color: #fff;
+`;
+export const Contents = styled.div`
+  width: 100%;
+  height: 1000px;
+  overflow: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: blue;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: coral;
+  }
+`;
 export const List = styled.div`
   width: 100%;
   height: 200px;
   cursor: pointer;
-`;
-
-// --- LEFT Product IMG Start ---
-export const ProductBox = styled.div`
-  width: 100%;
-  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
-export const ProductPrevImg = styled.div`
+
+// --- LEFT Product IMG Start ---
+export const ProductPrevImg = styled.img`
   width: 160px;
   height: 160px;
   background-color: #bdbdbd;
@@ -136,6 +161,7 @@ export const GoToWrite = styled.button`
   outline: none;
   border: 1px solid #000;
   background: #fff;
+  margin-top: 40px;
   :hover {
     background-color: #ffd600;
   }

@@ -15,7 +15,7 @@ export default function MarketDetail() {
   });
   console.log(data);
   function onClickMoveToList() {
-    router.push('../../../../../market/list');
+    router.push('/market/list');
   }
 
   return (

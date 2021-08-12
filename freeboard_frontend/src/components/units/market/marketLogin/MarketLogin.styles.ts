@@ -33,6 +33,8 @@ export const InputLogin = styled.input`
   padding-left: 16px;
   outline: none;
 `;
+export const ErrorMessage = styled.div``;
+
 export const KeepStateLogin = styled.div`
   height: 45px;
   /* border: 1px solid #fff;

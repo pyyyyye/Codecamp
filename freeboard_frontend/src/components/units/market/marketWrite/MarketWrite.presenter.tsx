@@ -6,9 +6,7 @@ import {
   Categorize,
   InputBox,
   ContBox,
-  ContentsBox,
-  ContIcons,
-  ContInput,
+  ReactQuillBox,
   AddressBox,
   AddressBoxLeft,
   LocationMap,
@@ -19,9 +17,6 @@ import {
   InputGPS,
   AddressDetail,
   ProductImages,
-  ImgInputBox,
-  ProductImg,
-  DeleteBtn,
   RadioBox,
   RadioButton,
   Button1,
@@ -30,6 +25,7 @@ import {
   ButtonBox,
 } from './MarketWrite.styles';
 import Upload01 from '../../../commons/uploads/01/uploads01.container';
+import 'react-quill/dist/quill.snow.css'; // ES6
 
 interface MarketWriteUIProps {
   // onClickSubmit: any;
@@ -60,15 +56,10 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
 
           <ContBox>
             <Categorize>상품 설명</Categorize>
-            <ContentsBox>
-              <ContIcons>아이콘 줄</ContIcons>
-              <ContInput
-                // type="text"
-
-                placeholder="상품 설명을 자세히 작성해주세요."
-                {...props.register('contents')}
-              />
-            </ContentsBox>
+            <ReactQuillBox
+              onChange={props.onChangeQuill}
+              placeholder="상세설명을 작성해주세요"
+            />
           </ContBox>
 
           <WriteInputBox>
