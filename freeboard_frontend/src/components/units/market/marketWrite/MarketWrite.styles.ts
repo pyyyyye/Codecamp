@@ -49,6 +49,13 @@ export const InputBox = styled.input`
   border: 1px solid #bdbdbd;
   outline: none;
 `;
+export const ErrorMessage = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 4px 0px 10px 16px;
+  color: #ff0000;
+`;
 export const ContBox = styled.div`
   width: 100%auto;
   margin-bottom: 40px;

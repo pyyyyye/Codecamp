@@ -12,13 +12,13 @@ export default function MarketWrite() {
   const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
-  const { register, handleSubmit, setValue, trigger } = useForm({
+  const { register, handleSubmit, setValue, trigger, formState } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
   const [createUsedItem] = useMutation(CREATE_USED_ITEM);
 
-  async function onClickSubmit(data: any) {
+  async function onSubmit(data: any) {
     try {
       // 이미지 업로드
       const uploadFiles = files
@@ -31,7 +31,12 @@ export default function MarketWrite() {
       const result = await createUsedItem({
         variables: {
           createUseditemInput: {
-            ...data,
+            // ...data,
+            name: data.name,
+            remarks: data.remarks,
+            contents: data.contents,
+            price: data.price,
+            tags: data.tags,
             images: images,
           },
         },
@@ -62,13 +67,13 @@ export default function MarketWrite() {
 
   return (
     <MarketWriteUI
-      // active={active}
-      onClickSubmit={onClickSubmit}
+      onSubmit={onSubmit}
       onChangeFiles={onChangeFiles}
-      // errors={formState.errors}
       register={register}
       handleSubmit={handleSubmit}
       onChangeQuill={onChangeQuill}
+      errors={formState.errors}
+      // isActive={formState.isValid}
     />
   );
 }

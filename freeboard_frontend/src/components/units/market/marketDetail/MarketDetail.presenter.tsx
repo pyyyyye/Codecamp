@@ -86,13 +86,13 @@ export default function MarketDetailUI(props) {
 
             {/* // ! ---- bottom txt ----  */}
             <InfoBottom>
-              {/* <InfoText
+              <InfoText
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(
                     props.data?.fetchUseditem.contents
                   ),
                 }}
-              /> */}
+              />
               <InfoTags>{props.data?.fetchUseditem.tags}</InfoTags>
             </InfoBottom>
           </ProductInfo>
