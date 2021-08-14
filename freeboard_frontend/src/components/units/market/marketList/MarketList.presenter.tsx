@@ -3,6 +3,8 @@ import {
   Wrapper,
   ListContents,
   Title,
+  TopBox,
+  Contents,
   List,
   ProductBox,
   ProductPrevImg,
@@ -27,31 +29,32 @@ import {
 } from './MarketList.styles';
 
 export default function MarketListUI(props) {
-  // const withAuth = (Component: ComponentType) => (props) => {
-  //   const { accessToken } = useContext(GlobalContext);
-  //   const router = useRouter();
-
-  //   useEffect(() => {
-  //     if (!accessToken) {
-  //       alert('로그인이 필요한 페이지입니다.');
-  //       router.push('../../../../../market/login');
-  //     }
-  //   }, []);
-  // };
   return (
     <Wrapper>
       <ListContents>
         <Title>베스트 상품 </Title>
-        {props.data?.fetchUseditems.map((data) => (
-          <List key={data._id}>
-            <ProductBox>
-              <ProductPrevImg>{data.images}</ProductPrevImg>
+        <TopBox>상단 박스</TopBox>
+        <Contents>
+          {props.data?.fetchUseditems.map((data) => (
+            <List
+              key={data._id}
+              id={data._id}
+              onClick={props.onClickTitle(data._id)}
+            >
+              {/* {props.data?.fetchUseditems.images.map((data) => (
+                <ProductPrevImg
+                   key={data}
+                  src={`https://storage.googleapis.com/${data}`}
+                />
+              ))} */}
+              <ProductPrevImg
+                key={data._id}
+                src={`https://storage.googleapis.com/${data.images[0]}`}
+              />
               <ProductPrevInfo>
                 <LeftInfo>
                   <TopPrevInfo>
-                    <ProductName id={data._id} onClick={props.onClickTitle}>
-                      {data.name}
-                    </ProductName>
+                    <ProductName>{data.name}</ProductName>
                     <ProductRemarks>{data.remarks}</ProductRemarks>
                     <ProductTags>{data.tags}</ProductTags>
                   </TopPrevInfo>
@@ -73,10 +76,9 @@ export default function MarketListUI(props) {
                   <Price>{data.price}</Price>
                 </ProductPrice>
               </ProductPrevInfo>
-            </ProductBox>
-          </List>
-        ))}
-
+            </List>
+          ))}
+        </Contents>
         <GoToWrite id={props.data?._id} onClick={props.onClickWrite}>
           상품 등록하기
         </GoToWrite>

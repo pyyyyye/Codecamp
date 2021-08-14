@@ -6,9 +6,7 @@ import {
   Categorize,
   InputBox,
   ContBox,
-  ContentsBox,
-  ContIcons,
-  ContInput,
+  ReactQuillBox,
   AddressBox,
   AddressBoxLeft,
   LocationMap,
@@ -19,22 +17,22 @@ import {
   InputGPS,
   AddressDetail,
   ProductImages,
-  ImgInputBox,
-  ProductImg,
-  DeleteBtn,
   RadioBox,
   RadioButton,
   Button1,
   RadioText,
   BottomBtn,
   ButtonBox,
+  ErrorMessage,
 } from './MarketWrite.styles';
 import Upload01 from '../../../commons/uploads/01/uploads01.container';
+import 'react-quill/dist/quill.snow.css'; // ES6
 
 interface MarketWriteUIProps {
   // onClickSubmit: any;
   // handleSubmit: any;
   onChangeFiles: (file: File, index: number) => void;
+  register: any;
 }
 
 export default function MarketWriteUI(props: MarketWriteUIProps) {
@@ -42,13 +40,14 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
     <Wrapper>
       <Contents>
         <Title>상품 등록하기</Title>
-        <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+        <form onSubmit={props.handleSubmit(props.onSubmit)}>
           <WriteInputBox>
             <Categorize>상품명</Categorize>
             <InputBox
               placeholder="상품명을 작성해주세요."
               {...props.register('name')}
             />
+            <ErrorMessage>{props.errors.name?.message}</ErrorMessage>
           </WriteInputBox>
           <WriteInputBox>
             <Categorize>한 줄 요약</Categorize>
@@ -56,19 +55,16 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               placeholder="간단한 상품 설명을 작성해주세요."
               {...props.register('remarks')}
             />
+            <ErrorMessage>{props.errors.remarks?.message}</ErrorMessage>
           </WriteInputBox>
 
           <ContBox>
             <Categorize>상품 설명</Categorize>
-            <ContentsBox>
-              <ContIcons>아이콘 줄</ContIcons>
-              <ContInput
-                // type="text"
-
-                placeholder="상품 설명을 자세히 작성해주세요."
-                {...props.register('contents')}
-              />
-            </ContentsBox>
+            <ReactQuillBox
+              onChange={props.onChangeQuill}
+              placeholder="상세설명을 작성해주세요"
+            />
+            <ErrorMessage>{props.errors.contents?.message}</ErrorMessage>
           </ContBox>
 
           <WriteInputBox>
@@ -77,12 +73,14 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               placeholder="판매 가격을 입력해주세요."
               {...props.register('price')}
             />
+            {/* <ErrorMessage>{props.errors.price?.message}</ErrorMessage> */}
+            {props.errors.price?.message ? '판매 가격은 필수 입력입니다.' : ''}
           </WriteInputBox>
 
           <WriteInputBox>
             <Categorize>태그입력</Categorize>
             <InputBox
-              name="Tag"
+              name="tags"
               placeholder="#태그 #태그 #태그"
               // {...props.register('contents')}
             />

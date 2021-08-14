@@ -131,7 +131,7 @@ export const LikeCount = styled.div`
 // ! ----- images start -----
 export const InfoMiddle = styled.div`
   width: 504px;
-  height: 482px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

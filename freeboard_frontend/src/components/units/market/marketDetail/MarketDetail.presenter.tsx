@@ -1,4 +1,5 @@
 import { getDate } from '../../../../commons/libraries/utils';
+import DOMPurify from 'dompurify';
 import {
   Wrapper,
   Contents,
@@ -31,7 +32,6 @@ import {
   ButtonBox,
 } from './MarketDetail.styles';
 // import { Tooltip } from 'antd';
-// import { getDate } from '../../../commons/libraries/utils';
 
 export default function MarketDetailUI(props) {
   return (
@@ -86,7 +86,13 @@ export default function MarketDetailUI(props) {
 
             {/* // ! ---- bottom txt ----  */}
             <InfoBottom>
-              <InfoText>{props.data?.fetchUseditem.contents}</InfoText>
+              <InfoText
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(
+                    props.data?.fetchUseditem.contents
+                  ),
+                }}
+              />
               <InfoTags>{props.data?.fetchUseditem.tags}</InfoTags>
             </InfoBottom>
           </ProductInfo>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Mybutton = styled.button`
-  background-color: ${(props) => (props.isActive ? 'yellow' : '')};
+  /* background-color: ${(props) => (props.isActive ? 'yellow' : '')}; */
 `;
 
 export default function Button01(props) {

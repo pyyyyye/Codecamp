@@ -1,36 +1,34 @@
 // ---------- 중고마켓 로그인 container.tsx -------------
 import { useApolloClient, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { MouseEvent, useContext } from 'react';
-import { ChangeEvent, useState } from 'react';
+import { useContext } from 'react';
 import { GlobalContext } from '../../../../../pages/_app';
 import MarketLoginUI from './MarketLogin.presenter';
 import { LOGIN_USER, FETCH_USER_LOGGED_IN } from './MarketLogin.queries';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { schema } from './MarketLogin.validation';
+import { useForm } from 'react-hook-form';
 
 export default function MarketLogin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [loginUser] = useMutation(LOGIN_USER);
-  const { setAccessToken, setUserInfo, userInfo } = useContext(GlobalContext);
+  const { setAccessToken, setUserInfo } = useContext(GlobalContext);
   const router = useRouter();
   const client = useApolloClient();
+  const { register, handleSubmit, formState } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(schema),
+  });
 
-  function onChangeEmail(event: ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
-  }
-  function onChangePassword(event: ChangeEvent<HTMLInputElement>) {
-    setPassword(event.target.value);
-  }
   function onClickGoToSignup() {
     router.push('/market/signup');
   }
-
-  async function onClickLogin() {
+  async function onSubmit(data: any) {
     try {
       const result = await loginUser({
         variables: {
-          email,
-          password,
+          // email,
+          // password,
+          ...data,
         },
       });
       const resultUser = await client.query({
@@ -41,12 +39,13 @@ export default function MarketLogin() {
           },
         },
       });
-      setUserInfo(resultUser.data.fetchUserLoggedIn);
+      setUserInfo(resultUser.data?.fetchUserLoggedIn);
       setAccessToken(result.data?.loginUser.accessToken || '');
       localStorage.setItem(
         'accessToken',
         result.data?.loginUser.accessToken || ''
       );
+      console.log('-성공!', result.data?.loginUser.accessToken);
       alert('로그인 되었습니다.');
       router.push('../../../../../market/list');
     } catch (error) {
@@ -56,10 +55,15 @@ export default function MarketLogin() {
 
   return (
     <MarketLoginUI
-      onChangeEmail={onChangeEmail}
-      onChangePassword={onChangePassword}
-      onClickLogin={onClickLogin}
+      // onChangeEmail={onChangeEmail}
+      // onChangePassword={onChangePassword}
+      // onClickLogin={onClickLogin}
       onClickGoToSignup={onClickGoToSignup}
+      register={register}
+      handleSubmit={handleSubmit}
+      errors={formState.errors}
+      // isActive={formState.isValid}
+      onSubmit={onSubmit}
     />
   );
 }

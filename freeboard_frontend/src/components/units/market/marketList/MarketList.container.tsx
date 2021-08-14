@@ -10,10 +10,10 @@ export default function MarketList() {
   function onClickWrite() {
     router.push('/market/write');
   }
-  function onClickTitle(event) {
-    router.push(`/market/detail/${event.target.id}`);
-    console.log(event.target.id);
-  }
+  const onClickTitle = (id) => () => {
+    router.push(`/market/detail/${id}`);
+    // console.log(event.target.id);
+  };
 
   return (
     <MarketListUI

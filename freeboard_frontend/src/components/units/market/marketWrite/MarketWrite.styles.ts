@@ -1,4 +1,8 @@
 import styled from '@emotion/styled';
+import 'react-quill/dist/quill.snow.css'; // ES6
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -45,29 +49,21 @@ export const InputBox = styled.input`
   border: 1px solid #bdbdbd;
   outline: none;
 `;
+export const ErrorMessage = styled.div`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 4px 0px 10px 16px;
+  color: #ff0000;
+`;
 export const ContBox = styled.div`
   width: 100%auto;
-  height: 361px;
   margin-bottom: 40px;
-  border-bottom: 1px solid #bdbdbd;
 `;
-export const ContentsBox = styled.div`
+export const ReactQuillBox = styled(ReactQuill)`
   width: 100%;
   height: 320px;
-  border: 1px solid #bdbdbd;
-`;
-export const ContIcons = styled.div`
-  width: 100%;
-  height: 52px;
-  border-bottom: 1px solid #bdbdbd;
-
-  padding: 16px;
-`;
-export const ContInput = styled.textarea`
-  width: 100%;
-  height: 268px;
-  padding: 16px;
-  border: none;
+  padding-bottom: 40px;
   outline: none;
 `;
 export const AddressBox = styled.div`
