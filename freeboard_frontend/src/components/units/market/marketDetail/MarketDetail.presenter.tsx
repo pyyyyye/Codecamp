@@ -31,9 +31,10 @@ import {
   BottomBtn,
   ButtonBox,
 } from './MarketDetail.styles';
-// import { Tooltip } from 'antd';
+import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
 
 export default function MarketDetailUI(props) {
+  if (typeof window === 'undefined') return <></>;
   return (
     <Wrapper>
       <Contents>
@@ -41,18 +42,13 @@ export default function MarketDetailUI(props) {
         <TopContentsWriter>
           <WriterProfileImg src="/images/WriterProfileImg_2.png" />
           <WriterInfo>
-            <Name>{props.userInfo.name}</Name>
+            <Name>{props.data?.fetchUseditem.seller.name}</Name>
             <Date>{getDate(props.data?.fetchUseditem.createdAt)}</Date>
           </WriterInfo>
           <WriterIcon>
             {/*---- 우측 픽토그램 ---*/}
+
             <LinkIcon src="/images/icon_link.png" />
-            {/* <Tooltip
-              placement="top"
-              title={`${props.data?.fetchUseditem.boardAddress?.address} ${props.data?.fetchUseditem.boardAddress?.addressDetail}`}
-            >
-              <MapIcon src="/icon_location.png" alt="작성자 주소" />
-            </Tooltip> */}
             <MapIcon src="/images/icon_location.png" alt="작성자 주소" />
           </WriterIcon>
         </TopContentsWriter>
@@ -96,7 +92,9 @@ export default function MarketDetailUI(props) {
               <InfoTags>{props.data?.fetchUseditem.tags}</InfoTags>
             </InfoBottom>
           </ProductInfo>
-          <Map>지도</Map>
+          <Map>
+            <KakaoMap01 isDetail={true} />
+          </Map>
         </MainContentsProduct>
 
         {/* --------- 하단 버튼 start ---------- */}

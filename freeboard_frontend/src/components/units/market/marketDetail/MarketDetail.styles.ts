@@ -168,10 +168,14 @@ export const InfoTags = styled.p`
 // ! ----- Map start -----
 export const Map = styled.div`
   width: 100%;
-  height: 360px;
+  /* height: 360px; */
   font-size: 50px;
-  text-align: center;
-  background-color: #bdbdbd;
+  margin: 0 auto;
+  border-top: 1px solid #bdbdbd;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 // !==================== BottomBtn Start ====================

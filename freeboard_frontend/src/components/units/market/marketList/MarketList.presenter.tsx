@@ -1,12 +1,24 @@
 // import { useRouter } from 'next/rou
+import SideMenu from '../../../commons/sideMenu/sideMenu';
 import {
   Wrapper,
   ListContents,
   Title,
   TopBox,
+  BestProductBox,
+  TopProductImg,
+  TopProductInfo,
+  TopName,
+  TopInfoRemarks,
+  TopInfoPrice,
+  TopInfoEtc,
+  TopInfoLeft,
+  TopInfoRight,
+  HeartToggle,
+  ToggleCount,
   Contents,
   List,
-  ProductBox,
+  // ProductBox,
   ProductPrevImg,
   ProductPrevInfo,
   TopPrevInfo,
@@ -24,8 +36,8 @@ import {
   ProductPrice,
   PriceIcon,
   Price,
-  RightSticky,
   GoToWrite,
+  MiddleBox,
 } from './MarketList.styles';
 
 export default function MarketListUI(props) {
@@ -33,7 +45,30 @@ export default function MarketListUI(props) {
     <Wrapper>
       <ListContents>
         <Title>베스트 상품 </Title>
-        <TopBox>상단 박스</TopBox>
+        {/* //!----- 상단 베스트 상품 ----- */}
+        <TopBox>
+          {new Array(4).fill(1).map(() => (
+            <BestProductBox>
+              <TopProductImg />
+              <TopProductInfo>
+                <TopName>베스트 상품 name</TopName>
+                <TopInfoEtc>
+                  <TopInfoLeft>
+                    <TopInfoRemarks>베스트 상품remarks</TopInfoRemarks>
+                    <TopInfoPrice>28,551원</TopInfoPrice>
+                  </TopInfoLeft>
+                  <TopInfoRight>
+                    <HeartToggle src="/images/icon_like_2.png" />
+                    <ToggleCount>0</ToggleCount>
+                  </TopInfoRight>
+                </TopInfoEtc>
+              </TopProductInfo>
+            </BestProductBox>
+          ))}
+        </TopBox>
+        {/* //!----- 중간 검색, 달력, 등 ----- */}
+        <MiddleBox>검색, 달력 상자</MiddleBox>
+        {/* //!----- 하단 상품 list ----- */}
         <Contents>
           {props.data?.fetchUseditems.map((data) => (
             <List
@@ -41,12 +76,6 @@ export default function MarketListUI(props) {
               id={data._id}
               onClick={props.onClickTitle(data._id)}
             >
-              {/* {props.data?.fetchUseditems.images.map((data) => (
-                <ProductPrevImg
-                   key={data}
-                  src={`https://storage.googleapis.com/${data}`}
-                />
-              ))} */}
               <ProductPrevImg
                 key={data._id}
                 src={`https://storage.googleapis.com/${data.images[0]}`}
@@ -62,7 +91,7 @@ export default function MarketListUI(props) {
                   <BottomPrevInfo>
                     <SellerBox>
                       <SellerImg src="/images/WriterProfileImg_2.png" />
-                      <Seller>박영은</Seller>
+                      <Seller>{data.seller.name}</Seller>
                     </SellerBox>
                     <LikeBox>
                       <Like src="/images/icon_like_2.png" />
@@ -85,7 +114,7 @@ export default function MarketListUI(props) {
       </ListContents>
 
       {/* 우측 오늘 본 상품 */}
-      <RightSticky>오늘 본 상품</RightSticky>
+      <SideMenu />
     </Wrapper>
   );
 }

@@ -9,11 +9,9 @@ export const Wrapper = styled.div`
   padding-bottom: 300px;
 `;
 
-//! =============== Main Best Product List Contents =================
 export const ListContents = styled.div`
   width: 100%;
   max-width: 1200px;
-  background-color: lemonchiffon;
   padding-top: 80px;
 `;
 export const Title = styled.h1`
@@ -21,29 +19,113 @@ export const Title = styled.h1`
   text-align: center;
   padding-bottom: 40px;
 `;
+//! =============== Top Bestlist =================
 export const TopBox = styled.div`
   width: 100%;
-  height: 80px;
-  background-color: lightseagreen;
-  text-align: center;
-  line-height: 80px;
-  margin-bottom: 80px;
-  color: #fff;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
+export const BestProductBox = styled.div`
+  width: 282px;
+  height: 391px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+`;
+export const TopProductImg = styled.img`
+  width: 242px;
+  height: 242px;
+  background-color: lightgray;
+`;
+export const TopProductInfo = styled.div`
+  width: 242px;
+  height: 89px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const TopName = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.64px;
+`;
+export const TopInfoEtc = styled.div`
+  width: 100%auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+export const TopInfoLeft = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const TopInfoRemarks = styled.div`
+  font-size: 12px;
+  line-height: 17.76px;
+  font-weight: 500;
+  color: #4f4f4f;
+`;
+export const TopInfoPrice = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.64px;
+`;
+
+export const TopInfoRight = styled.div`
+  width: 20px;
+  height: 50px;
+  width: 100%auto;
+  margin-left: 30px;
+`;
+export const HeartToggle = styled.img`
+  width: 20px;
+  height: 18.5px;
+`;
+export const ToggleCount = styled.h5`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.68px;
+  text-align: center;
+  padding-top: 4px;
+`;
+//! ===== Middle ETC Box =====
+
+export const MiddleBox = styled.div`
+  width: 100%auto;
+  line-height: 52px;
+  height: 52px;
+  background-color: #f2f2f2;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+`;
+//! =============== Bottom list contents =================
+
 export const Contents = styled.div`
   width: 100%;
   height: 1000px;
   overflow: scroll;
   overflow-x: hidden;
+
+  border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
+
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: blue;
+    background-color: #ffd600;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: coral;
+    background-color: #f2f2f2;
   }
 `;
 export const List = styled.div`
@@ -53,6 +135,8 @@ export const List = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* border-top: 1px solid #bdbdbd; */
+  border-bottom: 1px solid #bdbdbd;
 `;
 
 // --- LEFT Product IMG Start ---
@@ -66,6 +150,7 @@ export const ProductPrevImg = styled.img`
 // --- CENTER ProductPrevInfo Start ---
 export const ProductPrevInfo = styled.div`
   width: 1000px;
+
   display: flex;
   justify-content: space-between;
 `;
@@ -74,12 +159,13 @@ export const LeftInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 28px;
+  padding-bottom: 28px;
 `;
 export const TopPrevInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 25px 0px;
+  justify-content: space-evenly;
 `;
 export const ProductName = styled.h2`
   font-size: 24px;
@@ -117,7 +203,12 @@ export const SellerImg = styled.img`
   margin-right: 7px;
 `;
 
-export const Seller = styled.div``;
+export const Seller = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 23.68px;
+  color: #4f4f4f;
+`;
 export const LikeBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -127,7 +218,12 @@ export const Like = styled.img`
   height: 20px;
   margin-right: 7px;
 `;
-export const LikeCount = styled.div``;
+export const LikeCount = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 23.68px;
+`;
 
 // --- RIGHT Product Price ---
 export const ProductPrice = styled.div`
@@ -168,13 +264,3 @@ export const GoToWrite = styled.button`
 `;
 
 //! =============== Right Sticky Menu =================
-export const RightSticky = styled.div`
-  width: 196px;
-  height: 100px;
-  background-color: #bdbdbd;
-
-  position: sticky;
-  top: 600px;
-
-  display: none;
-`;
