@@ -26,6 +26,7 @@ import {
   ErrorMessage,
 } from './MarketWrite.styles';
 import Upload01 from '../../../commons/uploads/01/uploads01.container';
+import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
 import 'react-quill/dist/quill.snow.css'; // ES6
 
 interface MarketWriteUIProps {
@@ -36,6 +37,7 @@ interface MarketWriteUIProps {
 }
 
 export default function MarketWriteUI(props: MarketWriteUIProps) {
+  console.log(props.latLng);
   return (
     <Wrapper>
       <Contents>
@@ -74,7 +76,7 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               {...props.register('price')}
             />
             {/* <ErrorMessage>{props.errors.price?.message}</ErrorMessage> */}
-            {props.errors.price?.message ? '판매 가격은 필수 입력입니다.' : ''}
+            {props.errors.price?.message ? '판매 가격은 필.' : ''}
           </WriteInputBox>
 
           <WriteInputBox>
@@ -90,16 +92,25 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
             {/* --------  Address Left  ------- */}
             <AddressBoxLeft>
               <Categorize>거래 위치</Categorize>
-              <LocationMap>지도 그림 박스</LocationMap>
+              <KakaoMap01 setLatLng={props.setLatLng} />
+              {/* <LocationMap>지도 그림 박스</LocationMap> */}
             </AddressBoxLeft>
 
             {/* --------  Address Right  ------- */}
             <AddressBoxRight>
               <Categorize>GPS</Categorize>
               <GpsComponent>
-                <InputGPS type="text" placeholder="위도(LAT)" />
+                <InputGPS
+                  type="text"
+                  placeholder="위도(LAT)"
+                  value={props.latLng.lat || ''}
+                />
                 <LocationIcon src="/images/icon_location.png" />
-                <InputGPS type="text" placeholder="경도(LNG)" />
+                <InputGPS
+                  type="text"
+                  placeholder="경도(LNG)"
+                  value={props.latLng.lng || ''}
+                />
               </GpsComponent>
 
               <AddressComponent>

@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  position: sticky;
+  top: 50px;
 `;
 export const NaviWrap = styled.div`
   width: 380px;

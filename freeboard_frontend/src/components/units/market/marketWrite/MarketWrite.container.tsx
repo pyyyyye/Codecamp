@@ -9,6 +9,9 @@ import router from 'next/router';
 import { useState } from 'react';
 
 export default function MarketWrite() {
+  // const [lat, setLat] = useState(0);
+  // const [lng, setLng] = useState(0);
+  const [latLng, setLatLng] = useState({ lat: 0, lng: 0 });
   const [files, setFiles] = useState<(File | null)[]>([null, null, null]);
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
@@ -73,6 +76,8 @@ export default function MarketWrite() {
       handleSubmit={handleSubmit}
       onChangeQuill={onChangeQuill}
       errors={formState.errors}
+      latLng={latLng}
+      setLatLng={setLatLng}
       // isActive={formState.isValid}
     />
   );
