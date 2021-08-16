@@ -74,7 +74,7 @@ export default function MarketListUI(props) {
             <List
               key={data._id}
               id={data._id}
-              onClick={props.onClickTitle(data._id)}
+              onClick={props.onClickTitle(data)}
             >
               <ProductPrevImg
                 key={data._id}
@@ -114,7 +114,7 @@ export default function MarketListUI(props) {
       </ListContents>
 
       {/* 우측 오늘 본 상품 */}
-      <SideMenu />
+      <SideMenu aaa={props.aaa} />
     </Wrapper>
   );
 }
