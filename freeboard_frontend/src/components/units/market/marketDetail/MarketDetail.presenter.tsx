@@ -35,6 +35,8 @@ import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
 
 export default function MarketDetailUI(props) {
   if (typeof window === 'undefined') return <></>;
+  // 윈도우가 없을 때(= 브라우저가 없을 때 = 서버일 때)는 빈화면<></>을 그려
+  // 아래 dompurify 에러가 많이 떠서 입력한 코드
   return (
     <Wrapper>
       <Contents>

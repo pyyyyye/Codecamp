@@ -262,5 +262,3 @@ export const GoToWrite = styled.button`
     background-color: #ffd600;
   }
 `;
-
-//! =============== Right Sticky Menu =================
