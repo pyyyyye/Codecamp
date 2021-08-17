@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   align-items: center;
   padding-bottom: 300px;
 `;
-
 export const ListContents = styled.div`
   width: 100%;
   max-width: 1200px;
@@ -20,92 +19,83 @@ export const Title = styled.h1`
   padding-bottom: 40px;
 `;
 //! =============== Top Bestlist =================
-export const TopBox = styled.div`
-  width: 100%;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-export const BestProductBox = styled.div`
-  width: 282px;
-  height: 391px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-`;
-export const TopProductImg = styled.img`
-  width: 242px;
-  height: 242px;
-  background-color: lightgray;
-`;
-export const TopProductInfo = styled.div`
-  width: 242px;
-  height: 89px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-export const TopName = styled.div`
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 26.64px;
-`;
-export const TopInfoEtc = styled.div`
-  width: 100%auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-export const TopInfoLeft = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-export const TopInfoRemarks = styled.div`
-  font-size: 12px;
-  line-height: 17.76px;
-  font-weight: 500;
-  color: #4f4f4f;
-`;
-export const TopInfoPrice = styled.div`
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 26.64px;
-`;
-
-export const TopInfoRight = styled.div`
-  width: 20px;
-  height: 50px;
-  width: 100%auto;
-  margin-left: 30px;
-`;
-export const HeartToggle = styled.img`
-  width: 20px;
-  height: 18.5px;
-`;
-export const ToggleCount = styled.h5`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 23.68px;
-  text-align: center;
-  padding-top: 4px;
-`;
 //! ===== Middle ETC Box =====
 
 export const MiddleBox = styled.div`
   width: 100%auto;
   line-height: 52px;
   height: 52px;
-  background-color: #f2f2f2;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
+export const ItemPages = styled.div`
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+export const ItemsBox = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26.64px;
+  margin-right: 20px;
+  cursor: pointer;
+`;
+export const ItemSearchContents = styled.div`
+  width: 690px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+export const ItemsSearchBox = styled.div`
+  width: 282px;
+  height: 52px;
+  background-color: #f2f2f2;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+  padding: 0px 14px;
+`;
+export const SearchBoxInput = styled.input`
+  height: 52px;
+  border: none;
+  background: transparent;
+  outline: none;
+`;
+export const SearchIcon = styled.img`
+  width: 17.5px;
+  height: 17.5px;
+`;
+export const CalendarBox = styled.div`
+  width: 282px;
+  height: 52px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  text-align: left;
+  padding-left: 15px;
+`;
+export const GoToSearchBtn = styled.button`
+  width: 78px;
+  height: 52px;
+  outline: none;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  line-height: 23.68px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+`;
+
 //! =============== Bottom list contents =================
 
 export const Contents = styled.div`

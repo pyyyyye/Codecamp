@@ -1,24 +1,20 @@
 // import { useRouter } from 'next/rou
 import SideMenu from '../../../commons/sideMenu/sideMenu';
+import MarketListOfTheBest from '../../marketListOfTheBest/MarketListOfTheBest.container';
 import {
   Wrapper,
-  ListContents,
   Title,
-  TopBox,
-  BestProductBox,
-  TopProductImg,
-  TopProductInfo,
-  TopName,
-  TopInfoRemarks,
-  TopInfoPrice,
-  TopInfoEtc,
-  TopInfoLeft,
-  TopInfoRight,
-  HeartToggle,
-  ToggleCount,
+  ListContents,
+  ItemPages,
+  ItemsBox,
+  ItemSearchContents,
+  ItemsSearchBox,
+  SearchBoxInput,
+  SearchIcon,
+  CalendarBox,
+  GoToSearchBtn,
   Contents,
   List,
-  // ProductBox,
   ProductPrevImg,
   ProductPrevInfo,
   TopPrevInfo,
@@ -44,30 +40,31 @@ export default function MarketListUI(props) {
   return (
     <Wrapper>
       <ListContents>
+        {/* //!---- MarketListOfTheBest ---- */}
         <Title>베스트 상품 </Title>
-        {/* //!----- 상단 베스트 상품 ----- */}
-        <TopBox>
-          {new Array(4).fill(1).map(() => (
-            <BestProductBox>
-              <TopProductImg />
-              <TopProductInfo>
-                <TopName>베스트 상품 name</TopName>
-                <TopInfoEtc>
-                  <TopInfoLeft>
-                    <TopInfoRemarks>베스트 상품remarks</TopInfoRemarks>
-                    <TopInfoPrice>28,551원</TopInfoPrice>
-                  </TopInfoLeft>
-                  <TopInfoRight>
-                    <HeartToggle src="/images/icon_like_2.png" />
-                    <ToggleCount>0</ToggleCount>
-                  </TopInfoRight>
-                </TopInfoEtc>
-              </TopProductInfo>
-            </BestProductBox>
-          ))}
-        </TopBox>
+        <MarketListOfTheBest />
+
         {/* //!----- 중간 검색, 달력, 등 ----- */}
-        <MiddleBox>검색, 달력 상자</MiddleBox>
+        <MiddleBox>
+          {/* //! - 상품 목록 - */}
+          <ItemPages>
+            <ItemsBox>판매중 상품</ItemsBox>
+            <ItemsBox>판매된 상품</ItemsBox>
+          </ItemPages>
+          <ItemSearchContents>
+            {/* //! - 검색 - */}
+            <ItemsSearchBox>
+              <SearchBoxInput placeholder="제품을 검색해주세요." />
+              <SearchIcon src="/images/icon_search.png" />
+            </ItemsSearchBox>
+
+            {/* //! - 달력 - */}
+            <CalendarBox> 날짜 선택 박스입니다.</CalendarBox>
+
+            {/* //! - 검색 버튼 - */}
+            <GoToSearchBtn>검색</GoToSearchBtn>
+          </ItemSearchContents>
+        </MiddleBox>
         {/* //!----- 하단 상품 list ----- */}
         <Contents>
           {props.data?.fetchUseditems.map((data) => (

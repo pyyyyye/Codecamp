@@ -6,7 +6,7 @@ import { schema } from './MarketWrite.validation';
 import { useMutation } from '@apollo/client';
 import { Modal } from 'antd';
 import router from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MarketWrite() {
   // const [lat, setLat] = useState(0);

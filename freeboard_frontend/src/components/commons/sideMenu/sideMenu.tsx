@@ -22,7 +22,8 @@ const Contents = styled.div`
   height: 418px;
   overflow: scroll;
   overflow-x: hidden;
-  border: 1px solid #ebebeb;
+  /* border: 1px solid #ebebeb;
+  border-left: none; */
 
   ::-webkit-scrollbar {
     width: 3px;
@@ -44,8 +45,8 @@ const SideBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
+  border: 1px solid #ebebeb;
+  border-right: none;
 `;
 const ToggleBox = styled.div`
   width: 100%;
@@ -103,24 +104,27 @@ export default function SideMenu(props) {
     <SideWrap>
       <SideTitle>오늘 본 상품</SideTitle>
       <Contents>
-        {props.aaa.map((data) => (
-          <SideBox key={data._id}>
-            <ToggleBox>
-              <ToggleImg src="/images/icon_like_2.png" />
-              <ToggleCount>{data?.pickedCount}</ToggleCount>
-            </ToggleBox>
-            <SideProductImg
-              key={data.images}
-              src={`https://storage.googleapis.com/${data?.images}`}
-            />
-            <SideProductText>
-              <SideProductName>{data?.name}</SideProductName>
-              <SideProductRemarks>{data?.remarks}</SideProductRemarks>
-              <SideProductPrice>{data?.price}원</SideProductPrice>
-              <SideProductTags>{data?.tags}</SideProductTags>
-            </SideProductText>
-          </SideBox>
-        ))}
+        {props.aaa.map((data) => {
+          // console.log(data);
+          return (
+            <SideBox key={data._id}>
+              <ToggleBox>
+                <ToggleImg src="/images/icon_like_2.png" />
+                <ToggleCount>{data?.pickedCount}</ToggleCount>
+              </ToggleBox>
+              <SideProductImg
+                key={data.images}
+                src={`https://storage.googleapis.com/${data?.images[0]}`}
+              />
+              <SideProductText>
+                <SideProductName>{data?.name}</SideProductName>
+                <SideProductRemarks>{data?.remarks}</SideProductRemarks>
+                <SideProductPrice>{data?.price}원</SideProductPrice>
+                <SideProductTags>{data?.tags}</SideProductTags>
+              </SideProductText>
+            </SideBox>
+          );
+        })}
       </Contents>
     </SideWrap>
   );

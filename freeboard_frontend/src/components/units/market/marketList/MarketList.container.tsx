@@ -14,7 +14,9 @@ export default function MarketList() {
   }
 
   const onClickTitle = (basketData: any) => () => {
-    router.push(`/market/detail/${basketData}`);
+    console.log(basketData);
+    router.push(`/market/detail/${basketData._id}`);
+
     const baskets = JSON.parse(localStorage.getItem('baskets') || '[]');
     let isExists = false;
     baskets.forEach((data) => {

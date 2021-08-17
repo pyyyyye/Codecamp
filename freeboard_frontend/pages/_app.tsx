@@ -9,10 +9,18 @@ import 'antd/dist/antd.css';
 import { createUploadLink } from 'apollo-upload-client';
 import { Global } from '@emotion/react';
 import { globalStyles } from '../src/commons/styles/globalStyles';
-import { createContext, Dispatch, SetStateAction, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useState,
+  useEffect,
+} from 'react';
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import { useRouter } from 'next/router';
 import Layout from '../src/components/commons/layout';
+import { getAccessToken } from '../src/commons/libraries/getAccessToken';
+import { onError } from '@apollo/client/link/error';
 
 interface IContext {
   accessToken: string;
@@ -34,20 +42,43 @@ function MyApp({ Component, pageProps }: AppProps) {
     setUserInfo,
   };
   console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
+
+  useEffect(() => {
+    if (localStorage.getItem('refreshToken')) getAccessToken(setAccessToken);
+  }, []);
+
+  console.log(accessToken);
+  const errorLink = onError(({ graphQLErrors, operation, forward }) => {
+    if (graphQLErrors) {
+      for (const err of graphQLErrors) {
+        if (err.extensions?.code === 'UNAUTHENTICATED') {
+          operation.setContext({
+            headers: {
+              ...operation.getContext().headers,
+              authorization: `Bearer ${getAccessToken(setAccessToken)}`,
+            },
+          });
+          return forward(operation);
+        }
+      }
+    }
+  });
+
   const uploadLink = createUploadLink({
     // 실제 파일이 업로드 될 주소
-    uri: 'http://backend02.codebootcamp.co.kr/graphql',
+    uri: 'https://backend02.codebootcamp.co.kr/graphql',
     headers: {
-      authorization: `Bearer ${
-        (typeof window !== 'undefined' &&
-          localStorage.getItem('accessToken')) ||
-        ''
-      }`,
+      authorization: `Bearer ${accessToken}`,
+      //   (typeof window !== 'undefined' &&
+      //     localStorage.getItem('accessToken')) ||
+      //   ''
+      // }`,
     },
+    credentials: 'include',
   });
   const client = new ApolloClient({
     // uri: 'http://backend02.codebootcamp.co.kr/graphql',
-    link: ApolloLink.from([uploadLink as unknown as ApolloLink]),
+    link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
   });
 
