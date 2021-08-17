@@ -20,7 +20,7 @@ export default function LoginSuccessPage() {
 
   useEffect(() => {
     // if(!accessToken) 로그인페이지로 이동
-    if (!accessToken) router.push('/22-login');
+    if (!localStorage.getItem('refreshToken')) router.push('/22-login');
   }, []);
 
   return <div>{data?.fetchUserLoggedIn.name}님 환영합니다~</div>;

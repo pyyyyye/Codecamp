@@ -8,8 +8,8 @@ import {
 import { GlobalContext } from '../_app';
 
 const LOGIN_USER = gql`
-  mutation loginUser($email: String!, $password: String!) {
-    loginUser(email: $email, password: $password) {
+  mutation loginUserExample($email: String!, $password: String!) {
+    loginUserExample(email: $email, password: $password) {
       accessToken
     }
   }
@@ -40,15 +40,16 @@ export default function SignupPage() {
           password: password,
         },
       });
-      setAccessToken(result.data?.loginUser.accessToken || ''); // 타입 없으면 '' 빈문자열 넘겨줘
-      localStorage.setItem('accessToken', result.data?.loginUser.accessToken);
+      console.log(result);
+      setAccessToken(result.data?.loginUserExample?.accessToken || ''); // 타입 없으면 '' 빈문자열 넘겨줘
+      localStorage.setItem('refreshToken', 'true');
+      // 실제로는 refreshToken이라고 대놓고 쓰면 안됨. 이름 바꿔줘야해.
+      // localStorage.setItem('accessToken', result.data?.loginUser.accessToken || ''); --0817 리프레시토큰 하면서 주석함.
       //  로그인 시 로컬스토리지에 accessToken 저장되게 설정.
       // =ClobalContext에 담아라
       //   console.log(result.data?.loginUser.accessToken);
       //   alert(result.data?.loginUser.accessToken); // accessToken 보여지게
-
-      // router.push('/22-login-success');
-      router.push('/23-hoc');
+      router.push('/22-login-success');
     } catch (error) {
       alert(error.message);
     }
