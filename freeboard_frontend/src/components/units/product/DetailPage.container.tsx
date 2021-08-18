@@ -34,7 +34,6 @@ export default function DetailPage() {
   return (
     //!-------- props
     <DetailPageUI
-      // onDetail={data}
       data={data}
       onClickMoveToList={onClickMoveToList}
       onClickMoveToEdit={onClickMoveToEdit}

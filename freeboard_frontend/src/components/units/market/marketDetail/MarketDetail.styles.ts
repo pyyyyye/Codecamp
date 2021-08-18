@@ -182,6 +182,7 @@ export const Map = styled.div`
 export const BottomBtn = styled.div`
   width: 100%;
   border-top: 1px solid #bdbdbd;
+  border-bottom: 1px solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -3,11 +3,14 @@ const SideWrap = styled.div`
   width: 200px;
   height: 505px;
   border: 1px solid #ebebeb;
-  position: fixed;
+  /* position: fixed;
   top: 280px;
-  right: 400px;
+  right: 400px; */
   padding: 20px;
   background-color: #fff;
+  position: absolute;
+  top: 177px;
+  left: 1260px;
 `;
 const SideTitle = styled.h1`
   font-size: 18px;

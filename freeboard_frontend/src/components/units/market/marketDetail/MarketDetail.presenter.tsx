@@ -32,6 +32,7 @@ import {
   ButtonBox,
 } from './MarketDetail.styles';
 import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
+import MarketComment from '../../marketComment/MarketComment.container';
 
 export default function MarketDetailUI(props) {
   if (typeof window === 'undefined') return <></>;
@@ -104,6 +105,7 @@ export default function MarketDetailUI(props) {
           <ButtonBox onClick={props.onClickMoveToList}>목록으로</ButtonBox>
           <ButtonBox>수정하기</ButtonBox>
         </BottomBtn>
+        <MarketComment />
       </Contents>
     </Wrapper>
   );
