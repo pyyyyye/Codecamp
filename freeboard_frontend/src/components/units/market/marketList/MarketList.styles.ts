@@ -12,6 +12,7 @@ export const ListContents = styled.div`
   width: 100%;
   max-width: 1200px;
   padding-top: 80px;
+  position: relative;
 `;
 export const Title = styled.h1`
   font-size: 700;

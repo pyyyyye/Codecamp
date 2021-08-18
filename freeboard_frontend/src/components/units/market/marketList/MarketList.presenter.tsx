@@ -43,7 +43,6 @@ export default function MarketListUI(props) {
         {/* //!---- MarketListOfTheBest ---- */}
         <Title>베스트 상품 </Title>
         <MarketListOfTheBest />
-
         {/* //!----- 중간 검색, 달력, 등 ----- */}
         <MiddleBox>
           {/* //! - 상품 목록 - */}
@@ -107,11 +106,11 @@ export default function MarketListUI(props) {
         </Contents>
         <GoToWrite id={props.data?._id} onClick={props.onClickWrite}>
           상품 등록하기
-        </GoToWrite>
+        </GoToWrite>{' '}
+        <SideMenu aaa={props.aaa} />
       </ListContents>
 
       {/* 우측 오늘 본 상품 */}
-      <SideMenu aaa={props.aaa} />
     </Wrapper>
   );
 }

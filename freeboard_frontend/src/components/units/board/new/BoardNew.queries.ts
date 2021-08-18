@@ -32,3 +32,8 @@ export const UPLOAD_FILE = gql`
     }
   }
 `; //! ---------- UPLOAD_FILE end ---------
+// updateBoard(
+//   updateBoardInput: UpdateBoardInput!
+//   password: String
+//   boardId: ID!
+//   ): Board!
