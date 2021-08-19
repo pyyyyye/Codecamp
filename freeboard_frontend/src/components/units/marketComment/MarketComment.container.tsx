@@ -20,10 +20,15 @@ export default function MarketComment() {
     variables: { useditemId: router.query.detailpages },
   });
 
+  const [deleteUseditemQuestionMutation] = useMutation(
+    DELETE_USED_ITEM_QUESTION
+  );
+  const [updateUseditemQuestionMutation] = useMutation(
+    UPDATE_USED_ITEM_QUESTION
+  );
   const [createUseditemQuestionMutation] = useMutation(
     CREATE_USED_ITEM_QUESTION
   );
-
   const [inputComment, setInputComment] = useState(onChangeContentsInput);
 
   function onChangeInput(event: any) {
@@ -35,6 +40,8 @@ export default function MarketComment() {
     setInputComment(newInput);
     console.log(event.target.name);
   }
+
+  //! ---- 댓글 등록 , 댓글 리스트 ----
   async function onClick() {
     console.log(inputComment);
     try {
@@ -60,12 +67,64 @@ export default function MarketComment() {
     }
   }
 
+  //! ---- 댓글 수정 ----
+  const onClickCommentEdit = (commentEditId) => async () => {
+    // console.log(inputComment);
+    try {
+      await updateUseditemQuestionMutation({
+        variables: {
+          updateUseditemQuestionInput: {
+            ...inputComment,
+          },
+          useditemQuestionId: commentEditId,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEM_QUESTIONS,
+            variables: {
+              useditemId: router.query.detailpages,
+            },
+          },
+        ],
+      });
+      setInputComment(onChangeContentsInput);
+      alert('해당 댓글 수정을 완료했습니다.');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  //! ---- 댓글 삭제 ----
+  const onClickCommentDelete = (commentDeleteId) => async () => {
+    try {
+      await deleteUseditemQuestionMutation({
+        variables: {
+          useditemQuestionId: commentDeleteId,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEM_QUESTIONS,
+            variables: {
+              useditemId: router.query.detailpages,
+            },
+          },
+        ],
+      });
+      console.log('data');
+      alert('해당 댓글을 삭제합니다.');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <MarketCommentUI
       inputComment={inputComment}
       onChangeInput={onChangeInput}
       onClick={onClick}
       data={data}
+      onClickCommentEdit={onClickCommentEdit}
+      onClickCommentDelete={onClickCommentDelete}
     />
   );
 }

@@ -1,6 +1,7 @@
 // _app.tsx
 import { gql } from '@apollo/client';
 import { GraphQLClient } from 'graphql-request';
+// 굳이 graphql-request 안하고 axios를 써도 되긴 하는데 더 복잡하니까 그냥 깔끔하게 리퀘스트 넣어준 것.
 
 const RESTORE_ACCESS_TOKEN = gql`
   mutation restoreAccessToken {

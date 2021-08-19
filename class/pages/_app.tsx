@@ -25,6 +25,10 @@ import {
 } from 'react';
 import { getAccessToken } from '../src/commons/libraries/getAccessToken';
 // import Head from 'next/head';
+import * as Sentry from '@sentry/nextjs';
+Sentry.init({
+  dsn: 'https://b0c4e0fe1faf4f0abc9e2cb9c316acc0@o965501.ingest.sentry.io/5916342',
+});
 
 if (typeof window !== 'undefined') {
   firebase.initializeApp({
@@ -97,6 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     // uri: 'http://backend02.codebootcamp.co.kr/graphql',
     link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
     cache: new InMemoryCache(),
+    connectToDevTools: true,
   });
 
   return (

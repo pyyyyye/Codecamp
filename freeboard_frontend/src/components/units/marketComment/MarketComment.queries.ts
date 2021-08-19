@@ -30,24 +30,24 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
   }
 `;
 
-// // !------------------- 댓글 등록 -------------------
-// export const UPDATE_USED_ITEM_QUESTION = gql`
-//   mutation updateUseditemQuestion(
-//     $useditemQuestionId: ID!
-//     $updateUseditemQuestionInput: UpdateUseditemQuestionInput!
-//    ) {
-//     updateUseditemQuestion(
-//       useditemQuestionId: $useditemQuestionId
-//       UpdateUseditemQuestionInput:
-//     ){
-
-//     }
-//     }
-// `;
+// !------------------- 댓글 수정 -------------------
+export const UPDATE_USED_ITEM_QUESTION = gql`
+  mutation updateUseditemQuestion(
+    $useditemQuestionId: ID!
+    $updateUseditemQuestionInput: UpdateUseditemQuestionInput!
+  ) {
+    updateUseditemQuestion(
+      useditemQuestionId: $useditemQuestionId
+      updateUseditemQuestionInput: $updateUseditemQuestionInput
+    ) {
+      contents
+    }
+  }
+`;
 
 // !------------------- 댓글 삭제 -------------------
 export const DELETE_USED_ITEM_QUESTION = gql`
   mutation deleteUseditemQuestion($useditemQuestionId: ID!) {
-    deleteUseditemQuestion(useditemQuestionId: $deleteUseditemQuestion)
+    deleteUseditemQuestion(useditemQuestionId: $useditemQuestionId)
   }
 `;

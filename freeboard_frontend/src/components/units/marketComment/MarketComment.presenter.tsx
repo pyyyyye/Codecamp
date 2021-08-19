@@ -61,8 +61,15 @@ export default function MarketCommentUI(props: any) {
 
             <CommentListRightIcons>
               <CommentRightIcons src="/images/icon_reply.png" />
-              <CommentRightIcons src="/images/icon_edit.png" />
-              <CommentRightIcons src="/images/icon_delete.png" />
+              <CommentRightIcons
+                onClick={props.onClickCommentEdit(data._id)}
+                src="/images/icon_edit.png"
+              />
+              <CommentRightIcons
+                // id={data._id}
+                onClick={props.onClickCommentDelete(data._id)}
+                src="/images/icon_delete.png"
+              />
             </CommentListRightIcons>
           </CommentListUp>
         ))}
