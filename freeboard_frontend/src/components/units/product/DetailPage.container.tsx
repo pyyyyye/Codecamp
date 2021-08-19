@@ -3,7 +3,6 @@ import { useMutation, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { FETCH_BOARD, DELETE_BOARD } from './DetailPage.queries';
 import DetailPageUI from './DetailPage.presenter';
-// import { DELETE_BOARD } from '../board/new/BoardNew.queries';
 
 export default function DetailPage() {
   const router = useRouter();
@@ -27,7 +26,7 @@ export default function DetailPage() {
       alert('해당 글을 삭제합니다.');
       router.push(`../../board/bestposts`);
     } catch (error) {
-      alert(error);
+      alert(error.message);
     }
   }
 
