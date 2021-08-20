@@ -73,7 +73,7 @@ export default function KakaoMap01(props) {
   return (
     <>
       <Wrapper>
-        <KakaoMap id="map" isDetail={props.isDetail}></KakaoMap>
+        <KakaoMap id="map" isDetail={props.isDetail} />
         {/* <button onClick={onClickAlert}>클릭하세요!</button> */}
       </Wrapper>
     </>

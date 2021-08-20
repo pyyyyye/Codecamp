@@ -26,9 +26,9 @@ export default function MarketComment() {
   const [updateUseditemQuestionMutation] = useMutation(
     UPDATE_USED_ITEM_QUESTION
   );
-  const [createUseditemQuestionMutation] = useMutation(
-    CREATE_USED_ITEM_QUESTION
-  );
+  // const [createUseditemQuestionMutation] = useMutation(
+  //   CREATE_USED_ITEM_QUESTION
+  // );
   const [inputComment, setInputComment] = useState(onChangeContentsInput);
 
   function onChangeInput(event: any) {
@@ -41,34 +41,34 @@ export default function MarketComment() {
     console.log(event.target.name);
   }
 
-  //! ---- 댓글 등록 , 댓글 리스트 ----
-  async function onClick() {
-    console.log(inputComment);
-    try {
-      await createUseditemQuestionMutation({
-        variables: {
-          createUseditemQuestionInput: {
-            ...inputComment,
-          },
-          useditemId: router.query.detailpages,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_USED_ITEM_QUESTIONS,
-            variables: {
-              useditemId: router.query.detailpages,
-            },
-          },
-        ],
-      });
-      setInputComment(onChangeContentsInput);
-    } catch (error) {
-      alert(error.message);
-    }
-  }
+  // //! ---- 댓글 등록 , 댓글 리스트 ----
+  // async function onClick() {
+  //   console.log(inputComment);
+  //   try {
+  //     await createUseditemQuestionMutation({
+  //       variables: {
+  //         createUseditemQuestionInput: {
+  //           ...inputComment,
+  //         },
+  //         useditemId: router.query.detailpages,
+  //       },
+  //       refetchQueries: [
+  //         {
+  //           query: FETCH_USED_ITEM_QUESTIONS,
+  //           variables: {
+  //             useditemId: router.query.detailpages,
+  //           },
+  //         },
+  //       ],
+  //     });
+  //     setInputComment(onChangeContentsInput);
+  //   } catch (error) {
+  //     alert(error.message);
+  //   }
+  // }
 
   //! ---- 댓글 수정 ----
-  const onClickCommentEdit = (commentEditId) => async () => {
+  const onClickCommentEdit = (commentEditId: any) => async () => {
     // console.log(inputComment);
     try {
       await updateUseditemQuestionMutation({
@@ -95,7 +95,7 @@ export default function MarketComment() {
   };
 
   //! ---- 댓글 삭제 ----
-  const onClickCommentDelete = (commentDeleteId) => async () => {
+  const onClickCommentDelete = (commentDeleteId: any) => async () => {
     try {
       await deleteUseditemQuestionMutation({
         variables: {
@@ -119,9 +119,9 @@ export default function MarketComment() {
 
   return (
     <MarketCommentUI
-      inputComment={inputComment}
-      onChangeInput={onChangeInput}
-      onClick={onClick}
+      // inputComment={inputComment}
+      // onChangeInput={onChangeInput}
+      // onClick={onClick}
       data={data}
       onClickCommentEdit={onClickCommentEdit}
       onClickCommentDelete={onClickCommentDelete}

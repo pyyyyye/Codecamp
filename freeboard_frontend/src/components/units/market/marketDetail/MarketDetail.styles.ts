@@ -8,10 +8,6 @@ export const Contents = styled.div`
   width: 100%;
   margin: 0 auto;
   margin-top: 100px;
-  margin-bottom: 300px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
 `;
 
 export const TopContentsWriter = styled.div`
@@ -168,7 +164,6 @@ export const InfoTags = styled.p`
 // ! ----- Map start -----
 export const Map = styled.div`
   width: 100%;
-  /* height: 360px; */
   font-size: 50px;
   margin: 0 auto;
   border-top: 1px solid #bdbdbd;
@@ -182,7 +177,6 @@ export const Map = styled.div`
 export const BottomBtn = styled.div`
   width: 100%;
   border-top: 1px solid #bdbdbd;
-  border-bottom: 1px solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: center;
