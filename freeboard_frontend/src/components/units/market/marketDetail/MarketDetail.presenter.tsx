@@ -35,9 +35,6 @@ import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
 import MarketComment from '../../marketComment/MarketComment.container';
 
 export default function MarketDetailUI(props) {
-  if (typeof window === 'undefined') return <></>;
-  // 윈도우가 없을 때(= 브라우저가 없을 때 = 서버일 때)는 빈화면<></>을 그려
-  // 아래 dompurify 에러가 많이 떠서 입력한 코드
   return (
     <Wrapper>
       <Contents>
@@ -80,18 +77,22 @@ export default function MarketDetailUI(props) {
                 />
               ))}
 
-              <SubImage> </SubImage>
+              {/* <SubImage> </SubImage> */}
             </InfoMiddle>
 
             {/* // ! ---- bottom txt ----  */}
             <InfoBottom>
-              <InfoText
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(
-                    props.data?.fetchUseditem.contents
-                  ),
-                }}
-              />
+              {typeof window !== 'undefined' ? (
+                <InfoText
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(
+                      props.data?.fetchUseditem.contents
+                    ),
+                  }}
+                />
+              ) : (
+                <div />
+              )}
               <InfoTags>{props.data?.fetchUseditem.tags}</InfoTags>
             </InfoBottom>
           </ProductInfo>
@@ -105,7 +106,6 @@ export default function MarketDetailUI(props) {
           <ButtonBox onClick={props.onClickMoveToList}>목록으로</ButtonBox>
           <ButtonBox>수정하기</ButtonBox>
         </BottomBtn>
-        <MarketComment />
       </Contents>
     </Wrapper>
   );

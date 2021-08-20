@@ -30,8 +30,8 @@ export default function MarketCommentUI(props: any) {
         <CommentTitle>문의하기</CommentTitle>
       </CommentTitleBox>
 
-      <CommentUpload>
-        {/* //!-----▶▶▶▶▶ 댓글 입력 및 등록 창 ◀◀◀◀◀------ */}
+      {/* //!-----▶▶▶▶▶ 댓글 입력 및 등록 창 ◀◀◀◀◀------ */}
+      {/* <CommentUpload>
         <CommentUploadBottom>
           <CommentInput
             name="contents"
@@ -41,10 +41,10 @@ export default function MarketCommentUI(props: any) {
           <div></div>
           <UploadButton onClick={props.onClick}>문의하기</UploadButton>
         </CommentUploadBottom>
-      </CommentUpload>
+      </CommentUpload> */}
 
       {/*//!------▶▶▶▶▶ 댓글 리스트 ◀◀◀◀◀-------*/}
-      <CommentList>
+      {/* <CommentList>
         {props.data?.fetchUseditemQuestions.map((data: any) => (
           <CommentListUp key={data._id}>
             <CommentListLeft>
@@ -73,7 +73,7 @@ export default function MarketCommentUI(props: any) {
             </CommentListRightIcons>
           </CommentListUp>
         ))}
-      </CommentList>
+      </CommentList> */}
     </BoardCommentWrapper>
   );
 }
