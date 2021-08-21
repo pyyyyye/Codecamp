@@ -84,7 +84,13 @@ export default function CommentListUIItem(props: any) {
         </CommentListUp>
       )}
 
-      {isEdit && <CommentWrite isEdit={isEdit} />}
+      {isEdit && (
+        <CommentWrite
+          isEdit={isEdit}
+          id={props.data._id}
+          setIsEdit={setIsEdit}
+        />
+      )}
     </>
   );
 }

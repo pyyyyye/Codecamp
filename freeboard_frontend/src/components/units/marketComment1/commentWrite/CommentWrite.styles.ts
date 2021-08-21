@@ -48,11 +48,29 @@ export const CommentInput = styled.textarea`
 export const UploadButton = styled.button`
   width: 91px;
   height: 52px;
-  background-color: black;
+  background-color: #ffd600;
+  color: #000;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 16px;
+  line-height: 23.668px;
+`;
+
+export const CreateButton = styled.button`
+  width: 91px;
+  height: 52px;
+  background-color: #000;
   color: #fff;
   cursor: pointer;
   border: none;
   position: absolute;
   bottom: 0;
   right: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23.668px;
 `;
