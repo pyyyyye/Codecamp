@@ -63,7 +63,7 @@ export default function CommentWrite(props) {
   }
 
   //! ---- 댓글 수정 ----
-  const onClickCommentEdit = (commentEditId: any) => async () => {
+  const onClickCommentEdit = async () => {
     // console.log(inputComment);
     try {
       await updateUseditemQuestionMutation({
@@ -71,7 +71,7 @@ export default function CommentWrite(props) {
           updateUseditemQuestionInput: {
             ...inputComment,
           },
-          useditemQuestionId: commentEditId,
+          useditemQuestionId: props.id,
         },
         refetchQueries: [
           {
@@ -83,6 +83,7 @@ export default function CommentWrite(props) {
         ],
       });
       setInputComment(onChangeContentsInput);
+      props.setIsEdit(false);
       alert('해당 댓글 수정을 완료했습니다.');
     } catch (error) {
       alert(error.message);
