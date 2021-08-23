@@ -19,7 +19,7 @@ import CommentWrite from '../commentWrite/CommentWrite.container';
 import {
   DELETE_USED_ITEM_QUESTION,
   FETCH_USED_ITEM_QUESTIONS,
-} from '../../marketComment/MarketComment.queries';
+} from '../commenList/CommentList.queries';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 
@@ -49,7 +49,7 @@ export default function CommentListUIItem(props: any) {
           },
         ],
       });
-      console.log('data');
+      console.log('댓글 리스트 데이터 :', props.data);
       alert('해당 댓글을 삭제합니다.');
     } catch (error) {
       alert(error.message);
@@ -86,7 +86,7 @@ export default function CommentListUIItem(props: any) {
               />
             </CommentListRightIcons>
           </CommentListBox>
-          <ReplyCommentList />
+          <ReplyCommentList data={props.data} />
           <ReplyCommentWrite />
         </CommentListUp>
       )}
