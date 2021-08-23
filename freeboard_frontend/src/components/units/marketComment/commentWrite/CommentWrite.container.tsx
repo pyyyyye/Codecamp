@@ -57,6 +57,7 @@ export default function CommentWrite(props) {
         ],
       });
       setInputComment(onChangeContentsInput);
+      alert('해당 댓글 등록을 완료했습니다~~!!!~~!.');
     } catch (error) {
       alert(error.message);
     }

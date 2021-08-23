@@ -70,7 +70,7 @@ export const ReplyCommentInput = styled.textarea`
 export const UploadButton = styled.button`
   width: 91px;
   height: 51px;
-  background-color: #ffd600;
+  background-color: #ffe769d4;
   color: #000;
   cursor: pointer;
   font-weight: 500;
@@ -80,6 +80,9 @@ export const UploadButton = styled.button`
   right: 0;
   font-size: 16px;
   line-height: 23.668px;
+  :hover {
+    background-color: #ffd600;
+  }
 `;
 
 export const CreateButton = styled.button`

@@ -7,7 +7,7 @@ export const CREATE_USED_ITEM_QUESTION_ANSWER = gql`
     $useditemQuestionId: ID!
   ) {
     createUseditemQuestionAnswer(
-      createUseditemQuestionInput: $createUseditemQuestionAnswerInput
+      createUseditemQuestionAnswerInput: $createUseditemQuestionAnswerInput
       useditemQuestionId: $useditemQuestionId
     ) {
       _id
@@ -17,20 +17,6 @@ export const CREATE_USED_ITEM_QUESTION_ANSWER = gql`
         createdAt
       }
       createdAt
-      useditemQuestion {
-        _id
-        contents
-        useditem {
-          _id
-          name
-          contents
-        }
-        user {
-          _id
-          name
-          createdAt
-        }
-      }
     }
   }
 `;
@@ -38,13 +24,14 @@ export const CREATE_USED_ITEM_QUESTION_ANSWER = gql`
 // !------- 답글 수정 --------
 export const UPDATE_USED_ITEM_QUESTION_ANSWER = gql`
   mutation updateUseditemQuestionAnswer(
-    $useditemQuestionAnswerId: ID!
     $updateUseditemQuestionAnswerInput: UpdateUseditemQuestionAnswerInput!
+    $useditemQuestionAnswerId: ID!
   ) {
-    updateUseditemQuestion(
-      useditemQuestionAnswerId: $useditemQuestionAnswerId
+    updateUseditemQuestionAnswer(
       updateUseditemQuestionAnswerInput: $updateUseditemQuestionAnswerInput
+      useditemQuestionAnswerId: $useditemQuestionAnswerId
     ) {
+      _id
       contents
     }
   }
@@ -56,12 +43,6 @@ export const FETCH_USED_ITEM_QUESTION_ANSWERS = gql`
     fetchUseditemQuestionAnswers(useditemQuestionId: $useditemQuestionId) {
       _id
       contents
-      useditemQuestion {
-        contents
-        useditem
-        user
-        createdAt
-      }
       user {
         name
         createdAt

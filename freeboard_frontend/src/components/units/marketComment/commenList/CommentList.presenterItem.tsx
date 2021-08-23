@@ -87,7 +87,7 @@ export default function CommentListUIItem(props: any) {
             </CommentListRightIcons>
           </CommentListBox>
           <ReplyCommentList data={props.data} />
-          <ReplyCommentWrite />
+          <ReplyCommentWrite data={props.data} />
         </CommentListUp>
       )}
 

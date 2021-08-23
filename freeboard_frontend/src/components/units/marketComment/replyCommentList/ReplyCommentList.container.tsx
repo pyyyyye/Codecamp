@@ -9,5 +9,6 @@ export default function ReplyCommentList(props: any) {
     variables: { useditemQuestionId: props.data._id },
   });
   console.log('리댓 ReplyCommentList-data :', data);
+
   return <ReplyCommentListUI data={data} />;
 }

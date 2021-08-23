@@ -6,7 +6,6 @@ import {
   ReplyCommentLeft,
   ReplyCommentRight,
   ReplyWriterImg,
-  ReplyWriterName,
   ReplyCommentUploadBottom,
   ReplyCommentInput,
   UploadButton,
@@ -14,19 +13,20 @@ import {
 } from './ReplyCommentWrite.styles';
 
 export default function ReplyCommentWriteUI(props: any) {
+  console.log('답댓글 :', props.data);
   return (
     <BoardReplyCommentWrapper>
       {/* //!--▶▶▶▶▶답글 입력 및 등록 창 ◀◀◀◀◀-- */}
       <ReplyIconBox>
         <ReplyIcon src="/images/icon_replyComment.png" />
       </ReplyIconBox>
+
       <ReplyCommentUpload>
         <ReplyCommentLeft>
           <ReplyWriterImg src="/images/WriterProfileImg.png" />
         </ReplyCommentLeft>
-        <ReplyCommentRight>
-          <ReplyWriterName>글쓴이</ReplyWriterName>
 
+        <ReplyCommentRight>
           <ReplyCommentUploadBottom>
             <ReplyCommentInput
               name="contents"

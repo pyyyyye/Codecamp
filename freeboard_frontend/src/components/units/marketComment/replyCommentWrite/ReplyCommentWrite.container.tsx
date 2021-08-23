@@ -13,12 +13,13 @@ export const onChangeContentsInput = {
   contents: '',
 };
 
-export default function ReplyCommentWrite(props) {
+export default function ReplyCommentWrite(props: any) {
+  // console.log('아이디', props.data);
   const router = useRouter();
   const { data } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
-    variables: { useditemQuestionId: router.query.detailpages },
+    variables: { useditemQuestionId: props.data._id },
   });
-  // });
+  // console.log('답글 : ', data);
   const [updateUseditemQuestionAnswerMutation] = useMutation(
     UPDATE_USED_ITEM_QUESTION_ANSWER
   );
@@ -30,7 +31,7 @@ export default function ReplyCommentWrite(props) {
   );
 
   function onChangeReplyInput(event: any) {
-    console.log(event);
+    // console.log('ㄴㄴ', event);
     const newInput = {
       ...inputReplyComment,
       [event.target.name]: event.target.value,
@@ -41,53 +42,53 @@ export default function ReplyCommentWrite(props) {
 
   //! ---- 답글 등록 ----
   async function onClickReply() {
-    console.log(inputReplyComment);
     try {
       await createUseditemQuestionAnswerMutation({
         variables: {
-          createUseditemQuestionInput: {
-            ...inputReplyComment,
-          },
-          useditemQuestionId: router.query.detailpages,
+          createUseditemQuestionAnswerInput: { ...inputReplyComment },
+          useditemQuestionId: props.data._id,
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM_QUESTION_ANSWERS,
             variables: {
-              useditemQuestionId: router.query.detailpages,
+              useditemQuestionId: props.data._id,
             },
           },
         ],
       });
       setInputReplyComment(onChangeContentsInput);
-    } catch (error) {
-      alert(error.message);
+      // console.log(inputReplyComment);
+      alert('해당 답글 등록을 완료했습니다~~!!!~~!.');
+    } catch (errors) {
+      alert(errors.message);
     }
   }
+  0;
 
   //! ---- 답글 수정 ----
   const onClickReplyCommentEdit = async () => {
-    // console.log(inputReplyComment);
+    // console.log('수정버튼 클릭');
+    console.log('수정됐나? : ', data);
     try {
       await updateUseditemQuestionAnswerMutation({
         variables: {
-          updateUseditemQuestionAnswerInput: {
-            ...inputReplyComment,
-          },
-          useditemQuestionAnswerId: props.id,
+          updateUseditemQuestionAnswerInput: { ...inputReplyComment },
+          useditemQuestionAnswerId: data._id,
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM_QUESTION_ANSWERS,
             variables: {
-              useditemQuestionId: router.query.detailpages,
+              useditemQuestionId: props.data._id,
             },
           },
         ],
       });
       setInputReplyComment(onChangeContentsInput);
+
       props.setIsEdit(false);
-      alert('해당 댓글 수정을 완료했습니다.');
+      alert('해당 답글 수정을 완료했습니다.');
     } catch (error) {
       alert(error.message);
     }
@@ -98,9 +99,9 @@ export default function ReplyCommentWrite(props) {
       isEdit={props.isEdit}
       data={data}
       inputReplyComment={inputReplyComment}
-      onClicReplyk={onClickReply}
+      onClickReply={onClickReply}
       onChangeReplyInput={onChangeReplyInput}
-      onClickCommentEdit={onClickReplyCommentEdit}
+      onClickReplyCommentEdit={onClickReplyCommentEdit}
     />
   );
 }

@@ -50,7 +50,7 @@ export default function ReplyCommentListUIItem(props: any) {
           },
         ],
       });
-      console.log('data');
+      console.log('답글 삭제');
       alert('해당 답글을 삭제합니다.');
     } catch (error) {
       alert(error.message);
@@ -99,7 +99,7 @@ export default function ReplyCommentListUIItem(props: any) {
       {isEdit && (
         <ReplyCommentWrite
           isEdit={isEdit}
-          id={props.data._id}
+          data={props.data}
           setIsEdit={setIsEdit}
         />
       )}

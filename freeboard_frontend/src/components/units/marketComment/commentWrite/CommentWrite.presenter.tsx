@@ -19,9 +19,7 @@ export default function CommentWriteUI(props: any) {
           <CommentTitle>문의하기</CommentTitle>
         </CommentTitleBox>
       )}
-
       {/* //!-----▶▶▶▶▶ 댓글 입력 및 등록 창 ◀◀◀◀◀------ */}
-
       <CommentUpload>
         <CommentUploadBottom>
           <CommentInput
