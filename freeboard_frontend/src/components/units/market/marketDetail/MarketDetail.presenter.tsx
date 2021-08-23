@@ -32,9 +32,8 @@ import {
   ButtonBox,
 } from './MarketDetail.styles';
 import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
-import MarketComment from '../../marketComment/MarketComment.container';
 
-export default function MarketDetailUI(props) {
+export default function MarketDetailUI(props: any) {
   return (
     <Wrapper>
       <Contents>
