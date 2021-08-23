@@ -19,7 +19,7 @@ export default function MarketList() {
 
     const baskets = JSON.parse(localStorage.getItem('baskets') || '[]');
     let isExists = false;
-    baskets.forEach((data) => {
+    baskets.forEach((data: any) => {
       if (data._id === basketData._id) isExists = true;
     });
     if (isExists) return;

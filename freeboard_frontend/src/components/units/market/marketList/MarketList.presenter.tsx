@@ -36,7 +36,7 @@ import {
   MiddleBox,
 } from './MarketList.styles';
 
-export default function MarketListUI(props) {
+export default function MarketListUI(props: any) {
   return (
     <Wrapper>
       <ListContents>
@@ -66,7 +66,7 @@ export default function MarketListUI(props) {
         </MiddleBox>
         {/* //!----- 하단 상품 list ----- */}
         <Contents>
-          {props.data?.fetchUseditems.map((data) => (
+          {props.data?.fetchUseditems.map((data: any) => (
             <List
               key={data._id}
               id={data._id}

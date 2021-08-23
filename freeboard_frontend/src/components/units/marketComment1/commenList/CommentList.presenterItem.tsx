@@ -1,5 +1,6 @@
 import {
   CommentListUp,
+  CommentListBox,
   CommentListLeft,
   CommentWriterImg,
   CommentListMiddle,
@@ -10,6 +11,8 @@ import {
   CommentNote,
   CommentDate,
 } from './CommentList.styles';
+import ReplyCommentList from '../replyCommentList/ReplyCommentList.container';
+import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container';
 import { getDate } from '../../../../commons/libraries/utils';
 import { useState } from 'react';
 import CommentWrite from '../commentWrite/CommentWrite.container';
@@ -57,30 +60,34 @@ export default function CommentListUIItem(props: any) {
     <>
       {!isEdit && (
         <CommentListUp key={props.data._id}>
-          <CommentListLeft>
-            <CommentWriterImg src="/images/WriterProfileImg.png" />
-          </CommentListLeft>
+          <CommentListBox>
+            <CommentListLeft>
+              <CommentWriterImg src="/images/WriterProfileImg.png" />
+            </CommentListLeft>
 
-          <CommentListMiddle>
-            <CommentListTop>
-              <WriterName>{props.data.user.name}</WriterName>
-            </CommentListTop>
-            <CommentNote>{props.data.contents}</CommentNote>
-            <CommentDate>{getDate(props.data.createdAt)}</CommentDate>
-          </CommentListMiddle>
+            <CommentListMiddle>
+              <CommentListTop>
+                <WriterName>{props.data.user.name}</WriterName>
+              </CommentListTop>
+              <CommentNote>{props.data.contents}</CommentNote>
+              <CommentDate>{getDate(props.data.createdAt)}</CommentDate>
+            </CommentListMiddle>
 
-          <CommentListRightIcons>
-            <CommentRightIcons src="/images/icon_reply.png" />
-            <CommentRightIcons
-              onClick={onClickEdit}
-              src="/images/icon_edit.png"
-            />
-            <CommentRightIcons
-              // id={props.data._id}
-              onClick={onClickCommentDelete(props.data._id)}
-              src="/images/icon_delete.png"
-            />
-          </CommentListRightIcons>
+            <CommentListRightIcons>
+              <CommentRightIcons src="/images/icon_reply.png" />
+              <CommentRightIcons
+                onClick={onClickEdit}
+                src="/images/icon_edit.png"
+              />
+              <CommentRightIcons
+                // id={props.data._id}
+                onClick={onClickCommentDelete(props.data._id)}
+                src="/images/icon_delete.png"
+              />
+            </CommentListRightIcons>
+          </CommentListBox>
+          <ReplyCommentList />
+          <ReplyCommentWrite />
         </CommentListUp>
       )}
 

@@ -11,13 +11,20 @@ export const BoardCommentWrapper = styled.div`
 export const CommentList = styled.div`
   margin-top: 20px;
   width: 100%;
+  /* padding-bottom: 20px; */
 `;
 export const CommentListUp = styled.div`
   width: 100%;
-  height: 130px;
+  /* height: 130px; */
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #bdbdbd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+export const CommentListBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
