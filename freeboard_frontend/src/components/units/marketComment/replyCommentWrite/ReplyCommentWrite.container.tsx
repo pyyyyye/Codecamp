@@ -67,14 +67,15 @@ export default function ReplyCommentWrite(props: any) {
   0;
 
   //! ---- 답글 수정 ----
+  console.log('수정됐나? : ', data);
   const onClickReplyCommentEdit = async () => {
     // console.log('수정버튼 클릭');
-    console.log('수정됐나? : ', data);
+
     try {
       await updateUseditemQuestionAnswerMutation({
         variables: {
           updateUseditemQuestionAnswerInput: { ...inputReplyComment },
-          useditemQuestionAnswerId: data._id,
+          useditemQuestionAnswerId: props.data._id,
         },
         refetchQueries: [
           {

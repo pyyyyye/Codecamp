@@ -41,6 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     userInfo,
     setUserInfo,
   };
+
+  console.log(value);
   console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
 
   useEffect(() => {
