@@ -29,7 +29,6 @@ export default function CommentListUIItem(props: any) {
     DELETE_USED_ITEM_QUESTION
   );
   const router = useRouter();
-
   const onClickEdit = () => {
     setIsEdit(true);
   };
@@ -80,7 +79,6 @@ export default function CommentListUIItem(props: any) {
                 src="/images/icon_edit.png"
               />
               <CommentRightIcons
-                // id={props.data._id}
                 onClick={onClickCommentDelete(props.data._id)}
                 src="/images/icon_delete.png"
               />

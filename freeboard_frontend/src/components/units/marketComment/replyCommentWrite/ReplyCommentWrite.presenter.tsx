@@ -13,7 +13,7 @@ import {
 } from './ReplyCommentWrite.styles';
 
 export default function ReplyCommentWriteUI(props: any) {
-  console.log('답댓글 :', props.data);
+  // console.log('답댓글 :', props.data);
   return (
     <BoardReplyCommentWrapper>
       {/* //!--▶▶▶▶▶답글 입력 및 등록 창 ◀◀◀◀◀-- */}

@@ -43,6 +43,12 @@ export default function MarketLogin() {
       setUserInfo(resultUser.data?.fetchUserLoggedIn);
       setAccessToken(result.data?.loginUser?.accessToken || '');
       localStorage.setItem('refreshToken', 'true');
+      localStorage.setItem(
+        // 유저인포를 로컬스토리지에 문자열로 담아라.
+        'userInfo',
+        JSON.stringify(resultUser.data?.fetchUserLoggedIn)
+      );
+
       // localStorage.setItem(
       //   'accessToken',
       //   result.data?.loginUser.accessToken || ''
@@ -57,14 +63,10 @@ export default function MarketLogin() {
 
   return (
     <MarketLoginUI
-      // onChangeEmail={onChangeEmail}
-      // onChangePassword={onChangePassword}
-      // onClickLogin={onClickLogin}
       onClickGoToSignup={onClickGoToSignup}
       register={register}
       handleSubmit={handleSubmit}
       errors={formState.errors}
-      // isActive={formState.isValid}
       onSubmit={onSubmit}
     />
   );

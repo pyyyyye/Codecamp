@@ -46,7 +46,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
 
   useEffect(() => {
-    if (localStorage.getItem('refreshToken')) getAccessToken(setAccessToken);
+    if (localStorage.getItem('refreshToken')) {
+      getAccessToken(setAccessToken);
+      setUserInfo(JSON.parse(localStorage.getItem('userInfo') || '{}'));
+      // globalContext에 담기 위해 json.parse()형태로 문자열로 담아줌.
+    }
   }, []);
 
   console.log(accessToken);

@@ -13,7 +13,7 @@ export const onChangeContentsInput = {
   contents: '',
 };
 
-export default function CommentWrite(props) {
+export default function CommentWrite(props: any) {
   const router = useRouter();
   const { data } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { useditemId: router.query.detailpages },

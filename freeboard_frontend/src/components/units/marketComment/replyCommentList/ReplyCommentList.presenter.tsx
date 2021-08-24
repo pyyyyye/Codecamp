@@ -12,7 +12,12 @@ export default function ReplyCommentListUI(props: any) {
       <ReplyCommentList>
         {props.data?.fetchUseditemQuestionAnswers.map((data: any) => (
           <>
-            <ReplyCommentListUIItem key={data._id} data={data} />
+            <ReplyCommentListUIItem
+              useditemQuestionId={props.useditemQuestionId}
+              key={data._id}
+              data={data}
+              questionId={props.questionId}
+            />
           </>
         ))}
       </ReplyCommentList>
