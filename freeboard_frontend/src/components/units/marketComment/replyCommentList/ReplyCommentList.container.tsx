@@ -8,7 +8,7 @@ export default function ReplyCommentList(props: any) {
   const { data } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.data._id },
   });
-  console.log('리댓 ReplyCommentList-data :', data);
+  // console.log('리댓 ReplyCommentList-data :', data);
 
   return <ReplyCommentListUI data={data} useditemQuestionId={props.data._id} />;
 }
