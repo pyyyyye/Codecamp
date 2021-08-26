@@ -25,17 +25,20 @@ import { GlobalContext } from '../../../../../pages/_app';
 
 export default function ReplyCommentListUIItem(props: any) {
   const [isEdit, setIsEdit] = useState(false);
+  const [isNew, setIsNew] = useState(false);
   const { userInfo } = useContext(GlobalContext);
   const [deleteUseditemQuestionAnswerMutation] = useMutation(
     DELETE_USED_ITEM_QUESTION_ANSWER
   );
   console.log('유저인포.네임 :', userInfo);
-  console.log('이거예요 : ', props.data.user.name);
   console.log('useditemQuestionId : ', props.useditemQuestionId);
 
   const onClickReplyEdit = () => {
     setIsEdit(true);
   };
+  // const onClickReplyNew = () => {
+  //   setIsNew(true);
+  // };
 
   const onClickReplyCommentDelete = async () => {
     try {
@@ -101,7 +104,12 @@ export default function ReplyCommentListUIItem(props: any) {
 
             <ReplyCommentListRightIcons>
               {props.data.user.name !== userInfo.name ? (
-                <ReplyCommentRightIcons src="/images/icon_reply.png" />
+                !isNew && (
+                  <ReplyCommentRightIcons
+                    // onClick={onClickReplyNew}
+                    src="/images/icon_reply.png"
+                  />
+                )
               ) : (
                 <>
                   <ReplyCommentRightIcons
@@ -122,6 +130,7 @@ export default function ReplyCommentListUIItem(props: any) {
       {isEdit && (
         <ReplyCommentWrite
           isEdit={isEdit}
+          // isNew={isNew}
           data={props.data}
           setIsEdit={setIsEdit}
         />

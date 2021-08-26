@@ -6,7 +6,7 @@ import { FETCH_USED_ITEMS } from './MarketList.queries';
 
 export default function MarketList() {
   const router = useRouter();
-  const { data } = useQuery(FETCH_USED_ITEMS);
+  const { data, fetchMore } = useQuery(FETCH_USED_ITEMS);
   const [aaa, setAaa] = useState([]);
 
   function onClickWrite() {
@@ -36,6 +36,7 @@ export default function MarketList() {
   return (
     <MarketListUI
       data={data}
+      fetchMore={fetchMore}
       onClickWrite={onClickWrite}
       onClickTitle={onClickTitle}
       aaa={aaa}

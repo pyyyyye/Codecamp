@@ -55,7 +55,6 @@ export default function ReplyCommentWrite(props: any) {
         ],
       });
       setInputReplyComment(onChangeContentsInput);
-      // console.log(inputReplyComment);
       alert('해당 답글 등록을 완료했습니다~~!!!~~!.');
     } catch (errors) {
       alert(errors.message);
@@ -92,6 +91,7 @@ export default function ReplyCommentWrite(props: any) {
   return (
     <ReplyCommentWriteUI
       isEdit={props.isEdit}
+      isNew={props.isNew}
       data={data}
       inputReplyComment={inputReplyComment}
       onClickReply={onClickReply}

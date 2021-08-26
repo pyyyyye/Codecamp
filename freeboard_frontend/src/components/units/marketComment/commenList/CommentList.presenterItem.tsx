@@ -22,10 +22,10 @@ import {
 } from '../commenList/CommentList.queries';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
-// import { GlobalContext } from '../../../../../pages/_app';
+import { GlobalContext } from '../../../../../pages/_app';
 
 export default function CommentListUIItem(props: any) {
-  // const { userInfo } = useContext(GlobalContext);
+  const { userInfo } = useContext(GlobalContext);
   const [isEdit, setIsEdit] = useState(false);
   const [isReplyBtnOpen, setIsReplyOpenBtn] = useState(false);
   const [deleteUseditemQuestionMutation] = useMutation(
@@ -85,23 +85,23 @@ export default function CommentListUIItem(props: any) {
             </CommentListMiddle>
 
             <CommentListRightIcons>
-              {/* {props.data.user.name !== userInfo.name ? ( */}
-              <CommentRightIcons
-                onClick={onClickReplyWriteBoxBtn}
-                src="/images/icon_reply.png"
-              />
-              {/* ) : ( */}
-              <>
+              {props.data.user.name !== userInfo.name ? (
                 <CommentRightIcons
-                  onClick={onClickEdit}
-                  src="/images/icon_edit.png"
+                  onClick={onClickReplyWriteBoxBtn}
+                  src="/images/icon_reply.png"
                 />
-                <CommentRightIcons
-                  onClick={onClickCommentDelete(props.data._id)}
-                  src="/images/icon_delete.png"
-                />
-              </>
-              {/* )} */}
+              ) : (
+                <>
+                  <CommentRightIcons
+                    onClick={onClickEdit}
+                    src="/images/icon_edit.png"
+                  />
+                  <CommentRightIcons
+                    onClick={onClickCommentDelete(props.data._id)}
+                    src="/images/icon_delete.png"
+                  />
+                </>
+              )}
             </CommentListRightIcons>
           </CommentListBox>
           <ReplyCommentList data={props.data} />
@@ -112,7 +112,7 @@ export default function CommentListUIItem(props: any) {
       {isEdit && (
         <CommentWrite
           isEdit={isEdit}
-          id={props.data._id}
+          ondata={props.data}
           setIsEdit={setIsEdit}
         />
       )}
