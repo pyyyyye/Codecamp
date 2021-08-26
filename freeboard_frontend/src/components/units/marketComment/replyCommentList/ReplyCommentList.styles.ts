@@ -86,11 +86,12 @@ export const ReplyCommentListRightIcons = styled.div`
   width: 75px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 10px;
 `;
 export const ReplyCommentRightIcons = styled.img`
   width: 15px;
   height: 15px;
   cursor: pointer;
+  margin-left: 16px;
 `;

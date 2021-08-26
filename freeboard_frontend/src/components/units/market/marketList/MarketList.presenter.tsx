@@ -1,6 +1,7 @@
 // import { useRouter } from 'next/rou
 import SideMenu from '../../../commons/sideMenu/sideMenu';
 import MarketListOfTheBest from '../../marketListOfTheBest/MarketListOfTheBest.container';
+import InfiniteScroll from 'react-infinite-scroller';
 import {
   Wrapper,
   Title,
@@ -35,8 +36,28 @@ import {
   GoToWrite,
   MiddleBox,
 } from './MarketList.styles';
+import { useState } from 'react';
 
 export default function MarketListUI(props: any) {
+  const [hasMore, setHasMore] = useState(true);
+
+  const onLoadMore = () => {
+    if (!props.data) return;
+    props.fetchMore({
+      variables: {
+        page: Math.floor(props.data?.fetchUseditems.length) / 10 + 1,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchUseditems.length) setHasMore(false);
+        return {
+          fetchUseditems: [
+            ...prev.fetchUseditems,
+            ...fetchMoreResult.fetchUseditems,
+          ],
+        };
+      },
+    });
+  };
   return (
     <Wrapper>
       <ListContents>
@@ -66,51 +87,56 @@ export default function MarketListUI(props: any) {
         </MiddleBox>
         {/* //!----- 하단 상품 list ----- */}
         <Contents>
-          {props.data?.fetchUseditems.map((data: any) => (
-            <List
-              key={data._id}
-              id={data._id}
-              onClick={props.onClickTitle(data)}
-            >
-              <ProductPrevImg
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={onLoadMore}
+            hasMore={hasMore}
+            useWindow={false}
+          >
+            {props.data?.fetchUseditems.map((data: any) => (
+              <List
                 key={data._id}
-                src={`https://storage.googleapis.com/${data.images[0]}`}
-              />
-              <ProductPrevInfo>
-                <LeftInfo>
-                  <TopPrevInfo>
-                    <ProductName>{data.name}</ProductName>
-                    <ProductRemarks>{data.remarks}</ProductRemarks>
-                    <ProductTags>{data.tags}</ProductTags>
-                  </TopPrevInfo>
+                id={data._id}
+                onClick={props.onClickTitle(data)}
+              >
+                <ProductPrevImg
+                  key={data._id}
+                  src={`https://storage.googleapis.com/${data.images[0]}`}
+                />
+                <ProductPrevInfo>
+                  <LeftInfo>
+                    <TopPrevInfo>
+                      <ProductName>{data.name}</ProductName>
+                      <ProductRemarks>{data.remarks}</ProductRemarks>
+                      <ProductTags>{data.tags}</ProductTags>
+                    </TopPrevInfo>
 
-                  <BottomPrevInfo>
-                    <SellerBox>
-                      <SellerImg src="/images/WriterProfileImg_2.png" />
-                      <Seller>{data.seller.name}</Seller>
-                    </SellerBox>
-                    <LikeBox>
-                      <Like src="/images/icon_like_2.png" />
-                      <LikeCount>58</LikeCount>
-                    </LikeBox>
-                  </BottomPrevInfo>
-                </LeftInfo>
+                    <BottomPrevInfo>
+                      <SellerBox>
+                        <SellerImg src="/images/WriterProfileImg_2.png" />
+                        <Seller>{data.seller.name}</Seller>
+                      </SellerBox>
+                      <LikeBox>
+                        <Like src="/images/icon_like_2.png" />
+                        <LikeCount>58</LikeCount>
+                      </LikeBox>
+                    </BottomPrevInfo>
+                  </LeftInfo>
 
-                <ProductPrice>
-                  <PriceIcon src="/images/icon_Euro.png" />
-                  <Price>{data.price}</Price>
-                </ProductPrice>
-              </ProductPrevInfo>
-            </List>
-          ))}
+                  <ProductPrice>
+                    <PriceIcon src="/images/icon_Euro.png" />
+                    <Price>{data.price}</Price>
+                  </ProductPrice>
+                </ProductPrevInfo>
+              </List>
+            ))}
+          </InfiniteScroll>
         </Contents>
         <GoToWrite id={props.data?._id} onClick={props.onClickWrite}>
           상품 등록하기
-        </GoToWrite>{' '}
+        </GoToWrite>
         <SideMenu aaa={props.aaa} />
       </ListContents>
-
-      {/* 우측 오늘 본 상품 */}
     </Wrapper>
   );
 }

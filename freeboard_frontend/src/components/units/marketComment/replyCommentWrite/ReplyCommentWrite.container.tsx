@@ -14,12 +14,10 @@ export const onChangeContentsInput = {
 };
 
 export default function ReplyCommentWrite(props: any) {
-  // console.log('아이디', props.data);
   const router = useRouter();
   const { data } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
     variables: { useditemQuestionId: props.data._id },
   });
-  // console.log('답글 : ', data);
   const [updateUseditemQuestionAnswerMutation] = useMutation(
     UPDATE_USED_ITEM_QUESTION_ANSWER
   );
@@ -31,7 +29,6 @@ export default function ReplyCommentWrite(props: any) {
   );
 
   function onChangeReplyInput(event: any) {
-    // console.log('ㄴㄴ', event);
     const newInput = {
       ...inputReplyComment,
       [event.target.name]: event.target.value,
@@ -58,19 +55,15 @@ export default function ReplyCommentWrite(props: any) {
         ],
       });
       setInputReplyComment(onChangeContentsInput);
-      // console.log(inputReplyComment);
       alert('해당 답글 등록을 완료했습니다~~!!!~~!.');
     } catch (errors) {
       alert(errors.message);
     }
   }
-  0;
 
   //! ---- 답글 수정 ----
-  console.log('수정됐나? : ', data);
-  const onClickReplyCommentEdit = async () => {
-    // console.log('수정버튼 클릭');
 
+  const onClickReplyCommentEdit = async () => {
     try {
       await updateUseditemQuestionAnswerMutation({
         variables: {
@@ -98,6 +91,7 @@ export default function ReplyCommentWrite(props: any) {
   return (
     <ReplyCommentWriteUI
       isEdit={props.isEdit}
+      isNew={props.isNew}
       data={data}
       inputReplyComment={inputReplyComment}
       onClickReply={onClickReply}

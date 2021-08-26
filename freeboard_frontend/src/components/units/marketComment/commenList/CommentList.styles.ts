@@ -28,6 +28,7 @@ export const CommentListBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-right: 14px;
 `;
 export const CommentListLeft = styled.div`
   padding-right: 16px;
@@ -73,11 +74,12 @@ export const CommentListRightIcons = styled.div`
   width: 75px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 10px;
 `;
 export const CommentRightIcons = styled.img`
   width: 15px;
   height: 15px;
   cursor: pointer;
+  margin-left: 16px;
 `;

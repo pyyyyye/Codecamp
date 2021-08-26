@@ -32,9 +32,10 @@ export default function MarketPage(props) {
 
 export const getServerSideProps = async (context) => {
   const result = await request(
-    "http://backend02.codebootcamp.co.kr/graphql",
+    // 백엔드에서 받은 부분
+    "https://backend02.codebootcamp.co.kr/graphql",
     FETCH_USEDITEM,
-    { useditemId: useContext.query.useditemId }
+    { useditemId: context.query.useditemId }
   );
 
   return { props: { fetchUseditem: result.fetchUseditem } };

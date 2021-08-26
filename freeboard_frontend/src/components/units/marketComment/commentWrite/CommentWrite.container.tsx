@@ -13,11 +13,8 @@ export const onChangeContentsInput = {
   contents: '',
 };
 
-export default function CommentWrite(props) {
+export default function CommentWrite(props: any) {
   const router = useRouter();
-  const { data } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
-    variables: { useditemId: router.query.detailpages },
-  });
   const [updateUseditemQuestionMutation] = useMutation(
     UPDATE_USED_ITEM_QUESTION
   );
@@ -38,7 +35,7 @@ export default function CommentWrite(props) {
 
   //! ---- 댓글 등록 ----
   async function onClick() {
-    console.log(inputComment);
+    // console.log(inputComment);
     try {
       await createUseditemQuestionMutation({
         variables: {
@@ -65,14 +62,13 @@ export default function CommentWrite(props) {
 
   //! ---- 댓글 수정 ----
   const onClickCommentEdit = async () => {
-    // console.log(inputComment);
     try {
       await updateUseditemQuestionMutation({
         variables: {
           updateUseditemQuestionInput: {
             ...inputComment,
           },
-          useditemQuestionId: props.id,
+          useditemQuestionId: props.ondata._id,
         },
         refetchQueries: [
           {
@@ -94,7 +90,7 @@ export default function CommentWrite(props) {
   return (
     <CommentWriteUI
       isEdit={props.isEdit}
-      data={data}
+      ondata={props.ondata}
       inputComment={inputComment}
       onClick={onClick}
       onChangeInput={onChangeInput}

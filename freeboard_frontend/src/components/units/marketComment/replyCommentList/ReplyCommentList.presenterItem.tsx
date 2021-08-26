@@ -19,38 +19,59 @@ import {
 } from './ReplyCommentList.queries';
 import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container';
 import { useMutation } from '@apollo/client';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { getDate } from '../../../../commons/libraries/utils';
+import { GlobalContext } from '../../../../../pages/_app';
 
 export default function ReplyCommentListUIItem(props: any) {
-  console.log('이거 어딨냐고  : ', props.data);
   const [isEdit, setIsEdit] = useState(false);
+  const [isNew, setIsNew] = useState(false);
+  const { userInfo } = useContext(GlobalContext);
   const [deleteUseditemQuestionAnswerMutation] = useMutation(
     DELETE_USED_ITEM_QUESTION_ANSWER
   );
-  const router = useRouter();
+  console.log('유저인포.네임 :', userInfo);
+  console.log('useditemQuestionId : ', props.useditemQuestionId);
 
   const onClickReplyEdit = () => {
     setIsEdit(true);
   };
+  // const onClickReplyNew = () => {
+  //   setIsNew(true);
+  // };
 
-  const onClickReplyCommentDelete = (replycommentDeleteId: any) => async () => {
+  const onClickReplyCommentDelete = async () => {
     try {
       await deleteUseditemQuestionAnswerMutation({
         variables: {
-          useditemQuestionAnswerId: replycommentDeleteId,
+          useditemQuestionAnswerId: props.data._id,
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM_QUESTION_ANSWERS,
             variables: {
-              useditemQuestionId: router.query.detailpages,
+              useditemQuestionId: props.useditemQuestionId,
             },
           },
         ],
+        // update(cache, { data }) {
+        //   cache.modify({
+        //     fields: {
+        //       fetchUseditemQuestionAnswersMutation: (prev, { readField }) => {
+        //         const newPrev = prev.filter((prevData: any) => {
+        //           return (
+        //             readField('_id', prevData) !==
+        //             data.deleteUseditemQuestionAnswerMutation
+        //           );
+        //         });
+        //         return [...newPrev];
+        //       },
+        //     },
+        //   });
+        // },
       });
-      console.log('답글 삭제');
+
+      console.log('답글 리스트 데이터 :', props.fetchData);
       alert('해당 답글을 삭제합니다.');
     } catch (error) {
       alert(error.message);
@@ -82,15 +103,25 @@ export default function ReplyCommentListUIItem(props: any) {
             </ReplyCommentListMiddle>
 
             <ReplyCommentListRightIcons>
-              <ReplyCommentRightIcons src="/images/icon_reply.png" />
-              <ReplyCommentRightIcons
-                onClick={onClickReplyEdit}
-                src="/images/icon_edit.png"
-              />
-              <ReplyCommentRightIcons
-                onClick={onClickReplyCommentDelete}
-                src="/images/icon_delete.png"
-              />
+              {props.data.user.name !== userInfo.name ? (
+                !isNew && (
+                  <ReplyCommentRightIcons
+                    // onClick={onClickReplyNew}
+                    src="/images/icon_reply.png"
+                  />
+                )
+              ) : (
+                <>
+                  <ReplyCommentRightIcons
+                    onClick={onClickReplyEdit}
+                    src="/images/icon_edit.png"
+                  />
+                  <ReplyCommentRightIcons
+                    onClick={onClickReplyCommentDelete}
+                    src="/images/icon_delete.png"
+                  />
+                </>
+              )}
             </ReplyCommentListRightIcons>
           </ReplyCommentListUp>
         </ReplyCommentListBox>
@@ -99,6 +130,7 @@ export default function ReplyCommentListUIItem(props: any) {
       {isEdit && (
         <ReplyCommentWrite
           isEdit={isEdit}
+          // isNew={isNew}
           data={props.data}
           setIsEdit={setIsEdit}
         />

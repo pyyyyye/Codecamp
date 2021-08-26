@@ -6,7 +6,6 @@ export const FETCH_USED_ITEM_QUESTION_ANSWERS = gql`
     fetchUseditemQuestionAnswers(useditemQuestionId: $useditemQuestionId) {
       _id
       contents
-
       user {
         name
         createdAt

@@ -1,6 +1,6 @@
 import { gql, useMutation, useQuery } from '@apollo/client';
 import { Modal } from 'antd';
-import { CREATE_BOARD } from '../../src/components/units/board/write/BoardWrite.queries';
+// import { CREATE_BOARD } from '../../src/components/units/board/write/BoardWritse.queries';
 
 const FETCH_BOARDS = gql`
   query fetchBoards {
@@ -40,7 +40,7 @@ export default function ApolloCacheStatePage() {
               // 어떤 필드의 캐시를 수정할거냐
               fetchBoards: (prev, { readField }) => {
                 // 이 api캐시 수정한다
-                const newPrev = prev.filter((prevData) => {
+                const newPrev = prev.filter((prevData: any) => {
                   return readField('_id', prevData) !== data.deleteBoard;
                 }); // 필드 읽어내라 (이전 데이터들 중에 '아이디') !== 삭제한 데이터의 아이디 빼고
                 // 기존 것들 중 필터링해서 빼버려라 => id를 ! !== 삭제 ㅇ안된 아이디!
@@ -64,7 +64,7 @@ export default function ApolloCacheStatePage() {
 
   return (
     <>
-      {data?.fetchBoards.map((data) => (
+      {data?.fetchBoards.map((data: any) => (
         <div key={data._id}>
           <span style={{ padding: '30px' }}>{data.writer}</span>
           <span style={{ padding: '30px' }}>{data.title}</span>
