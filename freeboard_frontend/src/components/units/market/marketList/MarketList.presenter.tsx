@@ -118,7 +118,7 @@ export default function MarketListUI(props: any) {
                       </SellerBox>
                       <LikeBox>
                         <Like src="/images/icon_like_2.png" />
-                        <LikeCount>58</LikeCount>
+                        <LikeCount>{data.pickedCount}</LikeCount>
                       </LikeBox>
                     </BottomPrevInfo>
                   </LeftInfo>

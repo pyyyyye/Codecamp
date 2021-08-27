@@ -32,6 +32,7 @@ import {
   ButtonBox,
 } from './MarketDetail.styles';
 import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
+import ToggleHeart from '../../../commons/toggle/ToggleHeart.container';
 
 export default function MarketDetailUI(props: any) {
   return (
@@ -61,10 +62,11 @@ export default function MarketDetailUI(props: any) {
                 <Title2>{props.data?.fetchUseditem.name} </Title2>
                 <Price>{props.data?.fetchUseditem.price}</Price>
               </InfoTopLeft>
-              <InfoTopRight>
+              <ToggleHeart />
+              {/* <InfoTopRight>
                 <LikeBtn src="/images/icon_like_2.png" />
                 <LikeCount>20</LikeCount>
-              </InfoTopRight>
+              </InfoTopRight> */}
             </InfoTop>
 
             {/* // ! ---- images ---- */}
