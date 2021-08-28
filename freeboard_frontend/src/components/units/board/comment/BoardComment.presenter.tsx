@@ -19,9 +19,9 @@ import {
   CommentDate,
   Rate1,
   Rate2,
-  // CommentToEdit,
+  CommentToEdit,
   // Button_Edit,
-  // Button_delete,
+  Button_delete,
 } from './BoardComment.styles';
 import { getDate } from '../../../../commons/libraries/utils';
 
@@ -64,19 +64,18 @@ export default function BoardCommentUI(props: any) {
       <CommentList>
         {props.data?.fetchBoardComments.map((data: any) => (
           <CommentListUp key={data._id}>
-            <CommentListLeft></CommentListLeft>
+            <CommentListLeft src="/images/WriterProfileImg.png" />
             <CommentListRight>
               <CommentListTop>
                 <WriterName>
                   {data.writer}
                   <Rate2 value={data.rating} disabled></Rate2>
                 </WriterName>
-                {/* 
+
                 <CommentToEdit>
-                  <Button_Edit></Button_Edit>
-                <Button_delete></Button_delete>
+                  {/*<Button_Edit></Button_Edit>*/}
+                  <Button_delete></Button_delete>
                 </CommentToEdit>
-                 */}
               </CommentListTop>
               <CommentNote>{data.contents}</CommentNote>
               <CommentDate>{getDate(data.createdAt)}</CommentDate>

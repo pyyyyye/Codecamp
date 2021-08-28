@@ -32,7 +32,6 @@ import {
   ButtonBox,
 } from './MarketDetail.styles';
 import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
-import ToggleHeart from '../../../commons/toggle/ToggleHeart.container';
 
 export default function MarketDetailUI(props: any) {
   return (
@@ -62,16 +61,18 @@ export default function MarketDetailUI(props: any) {
                 <Title2>{props.data?.fetchUseditem.name} </Title2>
                 <Price>{props.data?.fetchUseditem.price}</Price>
               </InfoTopLeft>
-              <ToggleHeart />
-              {/* <InfoTopRight>
-                <LikeBtn src="/images/icon_like_2.png" />
-                <LikeCount>20</LikeCount>
-              </InfoTopRight> */}
+              <InfoTopRight>
+                <LikeBtn
+                  src="/images/icon_like_2.png"
+                  onClick={props.onClickToggle}
+                />
+                <LikeCount>{props.data?.fetchUseditem.pickedCount}</LikeCount>
+              </InfoTopRight>
             </InfoTop>
 
             {/* // ! ---- images ---- */}
             <InfoMiddle>
-              {props.data?.fetchUseditem.images.map((data) => (
+              {props.data?.fetchUseditem.images.map((data: any) => (
                 <MainImage
                   key={data}
                   src={`https://storage.googleapis.com/${data}`}
@@ -106,6 +107,7 @@ export default function MarketDetailUI(props: any) {
         <BottomBtn>
           <ButtonBox onClick={props.onClickMoveToList}>목록으로</ButtonBox>
           <ButtonBox>수정하기</ButtonBox>
+          <ButtonBox onClick={props.onClickDelete}>삭제하기</ButtonBox>
         </BottomBtn>
       </Contents>
     </Wrapper>
