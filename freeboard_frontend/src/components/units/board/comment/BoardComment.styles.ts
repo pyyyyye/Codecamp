@@ -77,23 +77,22 @@ export const CommentListUp = styled.div`
   border-bottom: 1px solid #bdbdbd;
   display: flex;
 `;
-export const CommentListLeft = styled.div`
+export const CommentListLeft = styled.img`
   width: 40px;
   height: 40px;
-  background-image: url('/WriterProfileImg.png');
   background-size: 100%;
   margin-right: 16px;
 `;
 export const CommentListRight = styled.div`
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 `;
 export const CommentListTop = styled.div`
   width: 100%;
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const WriterName = styled.div`
@@ -111,19 +110,25 @@ export const Rate2 = styled(Rate)`
 
 export const CommentToEdit = styled.div`
   width: 50px;
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  justify-content: flex-end;
 `;
 // export const Button_Edit = styled.div`
 //   width: 15px;
 //   height: 15px;
 //   background-image: url('/icon_post.png');
 // `;
-// export const Button_delete = styled.div`
-//   width: 15px;
-//   height: 15px;
-//   background-image: url('/icon_delete.png');
-// `;
+export const Button_delete = styled.div`
+  width: 15px;
+  height: 15px;
+  background-image: url('/images/icon_delete.png');
+  cursor: pointer;
+  background-repeat: no-repeat;
+
+  :hover {
+    background-image: url('/images/icon_delete_black.png');
+  }
+`;
 
 export const CommentNote = styled.div`
   color: #4f4f4f;

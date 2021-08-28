@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   font-weight: 500;
   position: sticky;
   top: 50px;
+  z-index: 500;
 `;
 export const NaviWrap = styled.div`
   width: 380px;

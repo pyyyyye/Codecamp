@@ -96,7 +96,7 @@
 // export default MyApp;
 // -------- pagination.presenter.tsx ----------
 import { MouseEvent } from 'react';
-import { Page } from './pagination01.styles';
+import { PaginationWrap, Page } from './pagination01.styles';
 
 interface IPaginations01UIProps {
   startPage: number;
@@ -107,11 +107,12 @@ interface IPaginations01UIProps {
 
 export default function Pagination01_UI(props: IPaginations01UIProps) {
   return (
-    <div>
-      <Page onClick={props.onClickPrevPage}>{`<`}</Page>
+    <PaginationWrap>
+      <Page onClick={props.onClickPrevPage} src="/images/icon_prev.png" />
       {new Array(10).fill(1).map((_, index) => {
         const currentPage = props.startPage + index;
       })}
-    </div>
+      <Page onClick={props.onClickNextPage} src="/images/icon_next.png" />
+    </PaginationWrap>
   );
 }

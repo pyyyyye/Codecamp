@@ -170,6 +170,11 @@ export const Categorize = styled.div`
   border-bottom: 1px solid lightgray;
   display: flex;
   justify-content: space-between;
+
+  :hover:not(:nth-of-type(1)) {
+    background-color: #ffdd00;
+    cursor: pointer;
+  }
 `;
 export const CategorizeTop = styled.div`
   width: 150px;
@@ -202,4 +207,7 @@ export const UploadButton = styled.button`
   font-size: 16px;
   margin-top: -22px;
   cursor: pointer;
+  :hover {
+    background-color: #ffdd00;
+  }
 `;

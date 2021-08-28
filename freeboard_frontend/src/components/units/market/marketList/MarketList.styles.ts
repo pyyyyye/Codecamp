@@ -128,6 +128,22 @@ export const List = styled.div`
   justify-content: space-between;
   /* border-top: 1px solid #bdbdbd; */
   border-bottom: 1px solid #bdbdbd;
+
+  /* nth 자손선택- 되도록 분류같은 경우만 사용 
+  :hover:not(:nth-of-type(1)) {
+    background-color: lemonchiffon;
+  } */
+  :hover {
+    background-color: #fffef7;
+  }
+
+  :hover #name {
+    color: #ffd600;
+  }
+
+  :hover .priceHover {
+    border-bottom: 3px solid #000;
+  }
 `;
 
 // --- LEFT Product IMG Start ---
@@ -231,7 +247,7 @@ export const PriceIcon = styled.img`
   height: 18px;
 `;
 export const Price = styled.div`
-  padding-left: 11px;
+  margin-left: 11px;
   font-size: 24px;
   line-height: 35.52px;
   font-weight: 700;

@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   position: sticky;
   top: 0;
+  z-index: 500;
 `;
 
 export const HeaderWrap = styled.div`

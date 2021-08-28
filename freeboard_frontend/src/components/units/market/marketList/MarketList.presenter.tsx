@@ -106,7 +106,7 @@ export default function MarketListUI(props: any) {
                 <ProductPrevInfo>
                   <LeftInfo>
                     <TopPrevInfo>
-                      <ProductName>{data.name}</ProductName>
+                      <ProductName id="name">{data.name}</ProductName>
                       <ProductRemarks>{data.remarks}</ProductRemarks>
                       <ProductTags>{data.tags}</ProductTags>
                     </TopPrevInfo>
@@ -118,14 +118,14 @@ export default function MarketListUI(props: any) {
                       </SellerBox>
                       <LikeBox>
                         <Like src="/images/icon_like_2.png" />
-                        <LikeCount>58</LikeCount>
+                        <LikeCount>{data.pickedCount}</LikeCount>
                       </LikeBox>
                     </BottomPrevInfo>
                   </LeftInfo>
 
                   <ProductPrice>
                     <PriceIcon src="/images/icon_Euro.png" />
-                    <Price>{data.price}</Price>
+                    <Price className="priceHover">{data.price}</Price>
                   </ProductPrice>
                 </ProductPrevInfo>
               </List>
