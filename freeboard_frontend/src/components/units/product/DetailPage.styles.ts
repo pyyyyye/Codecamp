@@ -27,10 +27,9 @@ export const TopContentsWriter = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const WriterProfileImg = styled.div`
+export const WriterProfileImg = styled.img`
   width: 48px;
   height: 48px;
-  background-image: url('/WriterProfileImg.png');
 `;
 export const WriterInfo = styled.div`
   width: 880px;
@@ -41,7 +40,6 @@ export const Name = styled.h2`
   font-size: 22px;
   font-weight: 500;
   line-height: 25px;
-  /* border: 1px solid black; */
   margin: 0;
 `;
 export const Date = styled.p`
@@ -124,6 +122,7 @@ export const RecomCount = styled.p`
   font-weight: 400;
   margin: 0 auto;
   color: #ffd600;
+  cursor: pointer;
 `;
 export const DecomImage = styled.img`
   width: 22px;
@@ -136,6 +135,7 @@ export const DecomCount = styled.p`
   font-weight: 400;
   margin: 0 auto;
   color: black;
+  cursor: pointer;
 `;
 
 //--- EtcContents Start ----

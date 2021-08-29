@@ -21,6 +21,11 @@ const FETCH_BOARDS = gql`
 const Column = styled.span`
   padding: 0px 40px;
 `;
+
+const ColumnBox = styled.span`
+  padding: 0px 40px;
+  border: 1px solid red;
+`;
 const Page = styled.span`
   padding: 0px 10px;
 `;
@@ -65,7 +70,7 @@ export default function SearchPage() {
       {data?.fetchBoards.map((data) => (
         <div key={data._id}>
           <Column>{data.writer}</Column>
-          <Column>
+          <ColumnBox>
             {data.title
               .replaceAll(keyword, `@#$%${keyword}@#$%`)
               .split('@#$%')
@@ -74,7 +79,7 @@ export default function SearchPage() {
                   {data}
                 </Word>
               ))}
-          </Column>
+          </ColumnBox>
           <Column>{data.createdAt}</Column>
         </div>
       ))}

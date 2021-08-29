@@ -23,7 +23,7 @@ import {
   SearchDateBox,
   SearchButtonBox,
   SearchIcon,
-  SearchText,
+  SearchInput,
   PostListsBox,
   Categorize,
   CategorizeTop,
@@ -33,7 +33,7 @@ import {
 } from './BestList.styles';
 import { getDate } from '../../../../commons/libraries/utils';
 
-export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
+export default function ListPageUI(props: any) {
   return (
     <>
       <BestListWrapper>
@@ -41,13 +41,13 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
           <BestPostsTitle>베스트 게시글</BestPostsTitle>
           {/* //!▶▶▶▶▶▶  BestListTop  Start ◀◀◀◀◀!// */}
           <BestPostsBox>
-            {new Array(4).fill(1).map(() => (
+            {props.bestData?.fetchBoardsOfTheBest.map((data) => (
               <BestPosts>
                 <BestPostsPhoto
                   src="/images/BestPostsPhoto_01.png"
                   alt="베스트게시글 대표사진_01"
                 />
-                <TitleInBestPosts>게시물 제목입니다.</TitleInBestPosts>
+                <TitleInBestPosts>{data?.title}</TitleInBestPosts>
                 <BestPostsInfo>
                   <PostsInfo_Left>
                     <WriterInfo>
@@ -55,29 +55,33 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
                         src="/images/WriterProfileImg.png"
                         alt="작가 프로필사진 "
                       />
-                      <WriterName>호두</WriterName>
+                      <WriterName>{data?.writer}</WriterName>
                     </WriterInfo>
-                    <PostDate>Date : 2020.02.18</PostDate>
+                    <PostDate>{getDate(data?.createdAt)}</PostDate>
                   </PostsInfo_Left>
                   <PostsInfo_Right>
-                    <RecomImage src="/images/like.png" alt="추천 아이콘" />
-                    <RecomCount>296</RecomCount>
+                    <RecomImage src="/images/icon_like.png" alt="추천 아이콘" />
+                    <RecomCount>{data?.likeCount}</RecomCount>
                   </PostsInfo_Right>
                 </BestPostsInfo>
               </BestPosts>
             ))}
           </BestPostsBox>
         </BestListTop>
-        {/* //!▶▶▶▶▶▶  Search Start  ◀◀◀◀◀!// */}
+
+        {/* //!▶▶▶▶▶▶ Search Start ◀◀◀◀◀!// */}
         <BestListBottom>
           <BestListBottomSearch>
             <SearchBox>
               <SearchIcon src="/images/icon_search.png" alt="검색 아이콘" />
-              <SearchText>제목을 검색해 주세요.</SearchText>
+              <SearchInput type="text" placeholder="제목을 검색해주세요." />
             </SearchBox>
             <SearchDateBox>YYYY.MM.DD ~ YYYY.MM.DD</SearchDateBox>
-            <SearchButtonBox>검색하기</SearchButtonBox>
+            <SearchButtonBox onClick={props.onClickSearch}>
+              검색하기
+            </SearchButtonBox>
           </BestListBottomSearch>
+
           {/* //!▶▶▶▶▶  list Start  ◀◀◀◀◀!// */}
           <PostListsBox>
             <Categorize>
@@ -87,10 +91,10 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
               <CategorizeTop aaa={true}>작성일</CategorizeTop>
             </Categorize>
 
-            {data?.fetchBoards.map((data, index) => (
+            {props.data?.fetchBoards.map((data, index) => (
               <Categorize key={data._id}>
                 <CategorizeTop>{index + 1}</CategorizeTop>
-                <CategorizeTopTitle id={data?._id} onClick={onClickTitle}>
+                <CategorizeTopTitle id={data?._id} onClick={props.onClickTitle}>
                   {data.title}
                 </CategorizeTopTitle>
                 <CategorizeTop>{data.writer}</CategorizeTop>
@@ -101,8 +105,16 @@ export default function ListPageUI({ onClickTitle, onClickUpload, data }) {
 
           {/* //!▶▶▶▶▶  ListFooter Start  ◀◀◀◀◀// */}
           <ListFooter>
-            <Pagination01 />
-            <UploadButton id={data?._id} onClick={onClickUpload}>
+            <Pagination01
+              // key={props.data._id}
+              id={props.data}
+              data={props.data}
+              count={props.count}
+              refetch={props.refetch}
+              startPage={props.startPage}
+              setStartPage={props.setStartPage}
+            />
+            <UploadButton id={props.data?._id} onClick={props.onClickUpload}>
               게시물 등록하기
             </UploadButton>
           </ListFooter>
