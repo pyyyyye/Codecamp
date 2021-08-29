@@ -39,6 +39,7 @@ export const BestPosts = styled.div`
   padding-top: 0px;
   cursor: pointer;
 `;
+
 export const BestPostsPhoto = styled.img``;
 export const TitleInBestPosts = styled.div`
   width: 100%;
@@ -120,7 +121,7 @@ export const SearchBox = styled.div`
   background-color: #f2f2f2;
   display: flex;
   justify-content: left;
-  padding: 18px;
+  /* padding: 18px; */
   cursor: pointer;
 `;
 export const SearchIcon = styled.img`
@@ -128,11 +129,17 @@ export const SearchIcon = styled.img`
   height: 18px;
   margin-left: 1px;
   margin-right: 12px;
+  /* padding-left: 5px; */
+  margin: 18px;
 `;
-export const SearchText = styled.div`
-  /* line-height: 50px; */
+export const SearchInput = styled.input`
+  width: 700px;
+  height: 52px;
   font-size: 16px;
   line-height: 18px;
+  outline: none;
+  background: none;
+  border: none;
 `;
 
 export const SearchDateBox = styled.div`
@@ -155,6 +162,10 @@ export const SearchButtonBox = styled.button`
   font-size: 16px;
   border: 0px;
   cursor: pointer;
+  :hover {
+    background: #ffbb00;
+    color: #000;
+  }
 `;
 
 //!▶▶▶▶▶  List Start  ◀◀◀◀◀!//

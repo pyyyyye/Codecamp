@@ -36,20 +36,19 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
       <PostContents>
         {/*----- TopContentsWriter Start -----*/}
         <TopContentsWriter>
-          <WriterProfileImg></WriterProfileImg>
+          <WriterProfileImg src="/images/WriterProfileImg_2.png" />
           <WriterInfo>
             <Name>{props.data?.fetchBoard.writer}</Name>
             <Date>{getDate(props.data?.fetchBoard.createdAt)}</Date>
           </WriterInfo>
           <WriterIcon>
             {/*---- 우측 픽토그램 ---*/}
-            <LinkIcon src="/icon_link.png" />
-            {/* <MapIcon src="/link2.png" /> */}
+            <LinkIcon src="/images/icon_link.png" />
             <Tooltip
               placement="top"
               title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
             >
-              <MapIcon src="/icon_location.png" alt="작성자 주소" />
+              <MapIcon src="/images/icon_location.png" alt="작성자 주소" />
             </Tooltip>
           </WriterIcon>
         </TopContentsWriter>
@@ -76,12 +75,12 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
         {/*//!--- BottomContentsRecommend 좋아요 싫어요 Start --- */}
         <BottomContentsRecommend>
           <Recommendations>
-            <RecomImage src="/icon_like.png" />
-            <RecomCount>1920</RecomCount>
+            <RecomImage src="\images\icon_like.png" />
+            <RecomCount>{props.data?.fetchBoard.likeCount}</RecomCount>
           </Recommendations>
           <Recommendations>
-            <DecomImage src="/icon_disLike.png" />
-            <DecomCount>1920</DecomCount>
+            <DecomImage src="\images/icon_disLike.png" />
+            <DecomCount>{props.data?.fetchBoard.dislikeCount}</DecomCount>
           </Recommendations>
         </BottomContentsRecommend>
       </PostContents>

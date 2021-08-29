@@ -95,24 +95,37 @@
 // }
 // export default MyApp;
 // -------- pagination.presenter.tsx ----------
+
 import { MouseEvent } from 'react';
-import { PaginationWrap, Page } from './pagination01.styles';
+import { PaginationWrap, Page, PageBtn } from './pagination01.styles';
 
 interface IPaginations01UIProps {
   startPage: number;
+  lastPage: number;
   onClickPage: (event: MouseEvent<HTMLSpanElement>) => void;
   onClickPrevPage: () => void;
   onClickNextPage: () => void;
+  data: any;
 }
 
 export default function Pagination01_UI(props: IPaginations01UIProps) {
   return (
     <PaginationWrap>
       <Page onClick={props.onClickPrevPage} src="/images/icon_prev.png" />
-      {new Array(10).fill(1).map((_, index) => {
-        const currentPage = props.startPage + index;
-      })}
+      {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(
+        (data, index) =>
+          props.startPage + index <= props.lastPage && (
+            <PageBtn
+              key={props.startPage + index}
+              onClick={props.onClickPage}
+              id={props.startPage + index}
+            >
+              {props.startPage + index}
+            </PageBtn>
+          )
+      )}
       <Page onClick={props.onClickNextPage} src="/images/icon_next.png" />
     </PaginationWrap>
   );
 }
+//const currentPage = props.startPage + index <= props.lastPage && (

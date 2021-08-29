@@ -26,7 +26,7 @@ export default function PaginationPage() {
     variables: { aaa: 1 },
     // aaa에 대해 fetchboards실행됨
   });
-  // refech =>함수. 저거 실행하면 언제든지 refetch가능
+  // refetch =>함수. 저거 실행하면 언제든지 refetch가능
   function onClickPage(event) {
     refetch({ aaa: Number(event.target.id) });
     // ----- refetch 실행 가능하도록 기능 넣음.
