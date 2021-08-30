@@ -74,7 +74,11 @@ export default function ListPageUI(props: any) {
           <BestListBottomSearch>
             <SearchBox>
               <SearchIcon src="/images/icon_search.png" alt="검색 아이콘" />
-              <SearchInput type="text" placeholder="제목을 검색해주세요." />
+              <SearchInput
+                type="text"
+                onChange={props.onChangeSearch}
+                placeholder="제목을 검색해주세요."
+              />
             </SearchBox>
             <SearchDateBox>YYYY.MM.DD ~ YYYY.MM.DD</SearchDateBox>
             <SearchButtonBox onClick={props.onClickSearch}>
