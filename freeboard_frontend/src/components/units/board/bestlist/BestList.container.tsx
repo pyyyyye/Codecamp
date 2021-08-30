@@ -24,7 +24,6 @@ export default function ListPage() {
     console.log(event.target);
     router.push(`/board/detail/${event.target.id}`);
   }
-
   function onClickUpload(event) {
     router.push(`/board/new/${event.target.id}`);
   }
