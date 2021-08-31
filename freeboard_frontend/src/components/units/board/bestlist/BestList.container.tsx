@@ -19,7 +19,7 @@ export default function ListPage() {
     variables: { page: startPage },
   });
   const { data: bestData } = useQuery(FETCH_BOARDS_OF_THE_BEST);
-  const { data: count } = useQuery<IQuery>(FETCH_BOARDS_COUNT);
+  const { data: count } = useQuery(FETCH_BOARDS_COUNT);
   function onClickTitle(event) {
     console.log(event.target);
     router.push(`/board/detail/${event.target.id}`);
