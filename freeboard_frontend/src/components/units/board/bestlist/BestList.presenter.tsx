@@ -18,12 +18,6 @@ import {
   RecomImage,
   RecomCount,
   BestListBottom,
-  BestListBottomSearch,
-  SearchBox,
-  SearchDateBox,
-  SearchButtonBox,
-  SearchIcon,
-  SearchInput,
   PostListsBox,
   Categorize,
   CategorizeTop,
@@ -32,6 +26,7 @@ import {
   UploadButton,
 } from './BestList.styles';
 import { getDate } from '../../../../commons/libraries/utils';
+import SearchOfFreeboard from '../../../commons/searchOfFreeboard/searchOfFreeboard';
 
 export default function ListPageUI(props: any) {
   return (
@@ -71,20 +66,13 @@ export default function ListPageUI(props: any) {
 
         {/* //!▶▶▶▶▶▶ Search Start ◀◀◀◀◀!// */}
         <BestListBottom>
-          <BestListBottomSearch>
-            <SearchBox>
-              <SearchIcon src="/images/icon_search.png" alt="검색 아이콘" />
-              <SearchInput
-                type="text"
-                onChange={props.onChangeSearch}
-                placeholder="제목을 검색해주세요."
-              />
-            </SearchBox>
-            <SearchDateBox>YYYY.MM.DD ~ YYYY.MM.DD</SearchDateBox>
-            <SearchButtonBox onClick={props.onClickSearch}>
-              검색하기
-            </SearchButtonBox>
-          </BestListBottomSearch>
+          <SearchOfFreeboard
+            data={props.data}
+            refetch={props.refetch}
+            setKeyword={props.setKeyword}
+            search={props.search}
+            setSearch={props.setSearch}
+          />
 
           {/* //!▶▶▶▶▶  list Start  ◀◀◀◀◀!// */}
           <PostListsBox>
@@ -99,7 +87,7 @@ export default function ListPageUI(props: any) {
               <Categorize key={data._id}>
                 <CategorizeTop>{index + 1}</CategorizeTop>
                 <CategorizeTopTitle id={data?._id} onClick={props.onClickTitle}>
-                  {data.title}
+                  {data.title.replaceAll()}
                 </CategorizeTopTitle>
                 <CategorizeTop>{data.writer}</CategorizeTop>
                 <CategorizeTop>{getDate(data.createdAt)}</CategorizeTop>
@@ -111,10 +99,13 @@ export default function ListPageUI(props: any) {
           <ListFooter>
             <Pagination01
               // key={props.data._id}
+              search={props.search}
+              setSearch={props.setSearch}
               id={props.data}
               data={props.data}
               count={props.count}
               refetch={props.refetch}
+              keyword={props.keyword}
               startPage={props.startPage}
               setStartPage={props.setStartPage}
             />

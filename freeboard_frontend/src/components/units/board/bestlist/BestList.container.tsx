@@ -7,33 +7,25 @@ import {
   FETCH_BOARDS_COUNT,
 } from './BestList.queries';
 import { useRouter } from 'next/router';
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 
 export default function ListPage() {
   const router = useRouter();
   const [startPage, setStartPage] = useState(1);
-  const [search, setSearch] = useState('');
   const [keyword, setKeyword] = useState('');
+  const [search, setSearch] = useState('');
 
   const { data, refetch } = useQuery(FETCH_BOARDS, {
     variables: { page: startPage },
   });
   const { data: bestData } = useQuery(FETCH_BOARDS_OF_THE_BEST);
   const { data: count } = useQuery(FETCH_BOARDS_COUNT);
-  function onClickTitle(event) {
+  function onClickTitle(event: any) {
     console.log(event.target);
     router.push(`/board/detail/${event.target.id}`);
   }
-  function onClickUpload(event) {
+  function onClickUpload(event: any) {
     router.push(`/board/new/${event.target.id}`);
-  }
-
-  function onChangeSearch(event: ChangeEvent<HTMLInputElement>) {
-    setSearch(event.target.value);
-  }
-  function onClickSearch() {
-    refetch({ search: search });
-    setKeyword(search);
   }
 
   return (
@@ -47,8 +39,10 @@ export default function ListPage() {
       onClickTitle={onClickTitle}
       startPage={startPage}
       setStartPage={setStartPage}
-      onChangeSearch={onChangeSearch}
-      onClickSearch={onClickSearch}
+      keyword={keyword}
+      setKeyword={setKeyword}
+      search={search}
+      setSearch={setSearch}
     />
   );
 }

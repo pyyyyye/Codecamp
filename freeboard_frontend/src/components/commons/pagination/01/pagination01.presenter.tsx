@@ -98,6 +98,7 @@
 
 import { MouseEvent } from 'react';
 import { PaginationWrap, Page, PageBtn } from './pagination01.styles';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IPaginations01UIProps {
   startPage: number;
@@ -113,10 +114,11 @@ export default function Pagination01_UI(props: IPaginations01UIProps) {
     <PaginationWrap>
       <Page onClick={props.onClickPrevPage} src="/images/icon_prev.png" />
       {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(
-        (data, index) =>
+        (_, index) =>
           props.startPage + index <= props.lastPage && (
             <PageBtn
-              key={props.startPage + index}
+              key={uuidv4()}
+              // key={props.startPage + index}
               onClick={props.onClickPage}
               id={props.startPage + index}
             >
@@ -124,8 +126,11 @@ export default function Pagination01_UI(props: IPaginations01UIProps) {
             </PageBtn>
           )
       )}
-      <Page onClick={props.onClickNextPage} src="/images/icon_next.png" />
+      <Page
+        key={uuidv4()}
+        onClick={props.onClickNextPage}
+        src="/images/icon_next.png"
+      />
     </PaginationWrap>
   );
 }
-//const currentPage = props.startPage + index <= props.lastPage && (
