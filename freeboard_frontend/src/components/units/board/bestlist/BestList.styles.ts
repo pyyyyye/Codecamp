@@ -109,64 +109,6 @@ export const BestListBottom = styled.div`
   width: 100%;
   margin-top: 75px;
 `;
-export const BestListBottomSearch = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-export const SearchBox = styled.div`
-  width: 776px;
-  height: 52px;
-  border-radius: 10px;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: left;
-  /* padding: 18px; */
-  cursor: pointer;
-`;
-export const SearchIcon = styled.img`
-  width: 18px;
-  height: 18px;
-  margin-left: 1px;
-  margin-right: 12px;
-  /* padding-left: 5px; */
-  margin: 18px;
-`;
-export const SearchInput = styled.input`
-  width: 700px;
-  height: 52px;
-  font-size: 16px;
-  line-height: 18px;
-  outline: none;
-  background: none;
-  border: none;
-`;
-
-export const SearchDateBox = styled.div`
-  width: 244px;
-  height: 52px;
-  border: 1px solid lightgray;
-  color: lightgray;
-  line-height: 52px;
-  font-weight: 16px;
-  text-align: center;
-  cursor: pointer;
-`;
-export const SearchButtonBox = styled.button`
-  width: 94px;
-  height: 52px;
-  background-color: black;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  border: 0px;
-  cursor: pointer;
-  :hover {
-    background: #ffbb00;
-    color: #000;
-  }
-`;
 
 //!▶▶▶▶▶  List Start  ◀◀◀◀◀!//
 export const PostListsBox = styled.div`

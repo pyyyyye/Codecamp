@@ -7,7 +7,8 @@ interface IPagination01Props {
   startPage: number;
   setStartPage: any;
   refetch: any;
-  activePage: any;
+  activePage: number;
+  keyword: any;
 }
 
 export default function Pagination01(props: IPagination01Props) {
@@ -16,7 +17,11 @@ export default function Pagination01(props: IPagination01Props) {
   const lastPage = Math.ceil(Number(props.count?.fetchBoardsCount) / 10);
 
   function onClickPage(e: MouseEvent<HTMLSpanElement>) {
-    props.refetch({ page: Number(e.target.id) });
+    props.refetch({
+      // page: Number(e.target.id),
+      search: props.keyword,
+      page: Number((e.target as Element).id),
+    });
 
     const activePage = Number((e.target as Element).id);
     setActivePage(activePage);
