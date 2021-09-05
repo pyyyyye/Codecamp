@@ -73,7 +73,7 @@ export default function SearchOfFreeboard(props: any) {
         <SearchInput
           type="text"
           onChange={onChangeSearch}
-          placeholder="제목을 검색해주세요ㅋㅋㅋㅋ"
+          placeholder="제목을 검색해주세요."
         />
       </SearchBox>
       <SearchDateBox>YYYY.MM.DD ~ YYYY.MM.DD</SearchDateBox>
