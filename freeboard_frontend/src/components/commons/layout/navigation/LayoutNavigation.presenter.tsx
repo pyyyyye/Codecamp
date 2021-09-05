@@ -10,8 +10,8 @@ export default function LayoutNavigationUI(props: IProps) {
     <Wrapper>
       <NaviWrap>
         <NaviButton onClick={props.onClickFreeboard}>자유게시판</NaviButton>|
-        <NaviButton onClick={props.onClickMarket}>중고 마켓</NaviButton>|
-        <NaviButton>마이 페이지</NaviButton>
+        <NaviButton onClick={props.onClickMarket}>중고 마켓</NaviButton>
+        {/* <NaviButton>마이 페이지</NaviButton> */}
       </NaviWrap>
     </Wrapper>
   );

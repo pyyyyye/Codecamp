@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 50px;
   background-color: #abd0ce;
+
   font-size: 15px;
   font-weight: 700;
   color: #fff;
@@ -12,7 +13,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   font-weight: 500;
   position: sticky;
-  top: 50px;
+  top: 40px;
   z-index: 500;
 `;
 export const NaviWrap = styled.div`
@@ -22,8 +23,6 @@ export const NaviWrap = styled.div`
   flex-direction: row;
   justify-content: space-between;
   font-family: 'font_Pretendard-Regular';
-
-  /* margin: 0 auto; */
 `;
 export const NaviButton = styled.button`
   height: 24px;

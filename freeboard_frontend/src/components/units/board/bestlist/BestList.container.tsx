@@ -30,19 +30,21 @@ export default function ListPage() {
 
   return (
     //!-------------- props로 담는 부분
-    <ListPageUI
-      onClickUpload={onClickUpload}
-      data={data}
-      count={count}
-      bestData={bestData}
-      refetch={refetch}
-      onClickTitle={onClickTitle}
-      startPage={startPage}
-      setStartPage={setStartPage}
-      keyword={keyword}
-      setKeyword={setKeyword}
-      search={search}
-      setSearch={setSearch}
-    />
+    <>
+      <ListPageUI
+        onClickUpload={onClickUpload}
+        data={data}
+        count={count}
+        bestData={bestData}
+        refetch={refetch}
+        onClickTitle={onClickTitle}
+        startPage={startPage}
+        setStartPage={setStartPage}
+        keyword={keyword}
+        setKeyword={setKeyword}
+        search={search}
+        setSearch={setSearch}
+      />
+    </>
   );
 }

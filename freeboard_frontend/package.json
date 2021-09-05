@@ -33,6 +33,8 @@
     "react-infinite-scroller": "^1.2.4",
     "react-player": "^2.9.0",
     "react-quill": "^1.3.5",
+    "react-slick": "0.28.1",
+    "slick-carousel": "1.8.1",
     "typeorm": "^0.2.34",
     "uuid": "8.3.2",
     "yup": "^0.32.9"

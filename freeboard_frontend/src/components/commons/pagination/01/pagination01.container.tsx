@@ -35,7 +35,7 @@ export default function Pagination01(props: IPagination01Props) {
   }
   function onClickNextPage() {
     if (props.startPage + 10 > lastPage) return;
-    setActivePage(props.startPage + 10);
+    // setActivePage(props.startPage + 10);
     props.setStartPage((prev) => prev + 10);
   }
 
