@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const CREATE_USED_ITEM = gql`
   mutation createUseditem($createUseditemInput: CreateUseditemInput!) {
@@ -16,7 +16,7 @@ export const CREATE_USED_ITEM = gql`
       }
     }
   }
-`;
+`
 
 export const UPLOAD_FILE = gql`
   mutation uploadFile($file: Upload!) {
@@ -24,4 +24,4 @@ export const UPLOAD_FILE = gql`
       url
     }
   }
-`;
+`

@@ -21,9 +21,9 @@ import {
   Rate2,
   CommentToEdit,
   // Button_Edit,
-  Button_delete,
-} from './BoardComment.styles';
-import { getDate } from '../../../../commons/libraries/utils';
+  ButtonDelete
+} from './BoardComment.styles'
+import { getDate } from '../../../../commons/libraries/utils'
 
 // ! ----------- Rating -----------
 // const starScore = ['1', '2', '3', '4', '5'];
@@ -74,7 +74,7 @@ export default function BoardCommentUI(props: any) {
 
                 <CommentToEdit>
                   {/*<Button_Edit></Button_Edit>*/}
-                  <Button_delete></Button_delete>
+                  <ButtonDelete></ButtonDelete>
                 </CommentToEdit>
               </CommentListTop>
               <CommentNote>{data.contents}</CommentNote>
@@ -84,5 +84,5 @@ export default function BoardCommentUI(props: any) {
         ))}
       </CommentList>
     </BoardCommentWrapper>
-  );
+  )
 }

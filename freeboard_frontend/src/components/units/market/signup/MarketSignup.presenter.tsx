@@ -1,16 +1,15 @@
 // ======= 중고마켓 회원가입 | market signup presenter =======
 import {
-  Test,
   MainSignupContents,
   TopTitle,
   InputSignup,
   SingupLabel,
   InputBox,
   SignupError,
-  GoToSignup,
-} from './MarketSignup.styles';
+  GoToSignup
+} from './MarketSignup.styles'
 
-export default function MarketSignupUI(props) {
+export default function MarketSignupUI(props: any) {
   return (
     <>
       <TopTitle>회원가입</TopTitle>
@@ -60,5 +59,5 @@ export default function MarketSignupUI(props) {
         <GoToSignup onClick={props.onClickSignup}>회원가입하기</GoToSignup>
       </MainSignupContents>
     </>
-  );
+  )
 }

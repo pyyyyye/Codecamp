@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 const SideWrap = styled.div`
   width: 200px;
   height: 505px;
@@ -11,7 +11,7 @@ const SideWrap = styled.div`
   position: absolute;
   top: 177px;
   left: 1260px;
-`;
+`
 const SideTitle = styled.h1`
   font-size: 18px;
   font-weight: 700;
@@ -19,7 +19,7 @@ const SideTitle = styled.h1`
   text-align: center;
   padding-bottom: 20px;
   margin: 0px;
-`;
+`
 const Contents = styled.div`
   width: 100%;
   height: 418px;
@@ -38,7 +38,7 @@ const Contents = styled.div`
   ::-webkit-scrollbar-track {
     background-color: #f1f1f1;
   }
-`;
+`
 const SideBox = styled.div`
   width: 156px;
   height: 199px;
@@ -50,64 +50,64 @@ const SideBox = styled.div`
   align-items: center;
   border: 1px solid #ebebeb;
   border-right: none;
-`;
+`
 const ToggleBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-`;
+`
 const ToggleImg = styled.img`
   width: 15px;
   height: 13.76px;
-`;
+`
 const ToggleCount = styled.div`
   font-size: 12px;
   line-height: 17.76px;
   font-weight: 500;
   padding-left: 5px;
-`;
+`
 const SideProductImg = styled.img`
   width: 60px;
   height: 60px;
   background-color: lightgray;
   font-size: 10px;
-`;
+`
 const SideProductText = styled.div`
   width: 100%;
   padding-top: 12px;
-`;
+`
 const SideProductName = styled.div`
   font-size: 12px;
   line-height: 17.76px;
   font-weight: 500;
-`;
+`
 const SideProductRemarks = styled.div`
   font-size: 12px;
   font-weight: 400;
   color: #4f4f4f;
   line-height: 17.76px;
-`;
+`
 const SideProductPrice = styled.div`
   font-size: 16px;
   font-weight: 700;
   line-height: 23.68px;
   padding-top: 5px;
-`;
+`
 const SideProductTags = styled.div`
   font-size: 10px;
   font-weight: 500;
   line-height: 14.8px;
   color: #bdbdbd;
   padding-top: 8px;
-`;
+`
 
-export default function SideMenu(props) {
+export default function SideMenu(props: any) {
   return (
     <SideWrap>
       <SideTitle>오늘 본 상품</SideTitle>
       <Contents>
-        {props.aaa.map((data) => {
+        {props.aaa.map((data: any) => {
           // console.log(data);
           return (
             <SideBox key={data._id}>
@@ -126,9 +126,9 @@ export default function SideMenu(props) {
                 <SideProductTags>{data?.tags}</SideProductTags>
               </SideProductText>
             </SideBox>
-          );
+          )
         })}
       </Contents>
     </SideWrap>
-  );
+  )
 }

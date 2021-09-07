@@ -1,5 +1,5 @@
 //게시물 업로드 화면 queries
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const CREATE_BOARD = gql`
   mutation createBoard($createBoardInput: CreateBoardInput!) {
@@ -7,7 +7,7 @@ export const CREATE_BOARD = gql`
       _id
     }
   }
-`; //! ---------- CREATE_BOARD end ---------
+` //! ---------- CREATE_BOARD end ---------
 
 export const UPDATE_BOARD = gql`
   mutation updateBoard(
@@ -23,7 +23,7 @@ export const UPDATE_BOARD = gql`
       _id
     }
   }
-`; //! ---------- UPDATE_BOARD end ---------
+` //! ---------- UPDATE_BOARD end ---------
 
 export const UPLOAD_FILE = gql`
   mutation uploadFile($file: Upload!) {
@@ -31,4 +31,4 @@ export const UPLOAD_FILE = gql`
       url
     }
   }
-`; //! ---------- UPLOAD_FILE end ---------
+` //! ---------- UPLOAD_FILE end ---------

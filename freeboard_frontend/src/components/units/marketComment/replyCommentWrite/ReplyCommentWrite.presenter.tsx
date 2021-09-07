@@ -9,8 +9,8 @@ import {
   ReplyCommentUploadBottom,
   ReplyCommentInput,
   UploadButton,
-  CreateButton,
-} from './ReplyCommentWrite.styles';
+  CreateButton
+} from './ReplyCommentWrite.styles'
 
 export default function ReplyCommentWriteUI(props: any) {
   // console.log('답댓글 :', props.data);
@@ -44,5 +44,5 @@ export default function ReplyCommentWriteUI(props: any) {
         </ReplyCommentRight>
       </ReplyCommentUpload>
     </BoardReplyCommentWrapper>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 //댓글 등록, 수정, 목록 queries
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const BOARD_COMMENT = gql`
   mutation createBoardComment(
@@ -13,7 +13,7 @@ export const BOARD_COMMENT = gql`
       _id
     }
   }
-`;
+`
 
 export const FETCHBOARD_COMMENT_LIST = gql`
   query fetchBoardComments($boardId: ID!) {
@@ -25,10 +25,10 @@ export const FETCHBOARD_COMMENT_LIST = gql`
       createdAt
     }
   }
-`;
+`
 
 export const DELETE_BOARD_COMMENT = gql`
   mutation deleteBoardComment($password: String, $boardCommentId: ID!) {
     deleteBoardComment(boardCommentId: $boardCommentId)
   }
-`;
+`

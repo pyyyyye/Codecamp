@@ -1,4 +1,5 @@
 // ---------- 중고마켓 로그인 presenter.tsx -------------
+// @ts-nocheck
 import {
   Wrapper,
   LoginContents,
@@ -11,17 +12,19 @@ import {
   GotoLoginBox,
   BottomJoinOrFind,
   BottomBtn,
-  ErrorMessage,
-} from './MarketLogin.styles';
-import { CheckCircleOutlined } from '@ant-design/icons';
-import { ChangeEvent } from 'react';
+  ErrorMessage
+} from './MarketLogin.styles'
+import { CheckCircleOutlined } from '@ant-design/icons'
+import { ChangeEvent } from 'react'
 
 interface IProps {
-  onChangeEmail: (event: ChangeEvent<HTMLInputElement>) => void;
-  onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void;
-  // onClickLogin: () => void;
-  onClickGoToSignup: any;
-  register: any;
+  onChangeEmail: (event: ChangeEvent<HTMLInputElement>) => void
+  onChangePassword: (event: ChangeEvent<HTMLInputElement>) => void
+  onClickLogin: () => void
+  onClickGoToSignup: any
+  register: any
+  handleSubmit: () => void
+  // onSubmit: () => void;
 }
 
 export default function MarketLoginUI(props: IProps) {
@@ -66,5 +69,5 @@ export default function MarketLoginUI(props: IProps) {
         </form>
       </LoginContents>
     </Wrapper>
-  );
+  )
 }

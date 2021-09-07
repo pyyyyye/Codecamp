@@ -1,5 +1,5 @@
-import LayoutFooterUI from './LayoutFooter.presenter';
+import LayoutFooterUI from './LayoutFooter.presenter'
 
 export default function LayoutFooter() {
-  return <LayoutFooterUI />;
+  return <LayoutFooterUI />
 }

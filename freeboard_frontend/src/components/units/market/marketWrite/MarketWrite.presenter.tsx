@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Wrapper,
   Contents,
@@ -9,7 +10,6 @@ import {
   ReactQuillBox,
   AddressBox,
   AddressBoxLeft,
-  LocationMap,
   LocationIcon,
   AddressComponent,
   AddressBoxRight,
@@ -23,21 +23,21 @@ import {
   RadioText,
   BottomBtn,
   ButtonBox,
-  ErrorMessage,
-} from './MarketWrite.styles';
-import Upload01 from '../../../commons/uploads/01/uploads01.container';
-import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
-import 'react-quill/dist/quill.snow.css'; // ES6
+  ErrorMessage
+} from './MarketWrite.styles'
+import Upload01 from '../../../commons/uploads/01/uploads01.container'
+import KakaoMap01 from '../../../commons/kakaomap/kakaomap01'
+import 'react-quill/dist/quill.snow.css' // ES6
 
 interface MarketWriteUIProps {
   // onClickSubmit: any;
   // handleSubmit: any;
-  onChangeFiles: (file: File, index: number) => void;
-  register: any;
+  onChangeFiles: (file: File, index: number) => void
+  register: any
 }
 
 export default function MarketWriteUI(props: MarketWriteUIProps) {
-  console.log(props.latLng);
+  console.log(props.latLng)
   return (
     <Wrapper>
       <Contents>
@@ -153,5 +153,5 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
         </form>
       </Contents>
     </Wrapper>
-  );
+  )
 }

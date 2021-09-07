@@ -1,59 +1,61 @@
+// @ts-nocheck
 import {
   ApolloClient,
   ApolloLink,
   InMemoryCache,
-  ApolloProvider,
-} from '@apollo/client';
-import '../styles/globals.css';
-import 'antd/dist/antd.css';
-import { createUploadLink } from 'apollo-upload-client';
-import { Global } from '@emotion/react';
-import { globalStyles } from '../src/commons/styles/globalStyles';
+  ApolloProvider
+} from '@apollo/client'
+import '../styles/globals.css'
+import 'antd/dist/antd.css'
+
+import { createUploadLink } from 'apollo-upload-client'
+import { Global } from '@emotion/react'
+import { globalStyles } from '../src/commons/styles/globalStyles'
 import {
   createContext,
   Dispatch,
   SetStateAction,
   useState,
-  useEffect,
-} from 'react';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
-import { useRouter } from 'next/router';
-import Layout from '../src/components/commons/layout';
-import { getAccessToken } from '../src/commons/libraries/getAccessToken';
-import { onError } from '@apollo/client/link/error';
+  useEffect
+} from 'react'
+import { AppProps } from 'next/dist/next-server/lib/router/router'
+import { useRouter } from 'next/router'
+import Layout from '../src/components/commons/layout'
+import { getAccessToken } from '../src/commons/libraries/getAccessToken'
+import { onError } from '@apollo/client/link/error'
 
 interface IContext {
-  accessToken: string;
-  setAccessToken: Dispatch<SetStateAction<string>>;
-  userInfo: any;
-  setUserInfo: any;
+  accessToken: string
+  setAccessToken: Dispatch<SetStateAction<string>>
+  userInfo: any
+  setUserInfo: any
 }
 
-export const GlobalContext = createContext<IContext>({});
+export const GlobalContext = createContext<IContext>({})
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const [accessToken, setAccessToken] = useState('');
-  const [userInfo, setUserInfo] = useState({}); //유저 정보
+  const router = useRouter()
+  const [accessToken, setAccessToken] = useState('')
+  const [userInfo, setUserInfo] = useState({}) //유저 정보
 
   const value = {
     accessToken,
     setAccessToken,
     userInfo,
-    setUserInfo,
-  };
+    setUserInfo
+  }
 
-  console.log(value);
-  console.log(router.pathname.includes('/signup')); // ----- market 배경이미지 때문에 추가한 부분
+  console.log(value)
+  console.log(router.pathname.includes('/signup')) // ----- market 배경이미지 때문에 추가한 부분
 
   useEffect(() => {
     if (localStorage.getItem('refreshToken')) {
-      getAccessToken(setAccessToken);
-      setUserInfo(JSON.parse(localStorage.getItem('userInfo') || '{}'));
+      getAccessToken(setAccessToken)
+      setUserInfo(JSON.parse(localStorage.getItem('userInfo') || '{}'))
       // globalContext에 담기 위해 json.parse()형태로 문자열로 담아줌.
     }
-  }, []);
+  }, [])
 
-  console.log(accessToken);
+  console.log(accessToken)
   const errorLink = onError(({ graphQLErrors, operation, forward }) => {
     if (graphQLErrors) {
       for (const err of graphQLErrors) {
@@ -61,35 +63,35 @@ function MyApp({ Component, pageProps }: AppProps) {
           operation.setContext({
             headers: {
               ...operation.getContext().headers,
-              authorization: `Bearer ${getAccessToken(setAccessToken)}`,
-            },
-          });
-          return forward(operation);
+              authorization: `Bearer ${getAccessToken(setAccessToken)}`
+            }
+          })
+          return forward(operation)
         }
       }
     }
-  });
+  })
 
   const uploadLink = createUploadLink({
     // 실제 파일이 업로드 될 주소
     uri: 'https://backend02.codebootcamp.co.kr/graphql',
     headers: {
-      authorization: `Bearer ${accessToken}`,
+      authorization: `Bearer ${accessToken}`
       //   (typeof window !== 'undefined' &&
       //     localStorage.getItem('accessToken')) ||
       //   ''
       // }`,
     },
-    credentials: 'include',
-  });
+    credentials: 'include'
+  })
   const client = new ApolloClient({
     // uri: 'http://backend02.codebootcamp.co.kr/graphql',
     link: ApolloLink.from([errorLink, uploadLink as unknown as ApolloLink]),
-    cache: new InMemoryCache(),
-  });
+    cache: new InMemoryCache()
+  })
 
   const checkLogin = // ----- market 배경이미지 때문에 추가한 부분
-    router.pathname.includes('/login') || router.pathname.includes('/signup');
+    router.pathname.includes('/login') || router.pathname.includes('/signup')
 
   return (
     <GlobalContext.Provider value={value}>
@@ -99,7 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             style={
               checkLogin
                 ? {
-                    backgroundImage: 'url(/market/market_bg.png)',
+                    backgroundImage: 'url(/market/market_bg.png)'
                   }
                 : undefined
             }
@@ -108,7 +110,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               style={
                 checkLogin
                   ? {
-                      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.8)'
                     }
                   : undefined
               }
@@ -120,7 +122,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Layout>
       </ApolloProvider>
     </GlobalContext.Provider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

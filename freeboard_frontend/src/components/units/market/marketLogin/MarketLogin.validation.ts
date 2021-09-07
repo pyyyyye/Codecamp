@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * as yup from 'yup'
 
 export const schema = yup.object().shape({
   email: yup
@@ -8,5 +8,5 @@ export const schema = yup.object().shape({
   password: yup
     .string()
     .max(15, '비밀번호는 15자 이하여야 합니다.')
-    .required('비밀번호는 필수 입력입니다.'),
-});
+    .required('비밀번호는 필수 입력입니다.')
+})

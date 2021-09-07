@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
 
 export const globalStyles = css`
   * {
@@ -27,4 +27,4 @@ export const globalStyles = css`
     font-family: 'Black';
     src: url('/font/Pretendard-Black.ttf');
   }
-`;
+`

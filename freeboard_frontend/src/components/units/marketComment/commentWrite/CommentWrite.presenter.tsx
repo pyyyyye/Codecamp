@@ -7,8 +7,8 @@ import {
   CommentUploadBottom,
   CommentInput,
   UploadButton,
-  CreateButton,
-} from './CommentWrite.styles';
+  CreateButton
+} from './CommentWrite.styles'
 
 export default function CommentWriteUI(props: any) {
   return (
@@ -38,5 +38,5 @@ export default function CommentWriteUI(props: any) {
         </CommentUploadBottom>
       </CommentUpload>
     </BoardCommentWrapper>
-  );
+  )
 }

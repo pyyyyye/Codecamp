@@ -2,8 +2,8 @@
 /////// import { useState } from 'react'
 // import { useQuery } from '@apollo/client'
 // import {useRouter} from 'next/router'
-import DetailPage from '../../../../src/components/units/product/DetailPage.container';
-import BoardComment from '../../../../src/components/units/board/comment/BoardComment.container';
+import DetailPage from '../../../../src/components/units/product/DetailPage.container'
+import BoardComment from '../../../../src/components/units/board/comment/BoardComment.container'
 
 // import {Contents, TopContentsWriter, WriterProfileImg, WriterInfo, WriterIcon, Name, Date, MiddleContentsPost,  ContentsTitle, ContentsImage, ContentsText, ContentsVideo, BottomContentsRecommend, Recommendations, RecomImage, RecomCount, DecomImage, DecomCount, LinkIcon, MapIcon} from '../../../../styles/detailpage.styles'
 
@@ -23,7 +23,7 @@ export default function DetailApolloPage() {
       <BoardComment />
       {/* 댓글목록 */}
     </>
-  ); //불러올 페이지 삽입
+  ) //불러올 페이지 삽입
 
   // const router = useRouter()
   // const {data} = useQuery(

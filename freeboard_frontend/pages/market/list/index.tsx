@@ -1,8 +1,8 @@
-import withAuth from '../../../src/components/commons/hoc/withAuth';
-import MarketList from '../../../src/components/units/market/marketList/MarketList.container';
+import withAuth from '../../../src/components/commons/hoc/withAuth'
+import MarketList from '../../../src/components/units/market/marketList/MarketList.container'
 
 function MarketListPage() {
-  return <MarketList />;
+  return <MarketList />
 }
 
-export default withAuth(MarketListPage);
+export default withAuth(MarketListPage)

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   Wrapper,
   TopBox,
@@ -11,10 +12,10 @@ import {
   TopInfoLeft,
   TopInfoRight,
   HeartToggle,
-  ToggleCount,
-} from './MarketListOfTheBest.styles';
-import { gql, useQuery } from '@apollo/client';
-import { useRouter } from 'next/router';
+  ToggleCount
+} from './MarketListOfTheBest.styles'
+import { gql, useQuery } from '@apollo/client'
+import { useRouter } from 'next/router'
 
 export const FETCH_USED_ITEMS_OF_THE_BEST = gql`
   query fetchUseditemsOfTheBest {
@@ -29,15 +30,15 @@ export const FETCH_USED_ITEMS_OF_THE_BEST = gql`
       pickedCount
     }
   }
-`;
+`
 
 export default function MarketListOfTheBest() {
-  const router = useRouter();
-  const { data } = useQuery(FETCH_USED_ITEMS_OF_THE_BEST);
-  console.log(data);
+  const router = useRouter()
+  const { data } = useQuery(FETCH_USED_ITEMS_OF_THE_BEST)
+  console.log(data)
   const onClickBox = (dataId) => () => {
-    router.push(`/market/detail/${dataId}`);
-  };
+    router.push(`/market/detail/${dataId}`)
+  }
   return (
     <Wrapper>
       {data?.fetchUseditemsOfTheBest.map((data: any) => (
@@ -63,5 +64,5 @@ export default function MarketListOfTheBest() {
         </TopBox>
       ))}
     </Wrapper>
-  );
+  )
 }

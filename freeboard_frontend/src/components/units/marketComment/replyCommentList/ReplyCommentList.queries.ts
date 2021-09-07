@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 // !-------------------답글 리스트 -------------------
 export const FETCH_USED_ITEM_QUESTION_ANSWERS = gql`
@@ -13,7 +13,7 @@ export const FETCH_USED_ITEM_QUESTION_ANSWERS = gql`
       createdAt
     }
   }
-`;
+`
 
 // !----------- 댓글 삭제 -----------
 export const DELETE_USED_ITEM_QUESTION_ANSWER = gql`
@@ -22,4 +22,4 @@ export const DELETE_USED_ITEM_QUESTION_ANSWER = gql`
       useditemQuestionAnswerId: $useditemQuestionAnswerId
     )
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -11,8 +11,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   position: sticky;
   top: 0;
-  z-index: 500;
-`;
+  z-index: 5000;
+`
 
 export const HeaderWrap = styled.div`
   width: 190px;
@@ -23,7 +23,12 @@ export const HeaderWrap = styled.div`
   font-weight: 500;
   align-items: center;
   color: #51ada9;
-`;
+  margin-left: 13px;
+`
+export const AfterLogin = styled.div`
+  margin: 0 auto;
+  padding-right: 5px;
+`
 export const HeaderButton = styled.button`
   width: 70px;
   height: 20px;
@@ -34,4 +39,4 @@ export const HeaderButton = styled.button`
   margin: 10px;
   cursor: pointer;
   color: #51ada9;
-`;
+`
