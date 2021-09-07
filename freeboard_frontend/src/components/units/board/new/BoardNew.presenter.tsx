@@ -1,4 +1,5 @@
 //게시물 업로드 화면 presenter
+// @ts-nocheck
 import {
   Wrapper,
   Title,
@@ -19,26 +20,26 @@ import {
   RadioBox,
   ButtonBox,
   Button1,
-  ErrorM,
-} from './BoardNew.styles';
-import { Modal } from 'antd';
-import DaumPostcode from 'react-daum-postcode';
-import Upload01 from '../../../commons/uploads/01/uploads01.container';
+  ErrorM
+} from './BoardNew.styles'
+import { Modal } from 'antd'
+import DaumPostcode from 'react-daum-postcode'
+import Upload01 from '../../../commons/uploads/01/uploads01.container'
 
 interface NewPageUIProps {
-  isEdit: boolean;
-  isOpen: boolean;
-  active: boolean;
-  inputsErrors: String;
-  address: string;
-  zoneCode: string;
-  zipcode: string;
-  onChangeInputs: (event: any) => void;
-  onClickSubmit: () => void;
-  onClickOpenModal: () => void;
-  onComplete: () => void;
-  onChangeAddressDetail: (data: any) => void;
-  onChangeFiles: (file: File, index: number) => void;
+  isEdit: boolean
+  isOpen: boolean
+  active: boolean
+  inputsErrors: String
+  address: string
+  zoneCode: string
+  zipcode: string
+  onChangeInputs: (event: any) => void
+  onClickSubmit: () => void
+  onClickOpenModal: () => void
+  onComplete: () => void
+  onChangeAddressDetail: (data: any) => void
+  onChangeFiles: (file: File, index: number) => void
 }
 
 export default function NewPageUI(props: NewPageUIProps) {
@@ -122,8 +123,6 @@ export default function NewPageUI(props: NewPageUIProps) {
 
         {/* --------------  이미지 업로드 버튼  -------------- */}
         <PhotoBox>
-          <Categorize>사진 첨부</Categorize>
-
           {new Array(3).fill('a').map((data, index) => (
             <Upload01
               key={`${data}_${index}`}
@@ -150,5 +149,5 @@ export default function NewPageUI(props: NewPageUIProps) {
         </ButtonBox>
       </Contents>
     </Wrapper>
-  );
+  )
 }

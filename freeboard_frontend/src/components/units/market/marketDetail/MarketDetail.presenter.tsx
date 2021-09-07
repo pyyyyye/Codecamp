@@ -1,5 +1,5 @@
-import { getDate } from '../../../../commons/libraries/utils';
-import DOMPurify from 'dompurify';
+import { getDate } from '../../../../commons/libraries/utils'
+import DOMPurify from 'dompurify'
 import {
   Wrapper,
   Contents,
@@ -24,14 +24,13 @@ import {
   LikeCount,
   InfoMiddle,
   MainImage,
-  SubImage,
   InfoBottom,
   InfoText,
   InfoTags,
   BottomBtn,
-  ButtonBox,
-} from './MarketDetail.styles';
-import KakaoMap01 from '../../../commons/kakaomap/kakaomap01';
+  ButtonBox
+} from './MarketDetail.styles'
+import KakaoMap01 from '../../../commons/kakaomap/kakaomap01'
 
 export default function MarketDetailUI(props: any) {
   return (
@@ -89,7 +88,7 @@ export default function MarketDetailUI(props: any) {
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(
                       props.data?.fetchUseditem.contents
-                    ),
+                    )
                   }}
                 />
               ) : (
@@ -111,5 +110,5 @@ export default function MarketDetailUI(props: any) {
         </BottomBtn>
       </Contents>
     </Wrapper>
-  );
+  )
 }

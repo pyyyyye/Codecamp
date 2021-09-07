@@ -1,4 +1,5 @@
 //=== 게시물 상세페이지 presenter.js ===
+// @ts-nocheck
 import {
   Wrapper,
   PostContents,
@@ -23,11 +24,11 @@ import {
   MapIcon,
   // EtcContents,
   BottomButtons,
-  GoToButton,
-} from './DetailPage.styles';
-import { getDate } from '../../../commons/libraries/utils';
-import { IDetailPageUIProps } from './DetailPage.types';
-import { Tooltip } from 'antd';
+  GoToButton
+} from './DetailPage.styles'
+import { getDate } from '../../../commons/libraries/utils'
+import { IDetailPageUIProps } from './DetailPage.types'
+import { Tooltip } from 'antd'
 
 export default function DetailPageUI(props: IDetailPageUIProps) {
   return (
@@ -57,7 +58,10 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
         <MiddleContentsPost>
           <ContentsTitle> {props.data?.fetchBoard.title}</ContentsTitle>
           {props.data?.fetchBoard.images.map((data) => (
-            <ContentsImage src={`https://storage.googleapis.com/${data}`} />
+            <ContentsImage
+              key={data.images}
+              src={`https://storage.googleapis.com/${data}`}
+            />
           ))}
 
           <ContentsText>{props.data?.fetchBoard.contents}</ContentsText>
@@ -97,5 +101,5 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
         <GoToButton onClick={props.onClickMoveToDelete}>삭제하기</GoToButton>
       </BottomButtons>
     </Wrapper>
-  );
+  )
 }

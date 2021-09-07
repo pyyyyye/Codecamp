@@ -1,5 +1,6 @@
 //베스트 게시글 화면 presenter.js
-import Pagination01 from '../../../commons/pagination/01/pagination01.container';
+// @ts-nocheck
+import Pagination01 from '../../../commons/pagination/01/pagination01.container'
 import {
   BestListWrapper,
   BestListTop,
@@ -9,12 +10,12 @@ import {
   BestPostsPhoto,
   TitleInBestPosts,
   BestPostsInfo,
-  PostsInfo_Left,
+  PostsInfoLeft,
   WriterInfo,
   WriterPhoto,
   WriterName,
   PostDate,
-  PostsInfo_Right,
+  PostsInfoRight,
   RecomImage,
   RecomCount,
   BestListBottom,
@@ -23,12 +24,15 @@ import {
   CategorizeTop,
   CategorizeTopTitle,
   ListFooter,
-  UploadButton,
-} from './BestList.styles';
-import { getDate } from '../../../../commons/libraries/utils';
-import SearchOfFreeboard from '../../../commons/searchOfFreeboard/searchOfFreeboard';
-
-export default function ListPageUI(props: any) {
+  UploadButton
+} from './BestList.styles'
+import { getDate } from '../../../../commons/libraries/utils'
+import SearchOfFreeboard from '../../../commons/searchOfFreeboard/searchOfFreeboard'
+interface IListProps {
+  bestData: any
+  data: any
+}
+export default function ListPageUI(props: IListProps) {
   return (
     <>
       <BestListWrapper>
@@ -37,14 +41,14 @@ export default function ListPageUI(props: any) {
           {/* //!▶▶▶▶▶▶  BestListTop  Start ◀◀◀◀◀!// */}
           <BestPostsBox>
             {props.bestData?.fetchBoardsOfTheBest.map((data) => (
-              <BestPosts>
+              <BestPosts key={data._id}>
                 <BestPostsPhoto
                   src="/images/BestPostsPhoto_01.png"
                   alt="베스트게시글 대표사진_01"
                 />
                 <TitleInBestPosts>{data?.title}</TitleInBestPosts>
                 <BestPostsInfo>
-                  <PostsInfo_Left>
+                  <PostsInfoLeft>
                     <WriterInfo>
                       <WriterPhoto
                         src="/images/WriterProfileImg.png"
@@ -53,11 +57,11 @@ export default function ListPageUI(props: any) {
                       <WriterName>{data?.writer}</WriterName>
                     </WriterInfo>
                     <PostDate>{getDate(data?.createdAt)}</PostDate>
-                  </PostsInfo_Left>
-                  <PostsInfo_Right>
+                  </PostsInfoLeft>
+                  <PostsInfoRight>
                     <RecomImage src="/images/icon_like.png" alt="추천 아이콘" />
                     <RecomCount>{data?.likeCount}</RecomCount>
-                  </PostsInfo_Right>
+                  </PostsInfoRight>
                 </BestPostsInfo>
               </BestPosts>
             ))}
@@ -116,5 +120,5 @@ export default function ListPageUI(props: any) {
         </BestListBottom>
       </BestListWrapper>
     </>
-  );
+  )
 }

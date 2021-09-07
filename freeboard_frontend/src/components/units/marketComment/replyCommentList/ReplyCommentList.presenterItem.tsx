@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   ReplyCommentListBox,
   ReplyIconBox,
@@ -11,31 +12,31 @@ import {
   ReplyCommentListTop,
   WriterName,
   ReplyCommentNote,
-  ReplyCommentDate,
-} from './ReplyCommentList.styles';
+  ReplyCommentDate
+} from './ReplyCommentList.styles'
 import {
   FETCH_USED_ITEM_QUESTION_ANSWERS,
-  DELETE_USED_ITEM_QUESTION_ANSWER,
-} from './ReplyCommentList.queries';
-import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container';
-import { useMutation } from '@apollo/client';
-import { useState, useContext } from 'react';
-import { getDate } from '../../../../commons/libraries/utils';
-import { GlobalContext } from '../../../../../pages/_app';
+  DELETE_USED_ITEM_QUESTION_ANSWER
+} from './ReplyCommentList.queries'
+import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container'
+import { useMutation } from '@apollo/client'
+import { useState, useContext } from 'react'
+import { getDate } from '../../../../commons/libraries/utils'
+import { GlobalContext } from '../../../../../pages/_app'
 
 export default function ReplyCommentListUIItem(props: any) {
-  const [isEdit, setIsEdit] = useState(false);
-  const [isNew, setIsNew] = useState(false);
-  const { userInfo } = useContext(GlobalContext);
+  const [isEdit, setIsEdit] = useState(false)
+  const isNew = false
+  const { userInfo } = useContext(GlobalContext)
   const [deleteUseditemQuestionAnswerMutation] = useMutation(
     DELETE_USED_ITEM_QUESTION_ANSWER
-  );
-  console.log('유저인포.네임 :', userInfo);
-  console.log('useditemQuestionId : ', props.useditemQuestionId);
+  )
+  console.log('유저인포.네임 :', userInfo)
+  console.log('useditemQuestionId : ', props.useditemQuestionId)
 
   const onClickReplyEdit = () => {
-    setIsEdit(true);
-  };
+    setIsEdit(true)
+  }
   // const onClickReplyNew = () => {
   //   setIsNew(true);
   // };
@@ -44,16 +45,16 @@ export default function ReplyCommentListUIItem(props: any) {
     try {
       await deleteUseditemQuestionAnswerMutation({
         variables: {
-          useditemQuestionAnswerId: props.data._id,
+          useditemQuestionAnswerId: props.data._id
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM_QUESTION_ANSWERS,
             variables: {
-              useditemQuestionId: props.useditemQuestionId,
-            },
-          },
-        ],
+              useditemQuestionId: props.useditemQuestionId
+            }
+          }
+        ]
         // update(cache, { data }) {
         //   cache.modify({
         //     fields: {
@@ -69,14 +70,14 @@ export default function ReplyCommentListUIItem(props: any) {
         //     },
         //   });
         // },
-      });
+      })
 
-      console.log('답글 리스트 데이터 :', props.fetchData);
-      alert('해당 답글을 삭제합니다.');
+      console.log('답글 리스트 데이터 :', props.fetchData)
+      alert('해당 답글을 삭제합니다.')
     } catch (error) {
-      alert(error.message);
+      alert(error.message)
     }
-  };
+  }
 
   return (
     <>
@@ -136,5 +137,5 @@ export default function ReplyCommentListUIItem(props: any) {
         />
       )}
     </>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-import ReplyCommentListUIItem from './ReplyCommentList.presenterItem';
+import ReplyCommentListUIItem from './ReplyCommentList.presenterItem'
 import {
   BoardReplyCommentWrapper,
-  ReplyCommentList,
-} from './ReplyCommentList.styles';
+  ReplyCommentList
+} from './ReplyCommentList.styles'
 
 export default function ReplyCommentListUI(props: any) {
-  console.log('리댓 ReplyCommentListUI : ', props.data);
+  console.log('리댓 ReplyCommentListUI : ', props.data)
   return (
     <BoardReplyCommentWrapper>
       {/*//!---▶▶▶ 답글 리스트 ◀◀◀---*/}
@@ -22,5 +22,5 @@ export default function ReplyCommentListUI(props: any) {
         ))}
       </ReplyCommentList>
     </BoardReplyCommentWrapper>
-  );
+  )
 }

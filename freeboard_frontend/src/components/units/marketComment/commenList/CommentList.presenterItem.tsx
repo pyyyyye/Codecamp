@@ -9,63 +9,64 @@ import {
   CommentListTop,
   WriterName,
   CommentNote,
-  CommentDate,
-} from './CommentList.styles';
-import ReplyCommentList from '../replyCommentList/ReplyCommentList.container';
-import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container';
-import { getDate } from '../../../../commons/libraries/utils';
-import { useState, useContext } from 'react';
-import CommentWrite from '../commentWrite/CommentWrite.container';
+  CommentDate
+} from './CommentList.styles'
+import ReplyCommentList from '../replyCommentList/ReplyCommentList.container'
+import ReplyCommentWrite from '../replyCommentWrite/ReplyCommentWrite.container'
+import { getDate } from '../../../../commons/libraries/utils'
+import { useState, useContext } from 'react'
+import CommentWrite from '../commentWrite/CommentWrite.container'
 import {
   DELETE_USED_ITEM_QUESTION,
-  FETCH_USED_ITEM_QUESTIONS,
-} from '../commenList/CommentList.queries';
-import { useMutation } from '@apollo/client';
-import { useRouter } from 'next/router';
-import { GlobalContext } from '../../../../../pages/_app';
+  FETCH_USED_ITEM_QUESTIONS
+} from '../commenList/CommentList.queries'
+import { useMutation } from '@apollo/client'
+import { useRouter } from 'next/router'
+import { GlobalContext } from '../../../../../pages/_app'
 
 export default function CommentListUIItem(props: any) {
-  const { userInfo } = useContext(GlobalContext);
-  const [isEdit, setIsEdit] = useState(false);
-  const [isReplyBtnOpen, setIsReplyOpenBtn] = useState(false);
+  const { userInfo } = useContext(GlobalContext)
+  const [isEdit, setIsEdit] = useState(false)
+  const [isReplyBtnOpen, setIsReplyOpenBtn] = useState(false)
   const [deleteUseditemQuestionMutation] = useMutation(
     DELETE_USED_ITEM_QUESTION
-  );
-  const router = useRouter();
+  )
+  const router = useRouter()
 
   const onClickReplyWriteBoxBtn = () => {
     if (isReplyBtnOpen === false) {
-      setIsReplyOpenBtn(true);
+      setIsReplyOpenBtn(true)
     } else {
-      setIsReplyOpenBtn(false);
+      setIsReplyOpenBtn(false)
     }
-  };
+  }
 
   const onClickEdit = () => {
-    setIsEdit(true);
-  };
+    setIsEdit(true)
+  }
 
   const onClickCommentDelete = (commentDeleteId: any) => async () => {
     try {
       await deleteUseditemQuestionMutation({
         variables: {
-          useditemQuestionId: commentDeleteId,
+          useditemQuestionId: commentDeleteId
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM_QUESTIONS,
             variables: {
-              useditemId: router.query.detailpages,
-            },
-          },
-        ],
-      });
-      console.log('댓글 리스트 데이터 :', props.data);
-      alert('해당 댓글을 삭제합니다.');
+              useditemId: router.query.detailpages
+            }
+          }
+        ]
+      })
+      console.log('댓글 리스트 데이터 :', props.data)
+      alert('해당 댓글을 삭제합니다.')
     } catch (error) {
-      alert(error.message);
+      alert('댓글 삭제가 취소되었습니다.')
+      // alert(error.message);
     }
-  };
+  }
 
   return (
     <>
@@ -117,5 +118,5 @@ export default function CommentListUIItem(props: any) {
         />
       )}
     </>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import { useRouter } from 'next/router';
-import LayoutNavigation from '../navigation/LayoutNavigation.container';
-import LayoutHeaderUI from './LayoutHeader.presenter';
+import { useRouter } from 'next/router'
+import LayoutNavigation from '../navigation/LayoutNavigation.container'
+import LayoutHeaderUI from './LayoutHeader.presenter'
 
 export default function LayoutHeader() {
-  const router = useRouter();
+  const router = useRouter()
 
   const onClickLogin = () => {
-    router.push('/market/login');
-  };
+    router.push('/market/login')
+  }
   const onClickSignup = () => {
-    router.push('/market/signup');
-  };
+    router.push('/market/signup')
+  }
 
   return (
     <>
@@ -20,5 +20,5 @@ export default function LayoutHeader() {
       />
       <LayoutNavigation />
     </>
-  );
+  )
 }

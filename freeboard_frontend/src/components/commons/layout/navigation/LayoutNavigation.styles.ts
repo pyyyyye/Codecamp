@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 40px;
   z-index: 500;
-`;
+`
 export const NaviWrap = styled.div`
   width: 380px;
   height: 24px;
@@ -23,7 +23,7 @@ export const NaviWrap = styled.div`
   flex-direction: row;
   justify-content: space-between;
   font-family: 'font_Pretendard-Regular';
-`;
+`
 export const NaviButton = styled.button`
   height: 24px;
   color: #fff;
@@ -31,4 +31,4 @@ export const NaviButton = styled.button`
   border: transparent;
   font-size: 15px;
   cursor: pointer;
-`;
+`

@@ -1,5 +1,5 @@
-import LayoutBannerUI from './LayoutBanner.presenter';
+import LayoutBannerUI from './LayoutBanner.presenter'
 
 export default function LayoutBanner() {
-  return <LayoutBannerUI />;
+  return <LayoutBannerUI />
 }

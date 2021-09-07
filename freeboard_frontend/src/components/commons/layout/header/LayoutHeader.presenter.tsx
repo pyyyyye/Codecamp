@@ -1,18 +1,26 @@
-import { MouseEvent, useContext } from 'react';
-import { GlobalContext } from '../../../../../pages/_app';
-import { Wrapper, HeaderWrap, HeaderButton } from './LayoutHeader.styles';
+// @ts-nocheck
+
+import { useContext } from 'react'
+import { GlobalContext } from '../../../../../pages/_app'
+import {
+  Wrapper,
+  HeaderWrap,
+  HeaderButton,
+  AfterLogin
+} from './LayoutHeader.styles'
 
 interface IProps {
-  onClick: (event: MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClickLogin: () => void
+  onClickSignup: () => void
 }
 
 export default function LayoutHeaderUI(props: IProps) {
-  const { accessToken } = useContext(GlobalContext);
+  const { accessToken } = useContext(GlobalContext)
   return (
     <Wrapper>
       <HeaderWrap>
         {accessToken ? (
-          <div>마이페이지</div>
+          <AfterLogin>마이페이지</AfterLogin>
         ) : (
           <div>
             <HeaderButton onClick={props.onClickLogin}>로그인</HeaderButton>|
@@ -21,5 +29,5 @@ export default function LayoutHeaderUI(props: IProps) {
         )}
       </HeaderWrap>
     </Wrapper>
-  );
+  )
 }

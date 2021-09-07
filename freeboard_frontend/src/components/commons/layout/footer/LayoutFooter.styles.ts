@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const FooterWrap = styled.div`
   width: 100%;
@@ -8,5 +8,5 @@ export const FooterWrap = styled.div`
   justify-content: center;
   align-items: center;
   color: #a5a5a5;
-`;
-export const Footer = styled.div``;
+`
+export const Footer = styled.div``

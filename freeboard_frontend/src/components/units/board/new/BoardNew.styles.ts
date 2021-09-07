@@ -1,7 +1,10 @@
 //게시물 등록화면 연결 .styles
-import styled from '@emotion/styled';
+// @ts-nocheck
+import styled from '@emotion/styled'
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  margin-top: 40px;
+`
 
 export const Title = styled.h1`
   width: 100%;
@@ -10,7 +13,7 @@ export const Title = styled.h1`
   text-align: center;
   margin-top: 40px;
   padding-bottom: 40px;
-`;
+`
 export const Contents = styled.div`
   max-width: 1200px;
   width: 100%;
@@ -19,7 +22,7 @@ export const Contents = styled.div`
   height: 1847px;
   /* background-color: lemonchiffon; */
   box-shadow: 0px 0px 6px gray;
-`;
+`
 export const MyInput = styled.div`
   /* border: 1px solid black; */
   width: 100%;
@@ -28,15 +31,15 @@ export const MyInput = styled.div`
   height: 92px;
   margin-bottom: 50px;
   /* border: 1px solid red; */
-`;
+`
 export const TopBox = styled.div`
   width: 486px;
-`;
+`
 export const Categorize = styled.h5`
   font-size: 15px;
   margin: 0;
   padding-bottom: 16px;
-`;
+`
 export const InputBox = styled.input`
   border: 1px solid lightgray;
   height: 52px;
@@ -44,39 +47,39 @@ export const InputBox = styled.input`
   padding-left: 16px;
   display: block;
   outline: none;
-`;
+`
 export const ErrorM = styled.div`
   color: red;
   padding: 10px 0 0 17px;
   font-size: 13px;
-`;
+`
 
 export const LongInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
-`;
+`
 
 export const ContBox = styled.div`
   width: 100%;
   height: 520px;
   /* border: 1px solid red; */
   margin-bottom: 40px;
-`;
+`
 export const ContInput = styled.textarea`
   width: 100%;
   height: 480px;
   padding-left: 16px;
   padding-top: 16px;
   border: 1px solid lightgray;
-`;
+`
 
 export const AddressBox = styled.div`
   width: 100%;
   height: 242px;
   margin-bottom: 50px;
   /* border: 1px solid red; */
-`;
+`
 export const AddressNumInput = styled.input`
   width: 77px;
   height: 52px;
@@ -84,14 +87,14 @@ export const AddressNumInput = styled.input`
   padding-left: 16px;
   border: 1px solid lightgray;
   outline: none;
-`;
+`
 export const AddressButton = styled.button`
   width: 124px;
   height: 52px;
   background-color: black;
   color: white;
   cursor: pointer;
-`;
+`
 
 export const AddressInput = styled.input`
   width: 100%;
@@ -100,17 +103,19 @@ export const AddressInput = styled.input`
   padding-left: 16px;
   border: 1px solid lightgray;
   outline: none;
-`;
+`
 
 export const PhotoBox = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
   margin-bottom: 40px;
-`;
-// export const UploadBox = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-// `;
+  /* border: 1px solid red; */
+`
+export const UploadBox = styled.div`
+  margin-right: 30px;
+  border: 1px solid red;
+`
 // export const ImgUploadBox = styled.label`
 //   width: 78px;
 //   height: 78px;
@@ -124,18 +129,18 @@ export const ImgUploadInput = styled.input`
   //파일업로드 input박스 숨김
   display: none;
   outline: none;
-`;
+`
 
 export const RadioBox = styled.div`
   width: 159px;
   height: 64px;
-`;
-export const RadioButton = styled.div``;
+`
+export const RadioButton = styled.div``
 
 export const Button1 = styled.input`
   margin-left: 10px;
   outline: none;
-`;
+`
 
 export const ButtonBox = styled.button`
   width: 179px;
@@ -146,4 +151,4 @@ export const ButtonBox = styled.button`
   display: block;
   margin: 50px auto 0;
   cursor: pointer;
-`;
+`

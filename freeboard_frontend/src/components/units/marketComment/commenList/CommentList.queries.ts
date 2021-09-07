@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 // !------------------- 댓글 리스트 -------------------
 export const FETCH_USED_ITEM_QUESTIONS = gql`
@@ -12,11 +12,11 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
       createdAt
     }
   }
-`;
+`
 
 // !------------------- 댓글 삭제 -------------------
 export const DELETE_USED_ITEM_QUESTION = gql`
   mutation deleteUseditemQuestion($useditemQuestionId: ID!) {
     deleteUseditemQuestion(useditemQuestionId: $useditemQuestionId)
   }
-`;
+`

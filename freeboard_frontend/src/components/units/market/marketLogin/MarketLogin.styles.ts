@@ -1,16 +1,16 @@
 // ---------- 중고마켓 로그인 styles.tsx -------------
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   width: 100%auto;
   display: flex;
   justify-content: center;
   padding-top: 240px;
-`;
+`
 export const LoginContents = styled.div`
   width: 380px;
   /* height: 510px; */
-`;
+`
 export const TopLogo = styled.div`
   width: 288px;
   height: 44px;
@@ -18,14 +18,14 @@ export const TopLogo = styled.div`
   background-image: url('/market/logo.png');
   background-repeat: no-repeat;
   padding-bottom: 100px;
-`;
+`
 export const MainLoginContents = styled.div`
   width: 100%;
   height: 388px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
+`
 // export const LoginBox = styled.div`
 // `;
 export const InputLogin = styled.input`
@@ -36,14 +36,14 @@ export const InputLogin = styled.input`
   color: #fff;
   padding-left: 16px;
   outline: none;
-`;
+`
 export const ErrorMessage = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   padding: 4px 0px 10px 16px;
   color: #ff0000;
-`;
+`
 
 export const KeepStateLogin = styled.div`
   height: 45px;
@@ -54,18 +54,18 @@ export const KeepStateLogin = styled.div`
   line-height: 16px;
   /* padding-top: 15px; */
   padding-bottom: 40px;
-`;
+`
 export const KeepLoginText = styled.p`
   font-size: 15px;
   font-weight: 400;
   color: #fff;
   margin-left: 12px;
   cursor: pointer;
-`;
+`
 export const GotoLoginBox = styled.div`
   width: 100%;
   /* margin-bottom: 40px; */
-`;
+`
 export const GoToLogin = styled.button`
   width: 100%;
   height: 64px;
@@ -83,7 +83,7 @@ export const GoToLogin = styled.button`
     background-color: #ffd600;
     color: #000;
   }
-`;
+`
 export const BottomJoinOrFind = styled.div`
   display: flex;
   justify-content: center;
@@ -92,7 +92,7 @@ export const BottomJoinOrFind = styled.div`
   padding-top: 30px;
   margin-top: 30px;
   border-top: 1px solid;
-`;
+`
 export const BottomBtn = styled.div`
   color: #fff;
   font-weight: 400;
@@ -100,4 +100,4 @@ export const BottomBtn = styled.div`
   padding: 0 18px;
 
   cursor: pointer;
-`;
+`

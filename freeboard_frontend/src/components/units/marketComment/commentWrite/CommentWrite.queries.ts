@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 // !------- 댓글 등록 --------
 export const CREATE_USED_ITEM_QUESTION = gql`
@@ -13,7 +13,7 @@ export const CREATE_USED_ITEM_QUESTION = gql`
       _id
     }
   }
-`;
+`
 
 // !------- 댓글 수정 --------
 export const UPDATE_USED_ITEM_QUESTION = gql`
@@ -28,7 +28,7 @@ export const UPDATE_USED_ITEM_QUESTION = gql`
       contents
     }
   }
-`;
+`
 
 // !------------------- 댓글 리스트 -------------------
 export const FETCH_USED_ITEM_QUESTIONS = gql`
@@ -42,4 +42,4 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
       createdAt
     }
   }
-`;
+`

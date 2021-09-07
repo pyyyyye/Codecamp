@@ -1,5 +1,5 @@
 // -------- pagination.styles.ts ----------
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const PaginationWrap = styled.div`
   margin: 0 auto;
@@ -9,12 +9,12 @@ export const PaginationWrap = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+`
 export const Page = styled.img`
   width: 7.41px;
   cursor: pointer;
   height: 12px;
-`;
+`
 
 export const PageBtn = styled.div`
   margin: 0px 10px 0px 10px;
@@ -25,4 +25,4 @@ export const PageBtn = styled.div`
     color: #ffbb00;
     font-weight: 700;
   }
-`;
+`

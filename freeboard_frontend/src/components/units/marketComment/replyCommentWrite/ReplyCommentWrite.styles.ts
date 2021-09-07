@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const BoardReplyCommentWrapper = styled.div`
   max-width: 1200px;
@@ -8,7 +8,7 @@ export const BoardReplyCommentWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-top: 20px;
-`;
+`
 export const ReplyIconBox = styled.div`
   width: 20px;
   height: 40px;
@@ -17,11 +17,11 @@ export const ReplyIconBox = styled.div`
   justify-content: center;
   padding-left: 55px;
   padding-right: 30px;
-`;
+`
 export const ReplyIcon = styled.img`
   width: 15px;
   height: 17px;
-`;
+`
 
 export const ReplyCommentUpload = styled.div`
   width: 100%;
@@ -29,33 +29,33 @@ export const ReplyCommentUpload = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-`;
+`
 export const ReplyCommentLeft = styled.div`
   width: 100%auto;
-`;
+`
 
 export const ReplyWriterImg = styled.img`
   width: 40px;
   height: 40px;
-`;
+`
 export const ReplyCommentRight = styled.div`
   width: 100%;
   padding-left: 16px;
-`;
+`
 
 export const ReplyWriterName = styled.div`
   font-size: 16px;
   line-height: 23.68px;
   padding-bottom: 8px;
   font-weight: 500;
-`;
+`
 
 export const ReplyCommentUploadBottom = styled.div`
   width: 100%;
   height: 117px;
   border: 1px solid lightgray;
   position: relative;
-`;
+`
 export const ReplyCommentInput = styled.textarea`
   width: 100%;
   height: 64px;
@@ -66,7 +66,7 @@ export const ReplyCommentInput = styled.textarea`
   ::placeholder {
     color: #bdbdbd;
   }
-`;
+`
 export const UploadButton = styled.button`
   width: 91px;
   height: 51px;
@@ -83,7 +83,7 @@ export const UploadButton = styled.button`
   :hover {
     background-color: #ffd600;
   }
-`;
+`
 
 export const CreateButton = styled.button`
   width: 91px;
@@ -101,4 +101,4 @@ export const CreateButton = styled.button`
   :hover {
     background-color: #ffd600;
   }
-`;
+`

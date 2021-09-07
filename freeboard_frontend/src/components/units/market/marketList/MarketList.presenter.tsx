@@ -1,7 +1,8 @@
 // import { useRouter } from 'next/rou
-import SideMenu from '../../../commons/sideMenu/sideMenu';
-import MarketListOfTheBest from '../../marketListOfTheBest/MarketListOfTheBest.container';
-import InfiniteScroll from 'react-infinite-scroller';
+// @ts-nocheck
+import SideMenu from '../../../commons/sideMenu/sideMenu'
+import MarketListOfTheBest from '../../marketListOfTheBest/MarketListOfTheBest.container'
+import InfiniteScroll from 'react-infinite-scroller'
 import {
   Wrapper,
   Title,
@@ -34,30 +35,32 @@ import {
   PriceIcon,
   Price,
   GoToWrite,
-  MiddleBox,
-} from './MarketList.styles';
-import { useState } from 'react';
+  MiddleBox
+} from './MarketList.styles'
+import { useState } from 'react'
+
+// interface IMarketListTypeP {}
 
 export default function MarketListUI(props: any) {
-  const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState(true)
 
   const onLoadMore = () => {
-    if (!props.data) return;
+    if (!props.data) return
     props.fetchMore({
       variables: {
-        page: Math.floor(props.data?.fetchUseditems.length) / 10 + 1,
+        page: Math.floor(props.data?.fetchUseditems.length) / 10 + 1
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        if (!fetchMoreResult.fetchUseditems.length) setHasMore(false);
+        if (!fetchMoreResult.fetchUseditems.length) setHasMore(false)
         return {
           fetchUseditems: [
             ...prev.fetchUseditems,
-            ...fetchMoreResult.fetchUseditems,
-          ],
-        };
-      },
-    });
-  };
+            ...fetchMoreResult.fetchUseditems
+          ]
+        }
+      }
+    })
+  }
   return (
     <Wrapper>
       <ListContents>
@@ -138,5 +141,5 @@ export default function MarketListUI(props: any) {
         <SideMenu aaa={props.aaa} />
       </ListContents>
     </Wrapper>
-  );
+  )
 }
