@@ -1,12 +1,15 @@
 import { useQuery } from '@apollo/client'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import router from 'next/router'
 import MarketListUI from './MarketList.presenter'
 import { FETCH_USED_ITEMS } from './MarketList.queries'
 import { getDate } from '../../../../commons/libraries/utils'
+import { useEffect, useState } from 'react'
 
 export default function MarketList() {
-  const router = useRouter()
+  useEffect(() => {
+    const SideProps = JSON.parse(localStorage.getItem('baskets') || '[]')
+    setAaa(SideProps)
+  }, [])
   const { data, fetchMore } = useQuery(FETCH_USED_ITEMS)
   const [aaa, setAaa] = useState([])
 
@@ -28,11 +31,6 @@ export default function MarketList() {
     setAaa(baskets)
     localStorage.setItem(getDate('baskets'), JSON.stringify(baskets))
   }
-
-  useEffect(() => {
-    const SideProps = JSON.parse(localStorage.getItem('baskets') || '[]')
-    setAaa(SideProps)
-  }, [])
 
   return (
     <MarketListUI

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ======= 중고마켓 회원가입 | market signup container =======
 import { useMutation } from '@apollo/client'
 import { CREATE_USER } from './MarketSignup.queries'

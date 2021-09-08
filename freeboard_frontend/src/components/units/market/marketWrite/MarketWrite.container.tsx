@@ -6,12 +6,13 @@ import { CREATE_USED_ITEM, UPLOAD_FILE } from './MarketWrite.queries'
 import { schema } from './MarketWrite.validation'
 import { useMutation } from '@apollo/client'
 import { Modal } from 'antd'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 export default function MarketWrite() {
   // const [lat, setLat] = useState(0);
   // const [lng, setLng] = useState(0);
+  const router = useRouter()
   const [latLng, setLatLng] = useState({ lat: 0, lng: 0 })
   const [files, setFiles] = useState<(File | null)[]>([null, null, null])
   const [uploadFile] = useMutation(UPLOAD_FILE)
