@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@types/dompurify": "2.2.3",
     "react-infinite-scroller": "^1.2.4"
   }
 }

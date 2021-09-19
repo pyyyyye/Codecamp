@@ -1,5 +1,6 @@
 // @ts-nocheck
 // ------------ market login의 withAuth ------------
+
 import { useRouter } from 'next/router'
 import { ComponentType, useEffect } from 'react'
 // import { GlobalContext } from '../../../../pages/_app'
@@ -20,4 +21,4 @@ const withAuth = (Component: ComponentType) => (props: any) => {
   return <Component {...props} />
 }
 
-export default withAuth()
+export default withAuth

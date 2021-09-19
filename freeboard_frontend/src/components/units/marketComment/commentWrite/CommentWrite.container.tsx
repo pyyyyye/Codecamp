@@ -35,7 +35,6 @@ export default function CommentWrite(props: any) {
 
   //! ---- 댓글 등록 ----
   async function onClick() {
-    // console.log(inputComment);
     try {
       await createUseditemQuestionMutation({
         variables: {
@@ -57,7 +56,6 @@ export default function CommentWrite(props: any) {
       alert('해당 댓글 등록을 완료했습니다.')
     } catch (error) {
       alert('댓글 등록이 취소되었습니다.')
-      // alert(error.message);
     }
   }
 
