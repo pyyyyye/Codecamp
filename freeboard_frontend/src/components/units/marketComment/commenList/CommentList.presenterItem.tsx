@@ -64,7 +64,6 @@ export default function CommentListUIItem(props: any) {
       alert('해당 댓글을 삭제합니다.')
     } catch (error) {
       alert('댓글 삭제가 취소되었습니다.')
-      // alert(error.message);
     }
   }
 

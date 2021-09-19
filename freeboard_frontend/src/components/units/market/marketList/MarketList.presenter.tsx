@@ -48,7 +48,7 @@ export default function MarketListUI(props: any) {
     if (!props.data) return
     props.fetchMore({
       variables: {
-        page: Math.floor(props.data?.fetchUseditems.length) / 10 + 1
+        page: Math.ceil(props.data?.fetchUseditems.length / 10) + 1
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult.fetchUseditems.length) setHasMore(false)
