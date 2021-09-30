@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const uploadLink = createUploadLink({
     // 실제 파일이 업로드 될 주소
-    uri: 'https://backend02.codebootcamp.co.kr/graphql',
+    uri: 'https://backend02.codebootcamp.co.kr/graphql03',
     headers: {
       authorization: `Bearer ${accessToken}`
       //   (typeof window !== 'undefined' &&
