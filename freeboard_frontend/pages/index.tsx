@@ -34,7 +34,7 @@ const ClickBTN = styled.div`
 export default function Home() {
   const router = useRouter()
   function onClickPortfolio() {
-    router.push('/market/list')
+    router.push('/board/bestposts')
   }
   return (
     <Wrap>
