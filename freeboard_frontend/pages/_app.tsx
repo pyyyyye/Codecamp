@@ -101,7 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             style={
               checkLogin
                 ? {
-                    backgroundImage: 'url(/market/market_bg.png)'
+                    backgroundImage: 'url(/market_img/market_bg.png)'
                   }
                 : undefined
             }
