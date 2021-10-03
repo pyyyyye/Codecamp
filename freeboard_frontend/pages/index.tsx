@@ -42,7 +42,7 @@ const ClickBTN = styled.div`
 export default function Home() {
   const router = useRouter()
   function onClickMarket() {
-    router.push('/market/list')
+    router.push('/market/login')
   }
   function onClickFreeBoard() {
     router.push('/board/bestposts')
