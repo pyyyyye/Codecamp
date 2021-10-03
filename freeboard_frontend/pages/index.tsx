@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+// import Landing from './landingPage'
 
 const Wrap = styled.div`
   width: 100%;
@@ -48,6 +49,7 @@ export default function Home() {
     router.push('/board/bestposts')
   }
   return (
+    // <Landing />
     <Wrap>
       <>
         <LOGO>○ △ □</LOGO>
