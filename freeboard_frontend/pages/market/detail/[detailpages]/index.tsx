@@ -11,3 +11,8 @@ export default function MarketDetailPage() {
     </>
   )
 }
+
+// export const getServerSideProps = () => {
+//   // 백엔드에 요청해서 데이터 받기
+//   return 받은데이터
+// }

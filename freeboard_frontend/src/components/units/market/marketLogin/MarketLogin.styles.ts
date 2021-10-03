@@ -15,7 +15,7 @@ export const TopLogo = styled.div`
   width: 288px;
   height: 44px;
   margin: 0 auto;
-  background-image: url('/market/logo.png');
+  background-image: url('/market_img/logo.png');
   background-repeat: no-repeat;
   padding-bottom: 100px;
 `
