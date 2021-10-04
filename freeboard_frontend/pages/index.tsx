@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-// import Landing from './landingPage'
+import Landing from './landingPage'
 
 const Wrap = styled.div`
   width: 100%;
@@ -41,24 +41,24 @@ const ClickBTN = styled.div`
 `
 
 export default function Home() {
-  const router = useRouter()
-  function onClickMarket() {
-    router.push('/market/login')
-  }
-  function onClickFreeBoard() {
-    router.push('/board/bestposts')
-  }
+  // const router = useRouter()
+  // function onClickMarket() {
+  //   router.push('/market/login')
+  // }
+  // function onClickFreeBoard() {
+  //   router.push('/board/bestposts')
+  // }
   return (
-    // <Landing />
-    <Wrap>
-      <>
-        <LOGO>○ △ □</LOGO>
-        <p>입장을 원하는 버튼을 눌러주세요.</p>
-        <ButtonBox>
-          <ClickBTN onClick={onClickMarket}>중고마켓</ClickBTN>
-          <ClickBTN onClick={onClickFreeBoard}>자유게시판</ClickBTN>
-        </ButtonBox>
-      </>
-    </Wrap>
+    <Landing />
+    // <Wrap>
+    //   <>
+    //     <LOGO>○ △ □</LOGO>
+    //     <p>입장을 원하는 버튼을 눌러주세요.</p>
+    //     <ButtonBox>
+    //       <ClickBTN onClick={onClickMarket}>중고마켓</ClickBTN>
+    //       <ClickBTN onClick={onClickFreeBoard}>자유게시판</ClickBTN>
+    //     </ButtonBox>
+    //   </>
+    // </Wrap>
   )
 }

@@ -1,27 +1,65 @@
-import styled from '@emotion/styled'
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: lightblue;
-  padding: 200px;
-`
-const InnerWrap = styled.div`
-  width: 100%;
-  height: 100%;
-  border: 1px solid red; ;
-`
-const Title = styled.h1``
-const SubTitle = styled.p``
+import {
+  Wrapper,
+  TopInner,
+  Top,
+  Title,
+  SnsWrap,
+  SubTitle,
+  SnsButton,
+  BottomInner,
+  TabWrap,
+  TabBox,
+  TabButton,
+  WorksBox,
+  WorksTitle,
+  WorksButton,
+  StackBox,
+  StackImg,
+  StackTitle
+} from './landingPage.styles'
 
 export default function LandingPage() {
   return (
     <Wrapper>
-      <InnerWrap>
-        <Title>PORTFOLIO</Title>
-        <SubTitle>Front-end Developer</SubTitle>
-        <SubTitle>PARK YOUNG EUN</SubTitle>
-      </InnerWrap>
+      {/* --- 상단 타이틀 --- */}
+      <TopInner>
+        <Top>
+          <Title>PORTFOLIO</Title>
+          <SnsWrap>
+            <SnsButton>1</SnsButton>
+            <SnsButton>2</SnsButton>
+            <SnsButton>3</SnsButton>
+            <SnsButton>4</SnsButton>
+          </SnsWrap>
+        </Top>
+        <SubTitle>
+          Front-end Developer <br />
+          PARK YOUNG EUN
+        </SubTitle>
+      </TopInner>
+
+      {/* --- 하단 컨텐츠 --- */}
+      <BottomInner>
+        <TabWrap>
+          {/* MY WORKS */}
+          <TabBox>
+            <TabButton>MY WORKS</TabButton>
+            <WorksBox>
+              <WorksTitle>1. 헤이고</WorksTitle>
+              <WorksButton></WorksButton>
+            </WorksBox>
+          </TabBox>
+
+          {/* MY STACKS */}
+          <TabBox>
+            <TabButton>MY STACKS</TabButton>
+            <StackBox>
+              <StackImg />
+              <StackTitle>React</StackTitle>
+            </StackBox>
+          </TabBox>
+        </TabWrap>
+      </BottomInner>
     </Wrapper>
   )
 }
