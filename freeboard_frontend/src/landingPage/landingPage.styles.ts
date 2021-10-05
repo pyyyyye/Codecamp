@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
 
 export const TopInner = styled.div`
   width: 70%;
+  padding-top: 40px;
 `
 export const Top = styled.div`
   width: 100%;
@@ -63,24 +64,33 @@ export const TabButton = styled.button`
     border-bottom: 1px solid red;
   }
 `
-export const WorksBox = styled.div``
+export const WorksWrap = styled.div`
+  width: 100%auto;
+  display: flex;
+  flex-direction: row;
+`
+export const WorksBox = styled.div`
+  margin-right: 32px;
+`
 export const WorksTitle = styled.p``
 export const WorksButton = styled.button`
-  background-image: url('./portfolio_img/SplashScreen.png');
-  background-size: 250px;
-  background-position: center;
   width: 200px;
   height: 180px;
   border: none;
   border-radius: 30px;
-  /* background-color: #ededed; */
   cursor: pointer;
-
-  box-shadow: 0px 18px 8px -10px rgba(0, 0, 0, 0.1);
+  background: none;
+`
+export const WorksPhoto = styled.img`
+  width: 200px;
+  height: 180px;
+  border-radius: 30px;
+  overflow: hidden;
+  object-fit: cover;
   :hover {
-    background-size: 350px;
+    box-shadow: 0px 18px 8px -10px rgba(0, 0, 0, 0.1);
   }
 `
 export const StackBox = styled.div``
-export const StackImg = styled.image``
+export const StackImg = styled.img``
 export const StackTitle = styled.div``
