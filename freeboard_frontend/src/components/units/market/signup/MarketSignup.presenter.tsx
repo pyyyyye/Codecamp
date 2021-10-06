@@ -55,7 +55,6 @@ export default function MarketSignupUI(props: any) {
           />
           <SignupError>{props.inputError.password}</SignupError>
         </InputBox>
-        {/* -- 회원가입 버튼 -- */}
         <GoToSignup onClick={props.onClickSignup}>회원가입하기</GoToSignup>
       </MainSignupContents>
     </>
