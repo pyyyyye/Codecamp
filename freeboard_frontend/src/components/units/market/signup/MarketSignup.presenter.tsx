@@ -14,7 +14,6 @@ export default function MarketSignupUI(props: any) {
     <>
       <TopTitle>회원가입</TopTitle>
       <MainSignupContents>
-        {/* ---- MainSignupContents Start ---- */}
         <InputBox>
           <SingupLabel>이름</SingupLabel>
           <InputSignup
