@@ -81,11 +81,11 @@ export const IconImg = styled.img`
 `
 
 export const MainContainer = styled.div`
-  padding-top: 50px;
-
+  overflow: auto;
   width: 100%;
   display: flex;
   flex-direction: row;
+  padding-bottom: 10px;
 `
 export const WorksBox = styled.div`
   width: 335px;
@@ -101,21 +101,23 @@ export const WorksTitleBox = styled.div`
 `
 export const WorksNum = styled.p`
   font-family: 'Neothic';
-  font-size: 24px;
+  font-size: 16px;
   color: #000;
   letter-spacing: 2px;
+  margin: 0px;
 `
 export const WorksTitle = styled.p`
   font-family: 'Neothic';
   font-size: 24px;
   color: #000;
   letter-spacing: 2px;
+  margin: 0px;
 `
 export const WorksContents = styled.div`
   background-color: #efefef;
   width: 335px;
-  height: 290px;
-  border-radius: 20px;
+  height: 300px;
+  border-radius: 30px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -123,14 +125,14 @@ export const WorksContents = styled.div`
 export const WorksImg = styled.img`
   width: 450px;
   position: absolute;
-  top: 25px;
+  top: 35px;
   right: 15px;
 `
 export const WorksTextBox = styled.div`
   padding-left: 15px;
 `
 export const WorksType = styled.p`
-  font-family: 'SB_L';
+  font-family: 'Consolas';
   font-size: 14px;
   line-height: 20px;
   color: #888;
@@ -139,7 +141,7 @@ export const WorksType = styled.p`
 export const WorksText = styled.p`
   font-family: 'SB_L';
   font-size: 18px;
-  line-height: 30px;
+  line-height: 20px;
   margin-top: 10px;
   color: #000;
 `

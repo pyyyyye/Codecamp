@@ -107,6 +107,34 @@ export default function LandingPage() {
             <WorksText>자유게시판</WorksText>
           </WorksTextBox>
         </WorksBox>
+
+        <WorksBox>
+          <WorksTitleBox>
+            <WorksNum>01.</WorksNum>
+            <WorksTitle>Hey-Go</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <WorksImg src="/portfolio_img/mockup01.png" />
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>Solo</WorksType>
+            <WorksText>자유게시판</WorksText>
+          </WorksTextBox>
+        </WorksBox>
+        <WorksBox>
+          
+          <WorksTitleBox>
+            <WorksNum>01.</WorksNum>
+            <WorksTitle>Hey-Go</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <WorksImg src="/portfolio_img/mockup01.png" />
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>Solo</WorksType>
+            <WorksText>자유게시판</WorksText>
+          </WorksTextBox>
+        </WorksBox>
       </MainContainer>
 
       {/*//! ----- Footer ----- */}
