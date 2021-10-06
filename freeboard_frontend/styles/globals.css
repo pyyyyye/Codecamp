@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Noto Sans Kr, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Noto Sans Kr, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, SB_L,
+    Neothic, Consolas, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
 a {
@@ -13,8 +14,22 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
-
+div {
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+  padding: 0px;
+}
 #__next {
   height: 100%;
 }
