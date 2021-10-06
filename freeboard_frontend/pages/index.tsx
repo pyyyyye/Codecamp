@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-// import Landing from './landingPage'
+import Landing from './landingPage'
 
 const Wrap = styled.div`
   width: 100%;
@@ -54,17 +54,17 @@ export default function Home() {
     router.push('/board/bestposts')
   }
   return (
-    // <Landing />
-    <Wrap>
-      <>
-        <LOGO>○ △ □</LOGO>
-        <p>입장을 원하는 버튼을 눌러주세요.</p>
-        <ButtonBox>
-          <ClickBTN onClick={onClickHeyGo}>헤이고</ClickBTN>
-          <ClickBTN onClick={onClickMarket}>중고마켓</ClickBTN>
-          <ClickBTN onClick={onClickFreeBoard}>자유게시판</ClickBTN>
-        </ButtonBox>
-      </>
-    </Wrap>
+    <Landing />
+    // <Wrap>
+    //   <>
+    //     <LOGO>○ △ □</LOGO>
+    //     <p>입장을 원하는 버튼을 눌러주세요.</p>
+    //     <ButtonBox>
+    //       <ClickBTN onClick={onClickHeyGo}>헤이고</ClickBTN>
+    //       <ClickBTN onClick={onClickMarket}>중고마켓</ClickBTN>
+    //       <ClickBTN onClick={onClickFreeBoard}>자유게시판</ClickBTN>
+    //     </ButtonBox>
+    //   </>
+    // </Wrap>
   )
 }

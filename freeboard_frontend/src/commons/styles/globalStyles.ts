@@ -6,7 +6,14 @@ export const globalStyles = css`
     box-sizing: border-box;
     font-family: 'font_Pretendard-Regular', 'Courier';
   }
-
+  @font-face {
+    font-family: 'SB_L';
+    src: url('/font/SB_L.ttf');
+  }
+  @font-face {
+    font-family: 'Neothic';
+    src: url('/font/Neothic.ttf');
+  }
   @font-face {
     font-family: 'font_Pretendard-Thin';
     src: url('/font/Pretendard-Thin.ttf');

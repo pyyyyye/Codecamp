@@ -1,29 +1,32 @@
 import { useRouter } from 'next/router'
 import {
   Wrapper,
-  TopInner,
-  Top,
+  Header,
+  LeftBox,
   Title,
-  SnsWrap,
   SubTitle,
-  SnsButton,
-  BottomInner,
-  WorksWrap,
-  WorksPhoto,
-  TabWrap,
-  TabBox,
-  TabButton,
+  RightBox,
+  IconWrap,
+  IconBox,
+  IconImg,
+  MyStacksButton,
+  MainContainer,
   WorksBox,
+  WorksTitleBox,
+  WorksNum,
   WorksTitle,
-  WorksButton,
-  StackBox,
-  StackImg,
-  StackTitle
+  WorksContents,
+  WorksImg,
+  WorksTextBox,
+  WorksType,
+  WorksText,
+  Footer,
+  Hr,
+  FooterText
 } from './landingPage.styles'
 
 export default function LandingPage() {
   const router = useRouter()
-
   function onClickMoveToWork1() {
     router.replace(
       'https://newbizstart.notion.site/89f50449509d4630a9d52e9b5504d885'
@@ -32,67 +35,85 @@ export default function LandingPage() {
   function onClickMoveToWork2() {
     router.push('/market/list')
   }
-  function onClickMoveToWork3() {
-    router.push('/board/bestposts')
-  }
-
   return (
     <Wrapper>
-      {/* --- 상단 타이틀 --- */}
-      <TopInner>
-        <Top>
-          <Title>PORTFOLIO</Title>
-          <SnsWrap>
-            <SnsButton>1</SnsButton>
-            <SnsButton>2</SnsButton>
-            <SnsButton>3</SnsButton>
-            <SnsButton>4</SnsButton>
-          </SnsWrap>
-        </Top>
-        <SubTitle>
-          Front-end Developer <br />
-          PARK YOUNG EUN
-        </SubTitle>
-      </TopInner>
+      {/*//! ----- Header ----- */}
+      <Header>
+        <LeftBox>
+          <Title>PARK YOUNG EUN</Title>
+          <SubTitle>Junior Front-end Developer Portfolio</SubTitle>
+          <MyStacksButton>
+            My Stacks  >
+          </MyStacksButton>
+        </LeftBox>
+        <RightBox>
+          <IconWrap>
+            <IconBox>
+              <IconImg src="/portfolio_img/Notion_logo.png" />
+              <p>Notion</p>
+            </IconBox>
+            <IconBox>
+              <IconImg src="/portfolio_img/github_logo.png" />
+              <p>GitHub</p>
+            </IconBox>
+            <IconBox>
+              <IconImg src="/portfolio_img/velog_logo.jpg" />
+              <p>Velog</p>
+            </IconBox>
+          </IconWrap>
+        </RightBox>
+      </Header>
 
-      {/* --- 하단 컨텐츠 --- */}
-      <BottomInner>
-        {/* <TabWrap> */}
-        {/* MY WORKS */}
-        <TabBox>
-          <TabButton>MY WORKS</TabButton>
-          <WorksWrap>
-            <WorksBox>
-              <WorksTitle>1. 헤이고</WorksTitle>
-              <WorksButton onClick={onClickMoveToWork1}>
-                <WorksPhoto src="/portfolio_img/SplashScreen.png" />
-              </WorksButton>
-            </WorksBox>
-            <WorksBox>
-              <WorksTitle>2. LA한인 - 중고마켓</WorksTitle>
-              <WorksButton onClick={onClickMoveToWork2}>
-                <WorksPhoto src="/images/BannerImg01.jpg" />
-              </WorksButton>
-            </WorksBox>
-            <WorksBox>
-              <WorksTitle>3. LA한인 - 자유게시판</WorksTitle>
-              <WorksButton onClick={onClickMoveToWork3}>
-                <WorksPhoto src="/images/BannerImg02.jpg" />
-              </WorksButton>
-            </WorksBox>
-          </WorksWrap>
-        </TabBox>
+      {/*//! ----- Main Portfolio Works Container ----- */}
+      <MainContainer>
+        <WorksBox>
+          <WorksTitleBox>
+            <WorksNum>01.</WorksNum>
+            <WorksTitle>Hey-Go</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <WorksImg src="/portfolio_img/mockup01.png" />
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>Team</WorksType>
+            <WorksText>해외 여행 동행 구인 커뮤니티</WorksText>
+          </WorksTextBox>
+        </WorksBox>
 
-        {/* MY STACKS */}
-        {/* <TabBox>
-            <TabButton>MY STACKS</TabButton>
-            <StackBox>
-              <StackImg />
-              <StackTitle>React</StackTitle>
-            </StackBox>
-          </TabBox>
-        </TabWrap> */}
-      </BottomInner>
+        <WorksBox>
+          <WorksTitleBox>
+            <WorksNum>02.</WorksNum>
+            <WorksTitle>Market</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <WorksImg src="/portfolio_img/mockup01.png" />
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>Solo</WorksType>
+            <WorksText>중고 마켓</WorksText>
+          </WorksTextBox>
+        </WorksBox>
+
+        <WorksBox>
+          <WorksTitleBox>
+            <WorksNum>01.</WorksNum>
+            <WorksTitle>Hey-Go</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <WorksImg src="/portfolio_img/mockup01.png" />
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>Solo</WorksType>
+            <WorksText>자유게시판</WorksText>
+          </WorksTextBox>
+        </WorksBox>
+      </MainContainer>
+
+      {/*//! ----- Footer ----- */}
+      {/* <Footer>
+        <Hr />
+        <FooterText>park000eun@gmail.com</FooterText>
+      </Footer> */}
     </Wrapper>
   )
 }
