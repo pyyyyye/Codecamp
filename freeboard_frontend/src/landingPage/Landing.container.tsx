@@ -30,39 +30,55 @@ import {
   WorksImg3,
   WorksTextBox,
   WorksType,
-  WorksText,
+  WorksText
 } from './landingPage.styles'
 
 export default function LandingPage() {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const showModal = () => {
-    setIsModalVisible(true);
-  };
+    setIsModalVisible(true)
+  }
   const handleOk = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   const onClickMoveToNotion = () => {
-    window.open("https://www.notion.so/5ea464d9cb8e4cb9a931917038f51db4", "프론트엔드 개발자 박영은 노션 이력서", "width=100%");
+    window.open(
+      'https://www.notion.so/5ea464d9cb8e4cb9a931917038f51db4',
+      '프론트엔드 개발자 박영은 노션 이력서',
+      'width=100%'
+    )
   }
   const onClickMoveToGitHub = () => {
-    window.open("https://github.com/pyyyyye", "프론트엔드 개발자 박영은 깃허브", "width=100%");
+    window.open(
+      'https://github.com/pyyyyye',
+      '프론트엔드 개발자 박영은 깃허브',
+      'width=100%'
+    )
   }
   const onClickMoveToVelog = () => {
-    window.open("https://velog.io/@park0eun", "프론트엔드 개발자 박영은 벨로그", "width=100%");
+    window.open(
+      'https://velog.io/@park0eun',
+      '프론트엔드 개발자 박영은 벨로그',
+      'width=100%'
+    )
   }
 
   function onClickMoveToHeyGo() {
-    window.open("https://newbizstart.notion.site/89f50449509d4630a9d52e9b5504d885", "박영은 포트폴리오 - 헤이고", "width=100%");
+    window.open(
+      'https://newbizstart.notion.site/89f50449509d4630a9d52e9b5504d885',
+      '박영은 포트폴리오 - 헤이고',
+      'width=100%'
+    )
   }
   function onClickMoveToMarket() {
-    window.open("/market/list", "박영은 포트폴리오 - 헤이고", "width=100%");
+    window.open('/market/list', '박영은 포트폴리오 - 헤이고', 'width=100%')
   }
   function onClickMoveToFreeBoard() {
-    window.open("/board/bestposts", "박영은 포트폴리오 - 헤이고", "width=100%");
+    window.open('/board/bestposts', '박영은 포트폴리오 - 헤이고', 'width=100%')
   }
 
   return (
@@ -71,26 +87,33 @@ export default function LandingPage() {
       <Header>
         <LeftBox>
           <Title>PARK YOUNG EUN</Title>
-          <SubTitle>Junior <ImportanceTitle>Front-end Developer</ImportanceTitle> Portfolio</SubTitle>
-          
+          <SubTitle>
+            Junior <ImportanceTitle>Front-end Developer</ImportanceTitle>{' '}
+            Portfolio
+          </SubTitle>
+
           {/* -- My Stacks - Modal -- */}
-          <MyStacksButton onClick={showModal}>
-            My Stacks  >
-          </MyStacksButton>
-          <Modal title="Park YounEun's Stacks" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} bodyStyle={{ height:600, overflow:'auto'}}>
+          <MyStacksButton onClick={showModal}>My Stacks &#62;</MyStacksButton>
+          <Modal
+            title="Park YounEun's Stacks"
+            visible={isModalVisible}
+            onOk={handleOk}
+            onCancel={handleCancel}
+            bodyStyle={{ height: 600, overflow: 'auto' }}
+          >
             <ModalBox>
               <LogoWrapTitle>1.Stacks</LogoWrapTitle>
               <LogoWrap>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_js.png" />
+                  <LogoImg src="/portfolio_img/logo_js.png" />
                   <LogoTitle>JavaScript</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_ts.png" />
+                  <LogoImg src="/portfolio_img/logo_ts.png" />
                   <LogoTitle>TypeScript</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_html.png" />
+                  <LogoImg src="/portfolio_img/logo_html.png" />
                   <LogoTitle>Html</LogoTitle>
                 </LogoBox>
                 <LogoBox>
@@ -102,19 +125,19 @@ export default function LandingPage() {
               <LogoWrapTitle>2. Framework & Library</LogoWrapTitle>
               <LogoWrap>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_nextjs.png" />
+                  <LogoImg src="/portfolio_img/logo_nextjs.png" />
                   <LogoTitle>Next.js</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_react.png" />
+                  <LogoImg src="/portfolio_img/logo_react.png" />
                   <LogoTitle>React</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_react.png" />
+                  <LogoImg src="/portfolio_img/logo_react.png" />
                   <LogoTitle>React-Hooks</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/router.png" />
+                  <LogoImg src="/portfolio_img/router.png" />
                   <LogoTitle>React-Router</LogoTitle>
                 </LogoBox>
                 <LogoBox>
@@ -123,7 +146,11 @@ export default function LandingPage() {
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_ReactNavi.png" />
-                  <LogoTitle>React<br/>Navigation</LogoTitle>
+                  <LogoTitle>
+                    React
+                    <br />
+                    Navigation
+                  </LogoTitle>
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/emotion.png" />
@@ -131,7 +158,11 @@ export default function LandingPage() {
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_styledComponent.png" />
-                  <LogoTitle>Styled<br/>Component</LogoTitle>
+                  <LogoTitle>
+                    Styled
+                    <br />
+                    Component
+                  </LogoTitle>
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_ant.png" />
@@ -139,22 +170,26 @@ export default function LandingPage() {
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_material.png" />
-                  <LogoTitle>Material<br/>Design</LogoTitle>
+                  <LogoTitle>
+                    Material
+                    <br />
+                    Design
+                  </LogoTitle>
                 </LogoBox>
               </LogoWrap>
 
               <LogoWrapTitle>3. Network</LogoWrapTitle>
               <LogoWrap>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/graphql.png" />
+                  <LogoImg src="/portfolio_img/graphql.png" />
                   <LogoTitle>GraphQl-api</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_apollo.png" />
+                  <LogoImg src="/portfolio_img/logo_apollo.png" />
                   <LogoTitle>Apollo Client</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                <LogoImg  src="/portfolio_img/logo_com.jpg" />
+                  <LogoImg src="/portfolio_img/logo_com.jpg" />
                   <LogoTitle>REST api</LogoTitle>
                 </LogoBox>
               </LogoWrap>
@@ -162,23 +197,23 @@ export default function LandingPage() {
               <LogoWrapTitle>4. Communication Tools</LogoWrapTitle>
               <LogoWrap>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/Git-Icon-Black.png" />
+                  <LogoImg src="/portfolio_img/Git-Icon-Black.png" />
                   <LogoTitle>Git</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/github_logo.png" />
+                  <LogoImg src="/portfolio_img/github_logo.png" />
                   <LogoTitle>Git-hub</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                <LogoImg  src="/portfolio_img/slack2.png" />
+                  <LogoImg src="/portfolio_img/slack2.png" />
                   <LogoTitle>Slack</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                <LogoImg  src="/portfolio_img/logo_figma.png" />
+                  <LogoImg src="/portfolio_img/logo_figma.png" />
                   <LogoTitle>Figma</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                <LogoImg  src="/portfolio_img/Notion_logo.png" />
+                  <LogoImg src="/portfolio_img/Notion_logo.png" />
                   <LogoTitle>Notion</LogoTitle>
                 </LogoBox>
               </LogoWrap>
@@ -186,23 +221,22 @@ export default function LandingPage() {
               <LogoWrapTitle>5. Adobe</LogoWrapTitle>
               <LogoWrap>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_photoshop.png" />
+                  <LogoImg src="/portfolio_img/logo_photoshop.png" />
                   <LogoTitle>Photoshop</LogoTitle>
                 </LogoBox>
                 <LogoBox>
-                  <LogoImg  src="/portfolio_img/logo_indesign.png" />
+                  <LogoImg src="/portfolio_img/logo_indesign.png" />
                   <LogoTitle>Indesign</LogoTitle>
                 </LogoBox>
               </LogoWrap>
             </ModalBox>
           </Modal>
-
         </LeftBox>
         <RightBox>
           <IconWrap>
             <IconBox onClick={onClickMoveToNotion}>
               <IconImg src="/portfolio_img/Notion_logo.png" />
-            
+
               <NotionTitle> Resume </NotionTitle>
               <p>Notion</p>
             </IconBox>
@@ -264,32 +298,30 @@ export default function LandingPage() {
 
         <WorksBox>
           <WorksTitleBox>
-            <WorksNum>&nbsp;  </WorksNum>
+            <WorksNum>&nbsp; </WorksNum>
             <WorksTitle> &nbsp; </WorksTitle>
           </WorksTitleBox>
           <WorksContents>
-          <p>Loding ...</p>
+            <p>Loding ...</p>
           </WorksContents>
           <WorksTextBox>
             <WorksType> &nbsp; </WorksType>
-            <WorksText>  &nbsp; </WorksText>
+            <WorksText> &nbsp; </WorksText>
           </WorksTextBox>
         </WorksBox>
         <WorksBox>
           <WorksTitleBox>
-            <WorksNum>&nbsp;  </WorksNum>
+            <WorksNum>&nbsp; </WorksNum>
             <WorksTitle> &nbsp; </WorksTitle>
           </WorksTitleBox>
           <WorksContents>
-           <p>Loding ...</p>
+            <p>Loding ...</p>
           </WorksContents>
           <WorksTextBox>
             <WorksType> &nbsp; </WorksType>
-            <WorksText> &nbsp;  </WorksText>
+            <WorksText> &nbsp; </WorksText>
           </WorksTextBox>
         </WorksBox>
-          
-          
       </MainContainer>
     </Wrapper>
   )
