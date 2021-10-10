@@ -209,6 +209,9 @@ export const WorksImg3 = styled.img`
 `
 export const WorksTextBox = styled.div`
   padding-left: 15px;
+  :hover p {
+    color: #fec600;
+  }
 `
 export const WorksType = styled.p`
   font-family: 'Consolas';
