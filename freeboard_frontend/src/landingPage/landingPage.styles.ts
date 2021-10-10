@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-
+// !-- 랜딩 스타일
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
@@ -28,7 +28,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.h6`
   display: flex;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 20px;
   color: #888;
   font-family: 'Consolas';
   margin-top: 10px;
@@ -209,6 +209,9 @@ export const WorksImg3 = styled.img`
 `
 export const WorksTextBox = styled.div`
   padding-left: 15px;
+  :hover p {
+    color: #fec600;
+  }
 `
 export const WorksType = styled.p`
   font-family: 'Consolas';
