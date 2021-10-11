@@ -18,6 +18,7 @@ export const UploadButton = styled.div`
   margin-right: 24px;
   outline: none;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   text-align: center;
   padding: 25px;
