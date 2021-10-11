@@ -140,7 +140,7 @@ export const MainContainer = styled.div`
   padding-bottom: 50px;
 
   ::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #ffeb8a;
@@ -156,6 +156,20 @@ export const WorksBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 40px;
+  color: #777;
+
+  :hover p {
+    color: #000;
+  }
+  :hover #box1 {
+    background-color: #fec600;
+  }
+  :hover #box2 {
+    background-color: #2b6797;
+  }
+  :hover #box3 {
+    background-color: #a4c61f;
+  }
 `
 export const WorksTitleBox = styled.div`
   width: 100%;
@@ -165,14 +179,13 @@ export const WorksTitleBox = styled.div`
 export const WorksNum = styled.p`
   font-family: 'Neothic';
   font-size: 16px;
-  color: #000;
+  /* color: #000; */
   letter-spacing: 2px;
   margin: 0px;
 `
 export const WorksTitle = styled.p`
   font-family: 'Neothic';
   font-size: 24px;
-  color: #000;
   letter-spacing: 2px;
   margin: 0px;
 `
@@ -209,15 +222,12 @@ export const WorksImg3 = styled.img`
 `
 export const WorksTextBox = styled.div`
   padding-left: 15px;
-  :hover p {
-    color: #fec600;
-  }
+  color: #888;
 `
 export const WorksType = styled.p`
   font-family: 'Consolas';
   font-size: 14px;
   line-height: 20px;
-  color: #888;
   padding-top: 20px;
 `
 export const WorksText = styled.p`
@@ -225,7 +235,6 @@ export const WorksText = styled.p`
   font-size: 18px;
   line-height: 20px;
   margin-top: 10px;
-  color: #000;
 `
 export const Footer = styled.div`
   width: 100%;

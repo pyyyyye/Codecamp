@@ -66,6 +66,7 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               onChange={props.onChangeQuill}
               placeholder="상세설명을 작성해주세요"
             />
+
             <ErrorMessage>{props.errors.contents?.message}</ErrorMessage>
           </ContBox>
 
@@ -76,7 +77,7 @@ export default function MarketWriteUI(props: MarketWriteUIProps) {
               {...props.register('price')}
             />
             {/* <ErrorMessage>{props.errors.price?.message}</ErrorMessage> */}
-            {props.errors.price?.message ? '판매 가격은 필.' : ''}
+            {props.errors.price?.message ? '판매 가격은 필수입력입니다.' : ''}
           </WriteInputBox>
 
           <WriteInputBox>

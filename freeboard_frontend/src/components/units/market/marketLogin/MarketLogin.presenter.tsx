@@ -16,6 +16,7 @@ import {
 } from './MarketLogin.styles'
 import { CheckCircleOutlined } from '@ant-design/icons'
 import { ChangeEvent } from 'react'
+import { useRouter } from 'next/router'
 
 interface IProps {
   onChangeEmail: (event: ChangeEvent<HTMLInputElement>) => void
@@ -28,6 +29,11 @@ interface IProps {
 }
 
 export default function MarketLoginUI(props: IProps) {
+  const router = useRouter()
+  const onClickMoveToSignUp = () => {
+    router.push('/market/signup')
+  }
+
   return (
     <Wrapper>
       <LoginContents>
@@ -62,7 +68,7 @@ export default function MarketLoginUI(props: IProps) {
             <BottomJoinOrFind>
               <BottomBtn>이메일 찾기</BottomBtn>|
               <BottomBtn>비밀번호 찾기</BottomBtn>|
-              <BottomBtn>회원가입</BottomBtn>
+              <BottomBtn onClick={onClickMoveToSignUp}>회원가입</BottomBtn>
             </BottomJoinOrFind>
             {/* ---- MainLoginContents End ---- */}
           </MainLoginContents>
