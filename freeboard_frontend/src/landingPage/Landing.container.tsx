@@ -88,7 +88,7 @@ export default function LandingPage() {
         <LeftBox>
           <Title>PARK YOUNG EUN</Title>
           <SubTitle>
-            Junior <ImportanceTitle>Front-end Developer</ImportanceTitle>{' '}
+            Junior <ImportanceTitle>Front-end Developer</ImportanceTitle>
             Portfolio
           </SubTitle>
 
@@ -298,28 +298,28 @@ export default function LandingPage() {
 
         <WorksBox>
           <WorksTitleBox>
-            <WorksNum>&nbsp; </WorksNum>
-            <WorksTitle> &nbsp; </WorksTitle>
+            <WorksNum>&nbsp;</WorksNum>
+            <WorksTitle>&nbsp;</WorksTitle>
           </WorksTitleBox>
           <WorksContents>
-            <p>Loding ...</p>
+            <p>Loding...</p>
           </WorksContents>
           <WorksTextBox>
-            <WorksType> &nbsp; </WorksType>
-            <WorksText> &nbsp; </WorksText>
+            <WorksType>&nbsp;</WorksType>
+            <WorksText>&nbsp;</WorksText>
           </WorksTextBox>
         </WorksBox>
         <WorksBox>
           <WorksTitleBox>
-            <WorksNum>&nbsp; </WorksNum>
-            <WorksTitle> &nbsp; </WorksTitle>
+            <WorksNum>&nbsp;</WorksNum>
+            <WorksTitle>&nbsp;</WorksTitle>
           </WorksTitleBox>
           <WorksContents>
             <p>Loding ...</p>
           </WorksContents>
           <WorksTextBox>
-            <WorksType> &nbsp; </WorksType>
-            <WorksText> &nbsp; </WorksText>
+            <WorksType>&nbsp;</WorksType>
+            <WorksText>&nbsp;</WorksText>
           </WorksTextBox>
         </WorksBox>
       </MainContainer>
