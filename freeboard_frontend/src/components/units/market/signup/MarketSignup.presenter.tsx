@@ -52,6 +52,7 @@ export default function MarketSignupUI(props: any) {
             placeholder="비밀번호를 입력해주세요"
             onChange={props.onChangePasswordAginInput}
           />
+          {/* <SignupError>{props.inputError.repassword}</SignupError> */}
           <SignupError>{props.inputError.password}</SignupError>
         </InputBox>
         <GoToSignup onClick={props.onClickSignup}>회원가입하기</GoToSignup>

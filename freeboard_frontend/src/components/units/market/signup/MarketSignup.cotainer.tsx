@@ -5,11 +5,13 @@ import { CREATE_USER } from './MarketSignup.queries'
 import { ChangeEvent, useState } from 'react'
 import { IMutation } from '../../../../commons/types/generated/types'
 import MarketSignupUI from './MarketSignup.presenter'
+import router from 'next/router'
 
 export const SGINUP_INPUT = {
   name: '',
   email: '',
   password: ''
+  // repassword: ''
 }
 
 export default function MarketSingup() {
@@ -32,6 +34,9 @@ export default function MarketSingup() {
       name: signupInput.name ? '' : '이름을 입력해주세요.',
       email: signupInput.email ? '' : '이메일을 입력해주세요.',
       password: signupInput.password ? '' : '비밀번호를 입력해주세요.'
+      // repassword: signupInput.repassword
+      //   ? ''
+      //   : '비밀번호를 한번 더 입력해주세요.'
     })
 
     const isEvery = Object.values(signupInput).every((data) => data)
@@ -45,8 +50,9 @@ export default function MarketSingup() {
         }
       })
       alert('회원가입이 완료되었습니다.')
+      router.push('/market/login')
     } catch (error) {
-      alert('회원가입이 취소되었습니다.')
+      alert('회원가입에 실패했습니다.')
       // alert(error.message);
     }
   }

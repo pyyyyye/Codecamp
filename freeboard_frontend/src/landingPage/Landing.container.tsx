@@ -259,7 +259,7 @@ export default function LandingPage() {
             <WorksNum>01.</WorksNum>
             <WorksTitle>Hey-Go</WorksTitle>
           </WorksTitleBox>
-          <WorksContents>
+          <WorksContents id="box1">
             <WorksImg1 src="/portfolio_img/mockup01.png" />
           </WorksContents>
           <WorksTextBox>
@@ -273,7 +273,7 @@ export default function LandingPage() {
             <WorksNum>02.</WorksNum>
             <WorksTitle>Market</WorksTitle>
           </WorksTitleBox>
-          <WorksContents>
+          <WorksContents id="box2">
             <WorksImg2 src="/portfolio_img/MacBook.png" />
           </WorksContents>
           <WorksTextBox>
@@ -287,7 +287,7 @@ export default function LandingPage() {
             <WorksNum>03.</WorksNum>
             <WorksTitle>Freeboard</WorksTitle>
           </WorksTitleBox>
-          <WorksContents>
+          <WorksContents id="box3">
             <WorksImg3 src="/portfolio_img/Display.png" />
           </WorksContents>
           <WorksTextBox>
@@ -303,6 +303,19 @@ export default function LandingPage() {
           </WorksTitleBox>
           <WorksContents>
             <p>Loding...</p>
+          </WorksContents>
+          <WorksTextBox>
+            <WorksType>&nbsp;</WorksType>
+            <WorksText>&nbsp;</WorksText>
+          </WorksTextBox>
+        </WorksBox>
+        <WorksBox>
+          <WorksTitleBox>
+            <WorksNum>&nbsp;</WorksNum>
+            <WorksTitle>&nbsp;</WorksTitle>
+          </WorksTitleBox>
+          <WorksContents>
+            <p>Loding ...</p>
           </WorksContents>
           <WorksTextBox>
             <WorksType>&nbsp;</WorksType>

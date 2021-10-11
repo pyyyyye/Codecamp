@@ -11,6 +11,7 @@ import {
   Date,
   MiddleContentsPost,
   ContentsTitle,
+  ContentsImgWrap,
   ContentsImage,
   ContentsText,
   ContentsVideo,
@@ -57,12 +58,14 @@ export default function DetailPageUI(props: IDetailPageUIProps) {
         {/*//! --- MiddleContentsPost Start --- */}
         <MiddleContentsPost>
           <ContentsTitle> {props.data?.fetchBoard.title}</ContentsTitle>
-          {props.data?.fetchBoard.images.map((data) => (
-            <ContentsImage
-              key={data.images}
-              src={`https://storage.googleapis.com/${data}`}
-            />
-          ))}
+          <ContentsImgWrap>
+            {props.data?.fetchBoard.images.map((data) => (
+              <ContentsImage
+                key={data.images}
+                src={`https://storage.googleapis.com/${data}`}
+              />
+            ))}
+          </ContentsImgWrap>
 
           <ContentsText>{props.data?.fetchBoard.contents}</ContentsText>
 

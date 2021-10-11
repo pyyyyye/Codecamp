@@ -75,9 +75,21 @@ export const ContentsTitle = styled.h1`
   margin-top: 0px;
   margin-bottom: 40px;
 `
-export const ContentsImage = styled.img`
+export const ContentsImgWrap = styled.div`
   width: 100%;
-  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const ContentsImage = styled.img`
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
 `
 export const ContentsText = styled.p`
   font-size: 16px;
@@ -86,8 +98,10 @@ export const ContentsText = styled.p`
   margin: 40px 0px 120px 0px;
 `
 export const ContentsVideo = styled(ReactPlayer)`
-  width: 486px;
-  height: 290px;
+  /* width: 486px; */
+  width: auto;
+  height: auto;
+  /* height: 290px; */
   /* background-image: url(/video.png); */
   background-repeat: no-repeat;
   margin: 0 auto;

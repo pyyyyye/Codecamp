@@ -11,8 +11,8 @@ export const INPUT_INIT = {
   writer: '',
   password: '',
   title: '',
-  contents: '',
-  youtubeUrl: ''
+  contents: ''
+  // youtubeUrl: ''
 }
 interface IProps {
   isEdit?: boolean
@@ -69,8 +69,8 @@ export default function NewPage(props: IProps) {
       writer: inputs.writer ? '' : '작성자를 입력해주세요.',
       password: inputs.password ? '' : '비밀번호를 입력해주세요.',
       title: inputs.title ? '' : '제목을 입력해주세요.',
-      contents: inputs.contents ? '' : '내용을 입력해주세요',
-      youtubeUrl: inputs.youtubeUrl ? '' : ''
+      contents: inputs.contents ? '' : '내용을 입력해주세요'
+      // youtubeUrl: inputs.youtubeUrl ? '' : ''
     })
 
     //!----- error 실행 시작-----//

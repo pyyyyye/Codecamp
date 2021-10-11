@@ -14,7 +14,7 @@ export const UploadImage = styled.img`
 export const UploadButton = styled.div`
   width: 100px;
   height: 100px;
-  background-color: #bdbdbd;
+  background-color: #ededed;
   margin-right: 24px;
   outline: none;
   border: none;
