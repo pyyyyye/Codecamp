@@ -16,6 +16,20 @@ import {
 } from './subPage.styles'
 
 export default function YogerSubUI() {
+  const onClickMoveToYogerPc = () => {
+    window.open(
+      'http://joohyunedu.com/박영은/yoger',
+      '프론트엔드 개발자 박영은 - 요거프레소 반응형 제작 - pc',
+      'width=100%'
+    )
+  }
+  const onClickMoveToYogerMobile = () => {
+    window.open(
+      'http://joohyunedu.com/박영은/yoger/m/yoger_index.html',
+      '프론트엔드 개발자 박영은 - 요거프레소 반응형 제작 - mobile',
+      'width=100%'
+    )
+  }
   return (
     <Wrapper>
       <TopBox>
@@ -29,15 +43,10 @@ export default function YogerSubUI() {
           <p>기여도 100%</p>
         </SubText>
         <ButtonBox>
-          <a href="http://joohyunedu.com/박영은/yoger" target="_blank">
-            <Button>PC 버전 바로가기</Button>
-          </a>
-          <a
-            href="http://joohyunedu.com/박영은/yoger/m/yoger_index.html"
-            target="_blank"
-          >
-            <Button>Mobile 버전 바로가기</Button>
-          </a>
+          <Button onClick={onClickMoveToYogerPc}>PC 버전 바로가기</Button>
+          <Button onClick={onClickMoveToYogerMobile}>
+            Mobile 버전 바로가기
+          </Button>
         </ButtonBox>
         <Mockup src="/yoger_img/sub_01_p1_products.png" />
       </TopBox>

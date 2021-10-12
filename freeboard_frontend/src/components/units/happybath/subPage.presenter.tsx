@@ -16,6 +16,13 @@ import {
 } from './subPage.styles'
 
 export default function HappyBathSubUI() {
+  const onClickMoveToHappybath = () => {
+    window.open(
+      'http://joohyunedu.com/박영은/happybath',
+      '프론트엔드 개발자 박영은 - 해피바스 반응형 제작',
+      'width=100%'
+    )
+  }
   return (
     <Wrapper>
       <TopBox>
@@ -29,9 +36,9 @@ export default function HappyBathSubUI() {
           <p>기여도 100%</p>
         </SubText>
         <ButtonBox>
-          <a href="http://joohyunedu.com/박영은/happybath" target="_blank">
-            <Button>반응형 사이트 바로가기</Button>
-          </a>
+          <Button onClick={onClickMoveToHappybath}>
+            반응형 사이트 바로가기
+          </Button>
         </ButtonBox>
         <Mockup src="/yoger_img/happybathmockup.png" />
       </TopBox>
