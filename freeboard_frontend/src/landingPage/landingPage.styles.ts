@@ -170,6 +170,12 @@ export const WorksBox = styled.div`
   :hover #box3 {
     background-color: #a4c61f;
   }
+  :hover #box4 {
+    background-color: #fe9702;
+  }
+  :hover #box5 {
+    background-color: #46a0f6;
+  }
 `
 export const WorksTitleBox = styled.div`
   width: 100%;
@@ -219,6 +225,19 @@ export const WorksImg3 = styled.img`
   position: absolute;
   top: 16px;
   right: -6px;
+`
+export const WorksImg4 = styled.img`
+  width: 450px;
+  position: absolute;
+  top: 30px;
+  left: -50px;
+`
+export const WorksImg5 = styled.img`
+  width: 280px;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
 export const WorksTextBox = styled.div`
   padding-left: 15px;

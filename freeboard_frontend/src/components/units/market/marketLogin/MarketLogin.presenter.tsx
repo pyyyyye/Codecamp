@@ -12,7 +12,9 @@ import {
   GotoLoginBox,
   BottomJoinOrFind,
   BottomBtn,
-  ErrorMessage
+  ErrorMessage,
+  ExData,
+  IdPw
 } from './MarketLogin.styles'
 import { CheckCircleOutlined } from '@ant-design/icons'
 import { ChangeEvent } from 'react'
@@ -74,6 +76,10 @@ export default function MarketLoginUI(props: IProps) {
           </MainLoginContents>
         </form>
       </LoginContents>
+      <ExData>
+        <IdPw>I D : 111@111.com</IdPw>
+        <IdPw>PW : aa1111</IdPw>
+      </ExData>
     </Wrapper>
   )
 }

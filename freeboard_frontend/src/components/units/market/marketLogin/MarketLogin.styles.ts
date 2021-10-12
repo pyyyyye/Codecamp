@@ -15,7 +15,7 @@ export const TopLogo = styled.div`
   width: 288px;
   height: 44px;
   margin: 0 auto;
-  background-image: url('/market_img/logo.png');
+  background-image: url('/images/market_logo.png');
   background-repeat: no-repeat;
   padding-bottom: 100px;
 `
@@ -100,4 +100,18 @@ export const BottomBtn = styled.div`
   padding: 0 18px;
 
   cursor: pointer;
+`
+export const ExData = styled.div`
+  position: fixed;
+  right: 500px;
+  top: 335px;
+  width: 220px;
+  height: 106px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 25px;
+`
+export const IdPw = styled.p`
+  color: #fff;
+  letter-spacing: 2px;
 `

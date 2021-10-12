@@ -28,6 +28,8 @@ import {
   WorksImg1,
   WorksImg2,
   WorksImg3,
+  WorksImg4,
+  WorksImg5,
   WorksTextBox,
   WorksType,
   WorksText
@@ -80,7 +82,16 @@ export default function LandingPage() {
   function onClickMoveToFreeBoard() {
     window.open('/board/bestposts', '박영은 포트폴리오 - 헤이고', 'width=100%')
   }
-
+  function onClickMoveToYogerSub() {
+    window.open(
+      '/Yogerpresso',
+      '박영은 포트폴리오 - 요거프레소 소개',
+      'width=100%'
+    )
+  }
+  function onClickMoveToHappybathSub() {
+    window.open('/happybath', '박영은 포트폴리오 - 해피바스 소개', 'width=100%')
+  }
   return (
     <Wrapper>
       {/*//! ----- Header ----- */}
@@ -263,7 +274,7 @@ export default function LandingPage() {
             <WorksImg1 src="/portfolio_img/mockup01.png" />
           </WorksContents>
           <WorksTextBox>
-            <WorksType>Team</WorksType>
+            <WorksType>Team &nbsp; |&nbsp; 1 month</WorksType>
             <WorksText>해외 여행 동행 구인 커뮤니티</WorksText>
           </WorksTextBox>
         </WorksBox>
@@ -277,7 +288,7 @@ export default function LandingPage() {
             <WorksImg2 src="/portfolio_img/MacBook.png" />
           </WorksContents>
           <WorksTextBox>
-            <WorksType>Solo</WorksType>
+            <WorksType>Solo&nbsp; |&nbsp; 1 month</WorksType>
             <WorksText>중고 마켓</WorksText>
           </WorksTextBox>
         </WorksBox>
@@ -291,35 +302,36 @@ export default function LandingPage() {
             <WorksImg3 src="/portfolio_img/Display.png" />
           </WorksContents>
           <WorksTextBox>
-            <WorksType>Solo</WorksType>
+            <WorksType>Solo&nbsp; |&nbsp; 1 month</WorksType>
             <WorksText>자유게시판</WorksText>
           </WorksTextBox>
         </WorksBox>
 
-        <WorksBox>
+        <WorksBox onClick={onClickMoveToYogerSub}>
           <WorksTitleBox>
-            <WorksNum>&nbsp;</WorksNum>
-            <WorksTitle>&nbsp;</WorksTitle>
+            <WorksNum>04.</WorksNum>
+            <WorksTitle>Yogerpresso</WorksTitle>
           </WorksTitleBox>
-          <WorksContents>
-            <p>Loding...</p>
+          <WorksContents id="box4">
+            <WorksImg4 src="/yoger_img/yoger_mockup.png" />
           </WorksContents>
           <WorksTextBox>
-            <WorksType>&nbsp;</WorksType>
-            <WorksText>&nbsp;</WorksText>
+            <WorksType>Solo&nbsp; |&nbsp; 1 month</WorksType>
+            <WorksText>요거프레소 홈페이지 - 반응형 </WorksText>
           </WorksTextBox>
         </WorksBox>
-        <WorksBox>
+
+        <WorksBox onClick={onClickMoveToHappybathSub}>
           <WorksTitleBox>
-            <WorksNum>&nbsp;</WorksNum>
-            <WorksTitle>&nbsp;</WorksTitle>
+            <WorksNum>05.</WorksNum>
+            <WorksTitle>Happy Bath</WorksTitle>
           </WorksTitleBox>
-          <WorksContents>
-            <p>Loding ...</p>
+          <WorksContents id="box5">
+            <WorksImg5 src="/yoger_img/happybathmockup.png" />
           </WorksContents>
           <WorksTextBox>
-            <WorksType>&nbsp;</WorksType>
-            <WorksText>&nbsp;</WorksText>
+            <WorksType>Solo&nbsp; |&nbsp; 1 month</WorksType>
+            <WorksText>해피바스 홈페이지 - 반응형</WorksText>
           </WorksTextBox>
         </WorksBox>
         <WorksBox>

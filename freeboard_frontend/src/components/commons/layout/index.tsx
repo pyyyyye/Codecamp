@@ -17,7 +17,12 @@ interface IProps {
   children: ReactNode
 }
 
-const HIDDEN_URL = ['/market/signup', '/market/login']
+const HIDDEN_URL = [
+  '/market/signup',
+  '/market/login',
+  '/Yogerpresso/subPage',
+  '/happybath/subPage'
+]
 
 export default function Layout(props: IProps) {
   const router = useRouter()
