@@ -16,9 +16,6 @@ import {
 } from './subPage.styles'
 
 export default function HappyBathSubUI() {
-  const onClickMoveToHappybathMobile = () => {
-    alert('서비스 준비 중입니다.')
-  }
   return (
     <Wrapper>
       <TopBox>
@@ -29,6 +26,7 @@ export default function HappyBathSubUI() {
         <SubText>
           <span>&#128197; 1 month</span>|
           <span>&#127912;, &#128187; 2018. 09</span>
+          <p>기여도 100%</p>
         </SubText>
         <ButtonBox>
           <a href="http://joohyunedu.com/박영은/happybath" target="_blank">

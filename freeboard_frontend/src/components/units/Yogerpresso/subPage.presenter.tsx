@@ -26,6 +26,7 @@ export default function YogerSubUI() {
         <SubText>
           <span>&#128197; 1 month</span>|
           <span>&#127912;, &#128187; 2018. 08</span>
+          <p>기여도 100%</p>
         </SubText>
         <ButtonBox>
           <a href="http://joohyunedu.com/박영은/yoger" target="_blank">

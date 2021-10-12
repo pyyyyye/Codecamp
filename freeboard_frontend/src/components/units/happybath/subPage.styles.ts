@@ -44,6 +44,10 @@ export const SubText = styled.p`
   span {
     padding: 12px;
   }
+  p {
+    margin: 0px;
+    padding-top: 5px;
+  }
 `
 export const ButtonBox = styled.div`
   margin-bottom: 20px;
@@ -98,6 +102,10 @@ export const SizeText = styled.div`
   }
 `
 export const UiMockupBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 20px;
   p {

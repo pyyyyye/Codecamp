@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 export const TopBox = styled.div`
   width: 100%;
   background-image: url('/yoger_img/sub_01_p1_bg.jpg');
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +45,10 @@ export const SubText = styled.p`
   padding: 14px 0px;
   span {
     padding: 12px;
+  }
+  p {
+    margin: 0px;
+    padding-top: 5px;
   }
 `
 export const ButtonBox = styled.div`
