@@ -84,17 +84,13 @@ export default function LandingPage() {
   }
   function onClickMoveToYogerSub() {
     window.open(
-      '/Yogerpresso/subPage',
+      '/Yogerpresso',
       '박영은 포트폴리오 - 요거프레소 소개',
       'width=100%'
     )
   }
   function onClickMoveToHappybathSub() {
-    window.open(
-      '/happybath/subPage',
-      '박영은 포트폴리오 - 해피바스 소개',
-      'width=100%'
-    )
+    window.open('/happybath', '박영은 포트폴리오 - 해피바스 소개', 'width=100%')
   }
   return (
     <Wrapper>
