@@ -108,6 +108,7 @@ export const UiMockupBox = styled.div`
   align-items: center;
   text-align: center;
   font-size: 20px;
+  line-height: 20px;
   p {
     padding-bottom: 50px;
   }

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 `
 //! =============== Top Bestlist =================
 export const TopBox = styled.div`

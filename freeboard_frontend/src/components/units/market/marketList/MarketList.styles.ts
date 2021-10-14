@@ -236,7 +236,7 @@ export const LikeCount = styled.div`
 export const ProductPrice = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: left;
   width: 200px;
   height: 200px;
   text-align: right;
