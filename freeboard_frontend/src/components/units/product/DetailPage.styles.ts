@@ -82,14 +82,13 @@ export const ContentsImgWrap = styled.div`
   align-items: center;
 `
 export const ContentsImage = styled.img`
-  width: auto;
-  height: auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `
 export const ContentsText = styled.p`
   font-size: 16px;
