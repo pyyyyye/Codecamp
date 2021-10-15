@@ -200,7 +200,7 @@ export const WorksContents = styled.div`
   background-color: #efefef;
   width: 335px;
   height: 300px;
-  border-radius: 20px;
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
