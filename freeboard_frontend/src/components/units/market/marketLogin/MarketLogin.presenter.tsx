@@ -68,13 +68,12 @@ export default function MarketLoginUI(props: IProps) {
             </KeepStateLogin>
             {/* -- 로그인 버튼 -- */}
             <GotoLoginBox>
-              <GoToLogin type="submit">로그인하기</GoToLogin>
+              <GoToLogin type="submit">Sign in</GoToLogin>
             </GotoLoginBox>
             {/* -- 하단 비밀번호 찾기 및 회원가입 -- */}
             <BottomJoinOrFind>
-              <BottomBtn>이메일 찾기</BottomBtn>|
-              <BottomBtn>비밀번호 찾기</BottomBtn>|
-              <BottomBtn onClick={onClickMoveToSignUp}>회원가입</BottomBtn>
+              <BottomBtn>Forgot ID</BottomBtn>|<BottomBtn>Forgot PW</BottomBtn>|
+              <BottomBtn onClick={onClickMoveToSignUp}>Sing up</BottomBtn>
             </BottomJoinOrFind>
             {/* ---- MainLoginContents End ---- */}
           </MainLoginContents>

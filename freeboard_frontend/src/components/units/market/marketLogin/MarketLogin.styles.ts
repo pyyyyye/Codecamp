@@ -2,14 +2,16 @@
 import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
-  width: 100%auto;
+  width: 100%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 240px;
+  align-items: center;
+  text-align: center;
 `
 export const LoginContents = styled.div`
   width: 380px;
-  /* height: 510px; */
 `
 export const TopLogo = styled.div`
   width: 288px;

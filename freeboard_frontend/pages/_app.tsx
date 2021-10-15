@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               checkLogin
                 ? {
                     backgroundImage: 'url(/images/back.jpg)',
-                    backgroundSize: '100%'
+                    backgroundSize: 'cover'
                   }
                 : undefined
             }

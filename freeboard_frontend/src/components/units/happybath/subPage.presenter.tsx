@@ -32,8 +32,8 @@ export default function HappyBathSubUI() {
         </SubTitle>
         <SubText>
           <span>&#128197; 1 month</span>|
-          <span>&#127912;, &#128187; 2018. 09</span>
-          <p>기여도 100%</p>
+          <span>&#127912;, &#128187; 2018. 09</span>|<span>기여도 100%</span>
+          <p>- html, css, jQuery, JS -</p>
         </SubText>
         <ButtonBox>
           <Button onClick={onClickMoveToHappybath}>
