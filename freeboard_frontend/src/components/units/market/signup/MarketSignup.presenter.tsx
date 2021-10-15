@@ -1,5 +1,6 @@
 // ======= 중고마켓 회원가입 | market signup presenter =======
 import {
+  Wrapper,
   MainSignupContents,
   TopTitle,
   InputSignup,
@@ -11,52 +12,52 @@ import {
 
 export default function MarketSignupUI(props: any) {
   return (
-    <>
-      <TopTitle>회원가입</TopTitle>
+    <Wrapper>
+      <TopTitle>Sign up</TopTitle>
       <MainSignupContents>
         <InputBox>
-          <SingupLabel>이름</SingupLabel>
+          <SingupLabel>Name</SingupLabel>
           <InputSignup
             name="name"
             type="text"
-            placeholder="이름을 입력해주세요"
+            placeholder=" Name"
             onChange={props.onChangeSignupInput}
           />
           <SignupError>{props.inputError.name}</SignupError>
         </InputBox>
         <InputBox>
-          <SingupLabel>이메일</SingupLabel>
+          <SingupLabel>E-mail</SingupLabel>
           <InputSignup
             name="email"
             type="text"
-            placeholder="이메일을 입력해주세요"
+            placeholder="E-mail"
             onChange={props.onChangeSignupInput}
           />
           <SignupError>{props.inputError.email}</SignupError>
         </InputBox>
         <InputBox>
-          <SingupLabel>비밀번호</SingupLabel>
+          <SingupLabel>Password</SingupLabel>
           <InputSignup
             name="password"
             type="password"
-            placeholder="비밀번호를입력해주세요"
+            placeholder="Create Password"
             onChange={props.onChangeSignupInput}
           />
           <SignupError>{props.inputError.password}</SignupError>
         </InputBox>
         <InputBox>
-          <SingupLabel>비밀번호 확인</SingupLabel>
+          <SingupLabel>Password</SingupLabel>
           <InputSignup
             id="SignupPasswordAgain"
             type="password"
-            placeholder="비밀번호를 입력해주세요"
+            placeholder="Create Password"
             onChange={props.onChangePasswordAginInput}
           />
-          {/* <SignupError>{props.inputError.repassword}</SignupError> */}
-          <SignupError>{props.inputError.password}</SignupError>
+          <SignupError>{props.inputError.repassword}</SignupError>
+          {/* <SignupError>{props.inputError.password}</SignupError> */}
         </InputBox>
-        <GoToSignup onClick={props.onClickSignup}>회원가입하기</GoToSignup>
+        <GoToSignup onClick={props.onClickSignup}>Sign up</GoToSignup>
       </MainSignupContents>
-    </>
+    </Wrapper>
   )
 }

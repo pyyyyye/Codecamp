@@ -39,8 +39,8 @@ export default function YogerSubUI() {
         </SubTitle>
         <SubText>
           <span>&#128197; 1 month</span>|
-          <span>&#127912;, &#128187; 2018. 08</span>
-          <p>기여도 100%</p>
+          <span>&#127912;, &#128187; 2018. 08</span>|<span>기여도 100%</span>
+          <p>- html, css, jQuery, JS -</p>
         </SubText>
         <ButtonBox>
           <Button onClick={onClickMoveToYogerPc}>PC 버전 바로가기</Button>

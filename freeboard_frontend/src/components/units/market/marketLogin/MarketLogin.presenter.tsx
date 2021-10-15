@@ -13,7 +13,6 @@ import {
   BottomJoinOrFind,
   BottomBtn,
   ErrorMessage,
-  ExData,
   IdPw
 } from './MarketLogin.styles'
 import { CheckCircleOutlined } from '@ant-design/icons'
@@ -60,26 +59,26 @@ export default function MarketLoginUI(props: IProps) {
             {/* -- 로그인상태 유지 체크박스 -- */}
             <KeepStateLogin>
               <CheckCircleOutlined />
-              <KeepLoginText>로그인 상태 유지 </KeepLoginText>
+              <KeepLoginText>
+                <IdPw>
+                  Test &nbsp;) &nbsp;ID : <span>111@111.com</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; PW : <span>aa1111</span>
+                </IdPw>
+              </KeepLoginText>
             </KeepStateLogin>
             {/* -- 로그인 버튼 -- */}
             <GotoLoginBox>
-              <GoToLogin type="submit">로그인하기</GoToLogin>
+              <GoToLogin type="submit">Sign in</GoToLogin>
             </GotoLoginBox>
             {/* -- 하단 비밀번호 찾기 및 회원가입 -- */}
             <BottomJoinOrFind>
-              <BottomBtn>이메일 찾기</BottomBtn>|
-              <BottomBtn>비밀번호 찾기</BottomBtn>|
-              <BottomBtn onClick={onClickMoveToSignUp}>회원가입</BottomBtn>
+              <BottomBtn>Forgot ID</BottomBtn>|<BottomBtn>Forgot PW</BottomBtn>|
+              <BottomBtn onClick={onClickMoveToSignUp}>Sing up</BottomBtn>
             </BottomJoinOrFind>
             {/* ---- MainLoginContents End ---- */}
           </MainLoginContents>
         </form>
       </LoginContents>
-      <ExData>
-        <IdPw>I D : 111@111.com</IdPw>
-        <IdPw>PW : aa1111</IdPw>
-      </ExData>
     </Wrapper>
   )
 }

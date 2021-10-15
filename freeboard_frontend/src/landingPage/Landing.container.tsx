@@ -77,10 +77,10 @@ export default function LandingPage() {
     )
   }
   function onClickMoveToMarket() {
-    window.open('/market/list', '박영은 포트폴리오 - 헤이고', 'width=100%')
+    window.open('/market/login', '박영은 포트폴리오 - 마켓', 'width=100%')
   }
   function onClickMoveToFreeBoard() {
-    window.open('/board/bestposts', '박영은 포트폴리오 - 헤이고', 'width=100%')
+    window.open('/board/bestposts', '박영은 포트폴리오 - 게시판', 'width=100%')
   }
   function onClickMoveToYogerSub() {
     window.open(

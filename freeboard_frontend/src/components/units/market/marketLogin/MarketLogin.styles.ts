@@ -2,14 +2,16 @@
 import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
-  width: 100%auto;
+  width: 100%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 240px;
+  align-items: center;
+  text-align: center;
 `
 export const LoginContents = styled.div`
   width: 380px;
-  /* height: 510px; */
 `
 export const TopLogo = styled.div`
   width: 288px;
@@ -98,20 +100,14 @@ export const BottomBtn = styled.div`
   font-weight: 400;
   font-size: 13px;
   padding: 0 18px;
-
   cursor: pointer;
 `
-export const ExData = styled.div`
-  position: fixed;
-  right: 500px;
-  top: 335px;
-  width: 220px;
-  height: 106px;
-  border: 1px solid #fff;
-  border-radius: 15px;
-  padding: 25px;
-`
-export const IdPw = styled.p`
+
+export const IdPw = styled.div`
+  font-size: 12px;
+  line-height: 14px;
   color: #fff;
-  letter-spacing: 2px;
+  span {
+    border-bottom: 2px solid yellow;
+  }
 `
