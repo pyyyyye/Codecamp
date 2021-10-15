@@ -110,7 +110,7 @@ export default function LandingPage() {
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            bodyStyle={{ height: 600, overflow: 'auto' }}
+            bodyStyle={{ height: 560, overflow: 'auto' }}
           >
             <ModalBox>
               <LogoWrapTitle>1.Stacks</LogoWrapTitle>
