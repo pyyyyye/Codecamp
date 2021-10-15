@@ -45,7 +45,7 @@ export default function MarketSignupUI(props: any) {
           />
           <SignupError>{props.inputError.password}</SignupError>
         </InputBox>
-        <InputBox>
+        {/* <InputBox>
           <SingupLabel>Password</SingupLabel>
           <InputSignup
             id="SignupPasswordAgain"
@@ -55,7 +55,7 @@ export default function MarketSignupUI(props: any) {
           />
           <SignupError>{props.inputError.repassword}</SignupError>
           {/* <SignupError>{props.inputError.password}</SignupError> */}
-        </InputBox>
+        {/* </InputBox>  */}
         <GoToSignup onClick={props.onClickSignup}>Sign up</GoToSignup>
       </MainSignupContents>
     </Wrapper>

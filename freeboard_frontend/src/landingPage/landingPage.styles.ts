@@ -151,7 +151,8 @@ export const MainContainer = styled.div`
   }
 `
 export const WorksBox = styled.div`
-  width: 335px;
+  /* width: 335px; */
+  width: 30%;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -269,7 +270,7 @@ export const Hr = styled.hr`
 `
 export const FooterText = styled.p`
   font-family: 'Consolas';
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   text-align: right;
   color: #999;
 `
