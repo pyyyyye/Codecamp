@@ -36,7 +36,7 @@ export default function MarketSingup() {
       password: signupInput.password ? '' : '비밀번호를 입력해주세요.'
       // repassword: signupInput.repassword
       //   ? ''
-      //   : '비밀번호를 한번 더 입력해주세요.'
+      //   : '비밀번호를 한 번 더 입력해주세요.'
     })
 
     const isEvery = Object.values(signupInput).every((data) => data)

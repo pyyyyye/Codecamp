@@ -110,7 +110,7 @@ export default function LandingPage() {
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            bodyStyle={{ height: 600, overflow: 'auto' }}
+            bodyStyle={{ height: 560, overflow: 'auto' }}
           >
             <ModalBox>
               <LogoWrapTitle>1.Stacks</LogoWrapTitle>
@@ -201,7 +201,7 @@ export default function LandingPage() {
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_com.jpg" />
-                  <LogoTitle>REST api</LogoTitle>
+                  <LogoTitle>REST-api</LogoTitle>
                 </LogoBox>
               </LogoWrap>
 

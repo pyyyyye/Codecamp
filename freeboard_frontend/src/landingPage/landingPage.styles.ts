@@ -151,7 +151,8 @@ export const MainContainer = styled.div`
   }
 `
 export const WorksBox = styled.div`
-  width: 335px;
+  /* width: 335px; */
+  width: 30%;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -199,7 +200,7 @@ export const WorksContents = styled.div`
   background-color: #efefef;
   width: 335px;
   height: 300px;
-  border-radius: 30px;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -233,7 +234,7 @@ export const WorksImg4 = styled.img`
   left: -50px;
 `
 export const WorksImg5 = styled.img`
-  width: 280px;
+  width: 260px;
   position: absolute;
   top: 53%;
   left: 50%;
@@ -269,7 +270,7 @@ export const Hr = styled.hr`
 `
 export const FooterText = styled.p`
   font-family: 'Consolas';
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   text-align: right;
   color: #999;
 `
