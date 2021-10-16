@@ -234,7 +234,7 @@ export const WorksImg4 = styled.img`
   left: -50px;
 `
 export const WorksImg5 = styled.img`
-  width: 280px;
+  width: 260px;
   position: absolute;
   top: 53%;
   left: 50%;

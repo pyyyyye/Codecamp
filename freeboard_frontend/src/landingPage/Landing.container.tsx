@@ -201,7 +201,7 @@ export default function LandingPage() {
                 </LogoBox>
                 <LogoBox>
                   <LogoImg src="/portfolio_img/logo_com.jpg" />
-                  <LogoTitle>REST api</LogoTitle>
+                  <LogoTitle>REST-api</LogoTitle>
                 </LogoBox>
               </LogoWrap>
 
