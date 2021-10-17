@@ -6,16 +6,13 @@ export const UploadImage = styled.img`
   margin-right: 24px;
   cursor: pointer;
   box-sizing: border-box;
-  // 이미지 미리보기 박스
-  /* display: flex;
-  flex-direction: row; */
 `
 
 export const UploadButton = styled.div`
   width: 100px;
   height: 100px;
   background-color: #ededed;
-  margin-right: 24px;
+  margin-right: 23px;
   outline: none;
   border: none;
   border-radius: 10px;
