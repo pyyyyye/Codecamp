@@ -5,7 +5,7 @@ export const BannerWrap = styled.div`
   height: 700px;
   background-color: #777;
   font-size: 5px;
-  z-index: 100;
+  z-index: 500;
   color: #fff;
   position: relative;
 `
