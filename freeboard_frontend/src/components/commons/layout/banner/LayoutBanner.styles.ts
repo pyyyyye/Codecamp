@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const BannerWrap = styled.div`
   width: 100%;
   height: 700px;
-  background-color: #555;
+  background-color: #666;
   z-index: 500;
   color: #999;
   position: relative;
