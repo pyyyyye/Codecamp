@@ -10,7 +10,7 @@ export const BannerWrap = styled.div`
 `
 export const BannerBox = styled.div`
   width: 100%;
-  color: #999;
+  color: #555;
   font-size: 50px;
 `
 export const BannerImg = styled.img`
