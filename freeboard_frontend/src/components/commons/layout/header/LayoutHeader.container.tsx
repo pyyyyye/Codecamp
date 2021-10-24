@@ -18,7 +18,6 @@ export default function LayoutHeader() {
         onClickLogin={onClickLogin}
         onClickSignup={onClickSignup}
       />
-      <LayoutNavigation />
     </>
   )
 }

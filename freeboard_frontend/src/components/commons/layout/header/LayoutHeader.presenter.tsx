@@ -2,6 +2,7 @@
 
 import { useContext } from 'react'
 import { GlobalContext } from '../../../../../pages/_app'
+import LayoutNavigation from '../navigation/LayoutNavigation.container'
 import {
   Wrapper,
   HeaderWrap,
@@ -18,6 +19,8 @@ export default function LayoutHeaderUI(props: IProps) {
   const { accessToken } = useContext(GlobalContext)
   return (
     <Wrapper>
+      <LayoutNavigation />
+
       <HeaderWrap>
         {accessToken ? (
           <AfterLogin>마이페이지</AfterLogin>

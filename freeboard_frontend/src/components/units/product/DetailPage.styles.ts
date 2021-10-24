@@ -177,5 +177,9 @@ export const GoToButton = styled.div`
   line-height: 45px;
   font-size: 16px;
   font-weight: 400;
+  border-radius: 3px;
   cursor: pointer;
+  :hover {
+    color: #faad14;
+  }
 `

@@ -20,7 +20,6 @@ import {
   Rate1,
   Rate2,
   CommentToEdit,
-  // Button_Edit,
   ButtonDelete
 } from './BoardComment.styles'
 import { getDate } from '../../../../commons/libraries/utils'
