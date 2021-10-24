@@ -35,7 +35,7 @@ export const SubTitle = styled.h6`
 `
 export const ImportanceTitle = styled.h6`
   font-size: 20px;
-  color: #000;
+  color: #111;
   font-family: 'Consolas';
   margin: 0px 10px;
   background: linear-gradient(to top, #fee380 60%, transparent 50%);
