@@ -7,7 +7,7 @@ const fruits = [
   { number: 6, title: '애플망고' },
   { number: 7, title: '딸기' },
   { number: 8, title: '천혜향' },
-  { number: 9, title: '과일선물세트' },
+  { number: 9, title: '마담주 과일선물세트' },
   { number: 10, title: '청포도' },
 ];
 
