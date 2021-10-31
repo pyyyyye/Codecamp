@@ -1,11 +1,12 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
-export const MyInput = styled.input``
+export const MyInput = styled.input`
+  border: 1px solid black;
+`;
 
-
-interface IProps{
-    active : boolean
+interface IProps {
+  active: boolean;
 }
-export const MyButton  = styled.button`
-    color:${(props : IProps) =>props.active ? "red" : "blue" }
-`
+export const MyButton = styled.button`
+  color: ${(props: IProps) => (props.active ? 'red' : 'blue')};
+`;
