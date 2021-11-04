@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const MyInput = styled.input`
-  border: 1px solid orange;
+  border: 1px solid green;
 `;
 
 interface IProps {
